@@ -3,17 +3,25 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Sailee Rumao | Data Scientist</title>
 
+  <meta name="description"
+        content="Sailee Rumao — Data Scientist specializing in AI, machine learning, model risk, financial crime, NLP and analytics.">
+
   <style>
 
+    /* =========================
+       GLOBAL
+    ========================= */
+
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html {
@@ -21,19 +29,1273 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      background: #f5f7fa;
-      color: #172033;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #ffffff;
+      color: #273142;
       line-height: 1.7;
     }
 
-    /* NAVIGATION */
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+
+    /* =========================
+       NAVIGATION
+    ========================= */
 
     nav {
-      position: sticky;
+      position: fixed;
       top: 0;
-      z-index: 100;
-      background: rgba(255, 255, 255, 0.95);
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(255,255,255,0.96);
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    .nav-inner {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1c3557;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      color: #536174;
+      font-size: 14px;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #2c8c91;
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 720px;
+      padding-top: 72px;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(
+          120deg,
+          #f6f9fc 0%,
+          #ffffff 55%,
+          #eef7f7 100%
+        );
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .hero-small {
+      color: #2c8c91;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: 64px;
+      line-height: 1.08;
+      color: #1c3557;
+      margin-bottom: 18px;
+      letter-spacing: -2px;
+    }
+
+    .hero h2 {
+      font-size: 25px;
+      font-weight: 500;
+      color: #526174;
+      margin-bottom: 22px;
+    }
+
+    .hero-description {
+      font-size: 17px;
+      max-width: 650px;
+      color: #667386;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 700;
+      transition: 0.25s;
+    }
+
+    .btn-primary {
+      background: #1c3557;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #2c8c91;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 1px solid #cbd4df;
+      color: #1c3557;
+      background: white;
+    }
+
+    .btn-outline:hover {
+      border-color: #2c8c91;
+      color: #2c8c91;
+      transform: translateY(-2px);
+    }
+
+
+    /* =========================
+       HEADSHOT
+    ========================= */
+
+    .photo-area {
+      display: flex;
+      justify-content: center;
+    }
+
+    .photo-frame {
+      width: 310px;
+      height: 310px;
+      border-radius: 50%;
+      padding: 8px;
+      background: linear-gradient(
+        135deg,
+        #1c3557,
+        #2c8c91
+      );
+      box-shadow: 0 20px 50px rgba(28,53,87,0.18);
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid white;
+    }
+
+
+    /* =========================
+       SECTIONS
+    ========================= */
+
+    section {
+      padding: 95px 0;
+    }
+
+    section:nth-child(even) {
+      background: #f7f9fb;
+    }
+
+    .section-heading {
+      margin-bottom: 45px;
+    }
+
+    .section-label {
+      color: #2c8c91;
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    .section-heading h2 {
+      font-size: 38px;
+      color: #1c3557;
+      line-height: 1.2;
+    }
+
+    .section-heading p {
+      margin-top: 12px;
+      max-width: 700px;
+      color: #687587;
+    }
+
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+
+    .about-text p {
+      color: #5f6c7c;
+      margin-bottom: 18px;
+      font-size: 16px;
+    }
+
+    .about-highlight {
+      background: white;
+      padding: 30px;
+      border-left: 4px solid #2c8c91;
+      box-shadow: 0 8px 30px rgba(28,53,87,0.07);
+    }
+
+    .about-highlight h3 {
+      color: #1c3557;
+      margin-bottom: 15px;
+    }
+
+    .about-highlight p {
+      color: #647184;
+      font-size: 15px;
+    }
+
+
+    /* =========================
+       SKILLS
+    ========================= */
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .skill-card {
+      background: white;
+      padding: 25px;
+      border: 1px solid #e5e9ef;
+      border-radius: 8px;
+      transition: 0.25s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(28,53,87,0.08);
+    }
+
+    .skill-card h3 {
+      color: #1c3557;
+      font-size: 17px;
+      margin-bottom: 10px;
+    }
+
+    .skill-card p {
+      color: #6b7787;
+      font-size: 14px;
+    }
+
+
+    /* =========================
+       EXPERIENCE
+    ========================= */
+
+    .timeline {
+      position: relative;
+      border-left: 2px solid #dce4ea;
+      margin-left: 10px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 0 0 45px 35px;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -8px;
+      top: 5px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #2c8c91;
+      border: 3px solid white;
+      box-shadow: 0 0 0 1px #2c8c91;
+    }
+
+    .timeline-item h3 {
+      font-size: 21px;
+      color: #1c3557;
+    }
+
+    .timeline-role {
+      color: #2c8c91;
+      font-weight: 700;
+      margin: 4px 0 12px;
+    }
+
+    .timeline-item p {
+      color: #647184;
+      max-width: 800px;
+      font-size: 15px;
+    }
+
+
+    /* =========================
+       PROJECTS
+    ========================= */
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .project-card {
+      background: white;
+      border: 1px solid #e3e8ee;
+      padding: 30px;
+      border-radius: 10px;
+      transition: 0.25s;
+      position: relative;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 40px rgba(28,53,87,0.10);
+    }
+
+    .project-number {
+      color: #2c8c91;
+      font-weight: 700;
+      font-size: 13px;
+      margin-bottom: 15px;
+    }
+
+    .project-card h3 {
+      font-size: 22px;
+      color: #1c3557;
+      margin-bottom: 13px;
+    }
+
+    .project-card p {
+      color: #667386;
+      font-size: 15px;
+      margin-bottom: 17px;
+    }
+
+    .tags {
+      margin-bottom: 20px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #eef7f7;
+      color: #28767a;
+      padding: 5px 9px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      margin: 3px;
+    }
+
+    .project-link {
+      color: #2c8c91;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .project-link:hover {
+      text-decoration: underline;
+    }
+
+
+    /* =========================
+       EDUCATION
+    ========================= */
+
+    .education-card {
+      background: white;
+      padding: 30px;
+      border: 1px solid #e4e9ef;
+      border-radius: 10px;
+      max-width: 700px;
+    }
+
+    .education-card h3 {
+      color: #1c3557;
+      font-size: 21px;
+    }
+
+    .education-card p {
+      color: #667386;
+      margin-top: 5px;
+    }
+
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact {
+      text-align: center;
+      background: #1c3557 !important;
+      color: white;
+    }
+
+    .contact .section-label {
+      color: #8dd8db;
+    }
+
+    .contact h2 {
+      color: white;
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .contact p {
+      color: #ccd8e5;
+      max-width: 650px;
+      margin: auto auto 30px;
+    }
+
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .contact .btn-primary {
+      background: white;
+      color: #1c3557;
+    }
+
+    .contact .btn-outline {
+      background: transparent;
+      border-color: #72849a;
+      color: white;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: #14283f;
+      color: #aebccc;
+      text-align: center;
+      padding: 25px;
+      font-size: 13px;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 850px) {
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+      }
+
+      .hero {
+        padding-bottom: 70px;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .photo-area {
+        order: -1;
+      }
+
+      .photo-frame {
+        width: 220px;
+        height: 220px;
+      }
+
+      .hero h1 {
+        font-size: 46px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skill-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+
+    @media (max-width: 550px) {
+
+      .nav-inner {
+        height: auto;
+        padding: 15px 0;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        padding-top: 150px;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .hero h2 {
+        font-size: 20px;
+      }
+
+      .skill-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-heading h2 {
+        font-size: 31px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+  <div class="container nav-inner">
+
+    <div class="logo">
+      Sailee Rumao
+    </div>
+
+    <div class="nav-links">
+
+      <a href="#about">About</a>
+
+      <a href="#skills">Skills</a>
+
+      <a href="#experience">Experience</a>
+
+      <a href="#projects">Projects</a>
+
+      <a href="#contact">Contact</a>
+
+    </div>
+
+  </div>
+
+</nav>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<header class="hero">
+
+  <div class="container hero-inner">
+
+
+    <div>
+
+      <div class="hero-small">
+        Data • AI • Risk
+      </div>
+
+      <h1>
+        Hi, I'm Sailee.
+      </h1>
+
+      <h2>
+        Data Scientist | AI | Model Risk | Financial Crime
+      </h2>
+
+      <p class="hero-description">
+        I use statistics, machine learning, NLP, and data analytics
+        to solve complex problems and turn data into actionable
+        business and risk insights.
+      </p>
+
+
+      <div class="hero-buttons">
+
+        <a href="#projects" class="btn btn-primary">
+          View My Work
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/sailee-mathew-rumao-829608a0/"
+          target="_blank"
+          class="btn btn-outline">
+          LinkedIn
+        </a>
+
+        <a
+          href="https://github.com/sxr9810"
+          target="_blank"
+          class="btn btn-outline">
+          GitHub
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="photo-area">
+
+      <div class="photo-frame">
+
+        <img
+          src="YOUR-HEADSHOT-FILENAME.jpg"
+          alt="Sailee Rumao">
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</header>
+
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <div class="section-label">
+        About Me
+      </div>
+
+      <h2>
+        Data, statistics & intelligent decision-making.
+      </h2>
+
+    </div>
+
+
+    <div class="about-grid">
+
+
+      <div class="about-text">
+
+        <p>
+          I am a quantitative professional with experience spanning
+          data science, statistical modeling, machine learning,
+          model validation, and analytics.
+        </p>
+
+        <p>
+          At UBS, I work on models supporting financial crime,
+          AML, fraud, sanctions screening, and transaction monitoring.
+          My work combines statistical rigor with practical
+          business and risk considerations.
+        </p>
+
+        <p>
+          Previously, at ZS Associates, I applied analytics,
+          segmentation, and quantitative insights to support
+          healthcare and pharmaceutical decision-making.
+        </p>
+
+      </div>
+
+
+      <div class="about-highlight">
+
+        <h3>
+          What I enjoy working on
+        </h3>
+
+        <p>
+          Machine learning • NLP • AI • Model Risk • Financial Crime
+          • Statistical Modeling • Experimentation • Data Analytics
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     SKILLS
+========================= -->
+
+<section id="skills">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <div class="section-label">
+        Expertise
+      </div>
+
+      <h2>
+        Technical Skills
+      </h2>
+
+      <p>
+        A combination of statistical foundations, machine learning,
+        programming, and domain expertise.
+      </p>
+
+    </div>
+
+
+    <div class="skill-grid">
+
+
+      <div class="skill-card">
+
+        <h3>
+          Programming
+        </h3>
+
+        <p>
+          Python · SQL · R · Pandas · NumPy · Git
+        </p>
+
+      </div>
+
+
+      <div class="skill-card">
+
+        <h3>
+          Machine Learning
+        </h3>
+
+        <p>
+          XGBoost · Random Forest · Logistic Regression · Classification
+        </p>
+
+      </div>
+
+
+      <div class="skill-card">
+
+        <h3>
+          Statistics
+        </h3>
+
+        <p>
+          Hypothesis Testing · A/B Testing · AUC-ROC · KS Test
+        </p>
+
+      </div>
+
+
+      <div class="skill-card">
+
+        <h3>
+          AI & NLP
+        </h3>
+
+        <p>
+          NLP · Entity Resolution · Fuzzy Matching · LLM Applications
+        </p>
+
+      </div>
+
+
+      <div class="skill-card">
+
+        <h3>
+          Risk & Compliance
+        </h3>
+
+        <p>
+          AML · Fraud · Sanctions · Transaction Monitoring · Model Risk
+        </p>
+
+      </div>
+
+
+      <div class="skill-card">
+
+        <h3>
+          Analytics
+        </h3>
+
+        <p>
+          Data Analysis · Segmentation · KPI Analytics · Tableau
+        </p>
+
+      </div>
+
+
+      <div class="skill-card">
+
+        <h3>
+          Model Validation
+        </h3>
+
+        <p>
+          Model Performance · Benchmarking · Stress Testing · Validation
+        </p>
+
+      </div>
+
+
+      <div class="skill-card">
+
+        <h3>
+          Tools
+        </h3>
+
+        <p>
+          Jupyter · GitHub · GitLab · Tableau · Excel
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     EXPERIENCE
+========================= -->
+
+<section id="experience">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <div class="section-label">
+        Career
+      </div>
+
+      <h2>
+        Experience
+      </h2>
+
+    </div>
+
+
+    <div class="timeline">
+
+
+      <div class="timeline-item">
+
+        <h3>
+          UBS
+        </h3>
+
+        <div class="timeline-role">
+          Quantitative Analyst — Model Validation
+        </div>
+
+        <p>
+          Validate statistical and machine learning models across
+          AML, financial crime, fraud, sanctions screening, and
+          transaction monitoring. Apply statistical testing,
+          performance evaluation, stress testing, and model
+          risk principles to assess model effectiveness.
+        </p>
+
+      </div>
+
+
+      <div class="timeline-item">
+
+        <h3>
+          ZS Associates
+        </h3>
+
+        <div class="timeline-role">
+          Decision Analytics Associate
+        </div>
+
+        <p>
+          Applied statistical analysis, segmentation, market research,
+          and business analytics to support pharmaceutical clients
+          and improve data-driven decision-making.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section id="projects">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <div class="section-label">
+        Selected Work
+      </div>
+
+      <h2>
+        Featured Projects
+      </h2>
+
+      <p>
+        A selection of projects demonstrating my experience across
+        machine learning, NLP, financial crime, and analytics.
+      </p>
+
+    </div>
+
+
+    <div class="projects">
+
+
+      <!-- PROJECT 01 -->
+
+      <div class="project-card">
+
+        <div class="project-number">
+          PROJECT 01
+        </div>
+
+        <h3>
+          Sanctions Screening & Entity Resolution
+        </h3>
+
+        <p>
+          Built an NLP and fuzzy-matching workflow for identifying
+          potential sanctions matches despite spelling variations,
+          transliteration, and formatting differences.
+        </p>
+
+        <div class="tags">
+
+          <span class="tag">Python</span>
+          <span class="tag">NLP</span>
+          <span class="tag">Fuzzy Matching</span>
+          <span class="tag">Entity Resolution</span>
+
+        </div>
+
+        <a
+          class="project-link"
+          href="https://github.com/sxr9810/sanctions-screening-fuzzy-matching"
+          target="_blank">
+
+          View Project on GitHub →
+
+        </a>
+
+      </div>
+
+
+      <!-- PROJECT 02 -->
+
+      <div class="project-card">
+
+        <div class="project-number">
+          PROJECT 02
+        </div>
+
+        <h3>
+          AML Transaction Monitoring Model Validation
+        </h3>
+
+        <p>
+          Evaluated AML transaction monitoring models using
+          large-scale transaction datasets and statistical
+          performance measures to assess model effectiveness.
+        </p>
+
+        <div class="tags">
+
+          <span class="tag">Python</span>
+          <span class="tag">R</span>
+          <span class="tag">AML</span>
+          <span class="tag">Model Risk</span>
+
+        </div>
+
+        <a class="project-link" href="#experience">
+          Professional Experience →
+        </a>
+
+      </div>
+
+
+      <!-- PROJECT 03 -->
+
+      <div class="project-card">
+
+        <div class="project-number">
+          PROJECT 03
+        </div>
+
+        <h3>
+          Adverse Media NLP
+        </h3>
+
+        <p>
+          Explored NLP-driven approaches for entity matching and
+          identifying potentially relevant adverse media content
+          for financial crime screening.
+        </p>
+
+        <div class="tags">
+
+          <span class="tag">Python</span>
+          <span class="tag">NLP</span>
+          <span class="tag">Classification</span>
+          <span class="tag">Financial Crime</span>
+
+        </div>
+
+        <a class="project-link" href="#">
+          Coming Soon →
+        </a>
+
+      </div>
+
+
+      <!-- PROJECT 04 -->
+
+      <div class="project-card">
+
+        <div class="project-number">
+          PROJECT 04
+        </div>
+
+        <h3>
+          Healthcare Segmentation & Analytics
+        </h3>
+
+        <p>
+          Applied statistical segmentation and analytics to identify
+          high-value customer segments and translate quantitative
+          findings into actionable business recommendations.
+        </p>
+
+        <div class="tags">
+
+          <span class="tag">Statistics</span>
+          <span class="tag">Segmentation</span>
+          <span class="tag">Analytics</span>
+          <span class="tag">Healthcare</span>
+
+        </div>
+
+        <a class="project-link" href="#experience">
+          Professional Experience →
+        </a>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     EDUCATION
+========================= -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <div class="section-label">
+        Education
+      </div>
+
+      <h2>
+        Academic Background
+      </h2>
+
+    </div>
+
+
+    <div class="education-card">
+
+      <h3>
+        M.S. Applied Statistics
+      </h3>
+
+      <p>
+        Rochester Institute of Technology
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact" class="contact">
+
+  <div class="container">
+
+    <div class="section-label">
+      Get In Touch
+    </div>
+
+    <h2>
+      Let's connect.
+    </h2>
+
+    <p>
+      I'm interested in opportunities involving data science,
+      AI, analytics, model risk, and intelligent risk decisioning.
+    </p>
+
+
+    <div class="contact-buttons">
+
+      <a
+        href="https://www.linkedin.com/in/sailee-mathew-rumao-829608a0/"
+        target="_blank"
+        class="btn btn-primary">
+
+        LinkedIn
+
+      </a>
+
+
+      <a
+        href="https://github.com/sxr9810"
+        target="_blank"
+        class="btn btn-outline">
+
+        GitHub
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  <p>
+    © 2026 Sailee Rumao · Data Scientist · AI · Risk
+  </p>
+
+</footer>
+
+
+</body>
+
+</html>
+```
       backdrop-filter: blur(10px);
       border-bottom: 1px solid #e4e8ef;
     }
