@@ -26,7 +26,10 @@
       line-height: 1.7;
     }
 
-    /* NAVIGATION */
+
+    /* ==============================
+       NAVIGATION
+    =============================== */
 
     nav {
       position: sticky;
@@ -65,7 +68,9 @@
     }
 
 
-    /* HERO */
+    /* ==============================
+       HERO
+    =============================== */
 
     .hero {
       background: linear-gradient(
@@ -74,6 +79,7 @@
         #FAFAF9 55%,
         #F1F7F5 100%
       );
+
       color: #252525;
       padding: 90px 30px;
     }
@@ -123,7 +129,9 @@
     }
 
 
-    /* HEADSHOT */
+    /* ==============================
+       HEADSHOT
+    =============================== */
 
     .headshot-wrapper {
       flex-shrink: 0;
@@ -139,7 +147,9 @@
     }
 
 
-    /* BUTTONS */
+    /* ==============================
+       BUTTONS
+    =============================== */
 
     .buttons {
       display: flex;
@@ -181,7 +191,9 @@
     }
 
 
-    /* IMPACT BELT */
+    /* ==============================
+       IMPACT BELT
+    =============================== */
 
     .impact-belt {
       background: #F1F0FF;
@@ -226,7 +238,9 @@
     }
 
 
-    /* MAIN */
+    /* ==============================
+       MAIN
+    =============================== */
 
     .container {
       max-width: 1150px;
@@ -254,6 +268,11 @@
       letter-spacing: -0.5px;
     }
 
+
+    /* ==============================
+       ABOUT
+    =============================== */
+
     .about-text {
       max-width: 850px;
       font-size: 17px;
@@ -265,7 +284,9 @@
     }
 
 
-    /* PROJECTS */
+    /* ==============================
+       PROJECTS
+    =============================== */
 
     .project-container {
       display: grid;
@@ -335,7 +356,9 @@
     }
 
 
-    /* SKILLS */
+    /* ==============================
+       SKILLS
+    =============================== */
 
     .skills {
       display: flex;
@@ -359,7 +382,9 @@
     }
 
 
-    /* EXPERIENCE */
+    /* ==============================
+       EXPERIENCE
+    =============================== */
 
     .experience-item {
       background: #FFFFFF;
@@ -388,7 +413,9 @@
     }
 
 
-    /* EDUCATION */
+    /* ==============================
+       EDUCATION
+    =============================== */
 
     .education-card {
       background: #FFFFFF;
@@ -407,7 +434,79 @@
     }
 
 
-    /* FOOTER */
+    /* ==============================
+       CONTACT
+    =============================== */
+
+    .contact-form {
+      max-width: 750px;
+      background: #FFFFFF;
+      padding: 35px;
+      border-radius: 14px;
+      border: 1px solid #E5E2DD;
+      box-shadow: 0 8px 25px rgba(37,37,37,0.05);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: #3F3F3F;
+      margin-bottom: 7px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 13px 15px;
+      border: 1px solid #D8D5D0;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 15px;
+      color: #252525;
+      background: #FAFAF9;
+      transition: 0.2s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #6D5DFB;
+      box-shadow: 0 0 0 3px rgba(109,93,251,0.10);
+    }
+
+    .form-group textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .contact-submit {
+      border: none;
+      cursor: pointer;
+      background: #252525;
+      color: #FFFFFF;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .contact-submit:hover {
+      background: #6D5DFB;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(109,93,251,0.25);
+    }
+
+
+    /* ==============================
+       FOOTER
+    =============================== */
 
     footer {
       background: #1D1D1D;
@@ -418,7 +517,9 @@
     }
 
 
-    /* MOBILE */
+    /* ==============================
+       MOBILE
+    =============================== */
 
     @media (max-width: 750px) {
 
@@ -493,6 +594,10 @@
         font-size: 29px;
       }
 
+      .contact-form {
+        padding: 25px;
+      }
+
     }
 
   </style>
@@ -503,7 +608,9 @@
 <body>
 
 
-<!-- NAVIGATION -->
+<!-- ==============================
+     NAVIGATION
+=============================== -->
 
 <nav>
 
@@ -519,6 +626,7 @@
       <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
 
     </div>
 
@@ -527,7 +635,9 @@
 </nav>
 
 
-<!-- HERO -->
+<!-- ==============================
+     HERO
+=============================== -->
 
 <header class="hero">
 
@@ -559,15 +669,17 @@
           View Projects
         </a>
 
-        <a class="button button-secondary"
-           href="https://www.linkedin.com/in/sailee-mathew-rumao-829608a0/"
-           target="_blank">
+        <a
+          class="button button-secondary"
+          href="https://www.linkedin.com/in/sailee-mathew-rumao-829608a0/"
+          target="_blank">
           LinkedIn
         </a>
 
-        <a class="button button-secondary"
-           href="https://github.com/sxr9810"
-           target="_blank">
+        <a
+          class="button button-secondary"
+          href="https://github.com/sxr9810"
+          target="_blank">
           GitHub
         </a>
 
@@ -590,7 +702,9 @@
 </header>
 
 
-<!-- IMPACT BELT -->
+<!-- ==============================
+     IMPACT BELT
+=============================== -->
 
 <section class="impact-belt">
 
@@ -652,12 +766,16 @@
 </section>
 
 
-<!-- MAIN CONTENT -->
+<!-- ==============================
+     MAIN CONTENT
+=============================== -->
 
 <div class="container">
 
 
-<!-- ABOUT -->
+<!-- ==============================
+     ABOUT
+=============================== -->
 
 <section id="about">
 
@@ -686,7 +804,9 @@
 </section>
 
 
-<!-- PROJECTS -->
+<!-- ==============================
+     PROJECTS
+=============================== -->
 
 <section id="projects">
 
@@ -699,9 +819,7 @@
   </h2>
 
 
-  <!-- ==============================
-       WORK PROJECTS
-  =============================== -->
+  <!-- WORK PROJECTS -->
 
   <h3 style="
       font-size: 24px;
@@ -768,9 +886,7 @@
   </div>
 
 
-  <!-- ==============================
-       PERSONAL PROJECTS
-  =============================== -->
+  <!-- PERSONAL PROJECTS -->
 
   <h3 style="
       font-size: 24px;
@@ -880,7 +996,9 @@
 </section>
 
 
-<!-- SKILLS -->
+<!-- ==============================
+     SKILLS
+=============================== -->
 
 <section id="skills">
 
@@ -916,7 +1034,9 @@
 </section>
 
 
-<!-- EXPERIENCE -->
+<!-- ==============================
+     EXPERIENCE
+=============================== -->
 
 <section id="experience">
 
@@ -969,7 +1089,9 @@
 </section>
 
 
-<!-- EDUCATION -->
+<!-- ==============================
+     EDUCATION
+=============================== -->
 
 <section>
 
@@ -997,10 +1119,103 @@
 </section>
 
 
+<!-- ==============================
+     CONTACT
+=============================== -->
+
+<section id="contact">
+
+  <div class="section-label">
+    Get In Touch
+  </div>
+
+  <h2 class="section-title">
+    Contact Me
+  </h2>
+
+  <div class="about-text" style="margin-bottom: 25px;">
+
+    <p>
+      Interested in working together, discussing data science,
+      analytics, AI, or risk? I'd love to hear from you.
+    </p>
+
+  </div>
+
+
+  <form
+    class="contact-form"
+    action="mailto:YOUR_EMAIL@example.com"
+    method="POST"
+    enctype="text/plain">
+
+
+    <div class="form-group">
+
+      <label for="name">
+        Name
+      </label>
+
+      <input
+        type="text"
+        id="name"
+        name="Name"
+        placeholder="Your name"
+        required>
+
+    </div>
+
+
+    <div class="form-group">
+
+      <label for="email">
+        Email
+      </label>
+
+      <input
+        type="email"
+        id="email"
+        name="Email"
+        placeholder="your.email@example.com"
+        required>
+
+    </div>
+
+
+    <div class="form-group">
+
+      <label for="message">
+        Message
+      </label>
+
+      <textarea
+        id="message"
+        name="Message"
+        placeholder="Write your message here..."
+        required></textarea>
+
+    </div>
+
+
+    <button
+      type="submit"
+      class="contact-submit">
+
+      Send Message →
+
+    </button>
+
+  </form>
+
+</section>
+
+
 </div>
 
 
-<!-- FOOTER -->
+<!-- ==============================
+     FOOTER
+=============================== -->
 
 <footer>
 
