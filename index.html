@@ -1,18 +1,1496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sailee Rumao | Data Scientist</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   Roboto, Arial, sans-serif;
+      background: #FAFAF9;
+      color: #252525;
+      line-height: 1.7;
+    }
+
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 250, 249, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #E8E5E0;
+    }
+
+    .nav-container {
+      max-width: 1150px;
+      margin: auto;
+      padding: 18px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+      color: #252525;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #6B6B6B;
+      margin-left: 25px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #6D5DFB;
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      background: linear-gradient(
+        135deg,
+        #F7F5FF 0%,
+        #FAFAF9 55%,
+        #F1F7F5 100%
+      );
+
+      color: #252525;
+      padding: 90px 30px;
+    }
+
+    .hero-container {
+      max-width: 1150px;
+      margin: auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 60px;
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .hero-text .eyebrow {
+      color: #6D5DFB;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      font-size: 58px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      letter-spacing: -2px;
+      color: #252525;
+    }
+
+    .hero h2 {
+      font-size: 25px;
+      font-weight: 400;
+      color: #555555;
+      margin-bottom: 20px;
+    }
+
+    .hero-description {
+      max-width: 650px;
+      color: #6B6B6B;
+      font-size: 17px;
+      margin-bottom: 30px;
+    }
+
+
+    /* =========================
+       HEADSHOT
+    ========================= */
+
+    .headshot-wrapper {
+      flex-shrink: 0;
+    }
+
+    .headshot {
+      width: 230px;
+      height: 230px;
+
+      object-fit: cover;
+
+      border-radius: 50%;
+
+      border: 6px solid rgba(255,255,255,0.9);
+
+      box-shadow:
+        0 20px 50px rgba(37,37,37,0.18);
+    }
+
+
+    /* =========================
+       BUTTONS
+    ========================= */
+
+    .buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+
+      padding: 12px 22px;
+
+      border-radius: 8px;
+
+      text-decoration: none;
+
+      font-weight: 600;
+
+      font-size: 14px;
+
+      transition: 0.2s ease;
+    }
+
+    .button-primary {
+      background: #252525;
+      color: white;
+    }
+
+    .button-primary:hover {
+      background: #6D5DFB;
+
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 8px 20px rgba(109,93,251,0.25);
+    }
+
+    .button-secondary {
+      border: 1px solid #D8D5D0;
+
+      color: #252525;
+
+      background: #FFFFFF;
+    }
+
+    .button-secondary:hover {
+      border-color: #6D5DFB;
+
+      color: #6D5DFB;
+
+      background: #F8F7FF;
+    }
+
+
+    /* =========================
+       MAIN
+    ========================= */
+
+    .container {
+      max-width: 1150px;
+
+      margin: auto;
+
+      padding: 70px 30px;
+    }
+
+    section {
+      margin-bottom: 85px;
+    }
+
+    .section-label {
+      color: #6D5DFB;
+
+      font-size: 13px;
+
+      font-weight: 700;
+
+      text-transform: uppercase;
+
+      letter-spacing: 2px;
+
+      margin-bottom: 8px;
+    }
+
+    h2.section-title {
+      font-size: 34px;
+
+      color: #252525;
+
+      margin-bottom: 25px;
+
+      letter-spacing: -0.5px;
+    }
+
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about-text {
+      max-width: 850px;
+
+      font-size: 17px;
+
+      color: #5F5F5F;
+    }
+
+    .about-text p {
+      margin-bottom: 15px;
+    }
+
+
+    /* =========================
+       IMPACT BELT
+    ========================= */
+
+    .impact-container {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 15px;
+
+      margin-top: 35px;
+    }
+
+    .impact-card {
+      background: #FFFFFF;
+
+      border: 1px solid #E5E2DD;
+
+      border-radius: 12px;
+
+      padding: 22px 15px;
+
+      text-align: center;
+
+      box-shadow:
+        0 5px 18px rgba(37,37,37,0.04);
+
+      transition: 0.2s ease;
+    }
+
+    .impact-card:hover {
+      transform: translateY(-3px);
+
+      border-color: #D8D2FF;
+    }
+
+    .impact-number {
+      display: block;
+
+      font-size: 28px;
+
+      font-weight: 800;
+
+      color: #6D5DFB;
+
+      margin-bottom: 5px;
+    }
+
+    .impact-label {
+      display: block;
+
+      font-size: 13px;
+
+      color: #666666;
+
+      line-height: 1.4;
+    }
+
+
+    /* =========================
+       PROJECTS
+    ========================= */
+
+    .project-container {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 25px;
+    }
+
+    .project {
+      background: #FFFFFF;
+
+      padding: 30px;
+
+      border-radius: 14px;
+
+      border: 1px solid #E5E2DD;
+
+      box-shadow:
+        0 8px 25px rgba(37,37,37,0.05);
+
+      transition: 0.25s ease;
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+    .project::before {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+
+      left: 0;
+
+      width: 100%;
+
+      height: 4px;
+
+      background: #6D5DFB;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+
+      box-shadow:
+        0 15px 35px rgba(37,37,37,0.10);
+    }
+
+    .project-icon {
+      font-size: 28px;
+
+      margin-bottom: 15px;
+    }
+
+    .project h3 {
+      font-size: 21px;
+
+      color: #252525;
+
+      margin-bottom: 12px;
+    }
+
+    .project p {
+      color: #666666;
+
+      font-size: 15px;
+
+      margin-bottom: 18px;
+    }
+
+    .tech {
+      font-size: 13px;
+
+      color: #6D5DFB;
+
+      font-weight: 600;
+
+      margin-bottom: 20px !important;
+    }
+
+    .project a {
+      color: #6D5DFB;
+
+      text-decoration: none;
+
+      font-weight: 700;
+
+      font-size: 14px;
+    }
+
+    .project a:hover {
+      text-decoration: underline;
+    }
+
+
+    /* =========================
+       PERSONAL PROJECTS
+       3 CARDS IN ONE ROW
+    ========================= */
+
+    .personal-projects {
+      grid-template-columns:
+        repeat(3, 1fr);
+    }
+
+    .personal-projects .project {
+      padding: 25px;
+    }
+
+    .personal-projects .project h3 {
+      font-size: 19px;
+    }
+
+
+    /* =========================
+       SKILLS
+    ========================= */
+
+    .skills {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+    }
+
+    .skills span {
+      background: #FFFFFF;
+
+      border: 1px solid #D8D5D0;
+
+      color: #3F3F3F;
+
+      padding: 9px 15px;
+
+      border-radius: 30px;
+
+      font-size: 14px;
+
+      font-weight: 500;
+
+      transition: 0.2s ease;
+    }
+
+    .skills span:hover {
+      border-color: #6D5DFB;
+
+      color: #6D5DFB;
+    }
+
+
+    /* =========================
+       EXPERIENCE
+    ========================= */
+
+    .experience-item {
+      background: #FFFFFF;
+
+      border-left: 4px solid #6D5DFB;
+
+      padding: 25px 30px;
+
+      margin-bottom: 20px;
+
+      border-radius:
+        0 12px 12px 0;
+
+      box-shadow:
+        0 5px 20px rgba(37,37,37,0.04);
+    }
+
+    .experience-item h3 {
+      color: #252525;
+
+      font-size: 21px;
+
+      margin-bottom: 3px;
+    }
+
+    .role {
+      color: #6D5DFB;
+
+      font-weight: 600;
+
+      margin-bottom: 10px;
+    }
+
+    .experience-item p {
+      color: #666666;
+
+      font-size: 15px;
+    }
+
+
+    /* =========================
+       EDUCATION
+    ========================= */
+
+    .education-card {
+      background: #FFFFFF;
+
+      padding: 25px 30px;
+
+      border-radius: 12px;
+
+      border: 1px solid #E5E2DD;
+    }
+
+    .education-card h3 {
+      color: #252525;
+
+      margin-bottom: 5px;
+    }
+
+    .education-card p {
+      color: #666666;
+    }
+
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact-container {
+      max-width: 750px;
+    }
+
+    .contact-form {
+      background: #FFFFFF;
+
+      padding: 35px;
+
+      border-radius: 14px;
+
+      border: 1px solid #E5E2DD;
+
+      box-shadow:
+        0 8px 25px rgba(37,37,37,0.05);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+
+      font-size: 14px;
+
+      font-weight: 600;
+
+      color: #3F3F3F;
+
+      margin-bottom: 7px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+
+      width: 100%;
+
+      padding: 12px 14px;
+
+      border: 1px solid #D8D5D0;
+
+      border-radius: 8px;
+
+      font-family: inherit;
+
+      font-size: 14px;
+
+      color: #252525;
+
+      background: #FAFAF9;
+
+      outline: none;
+
+      transition: 0.2s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+
+      border-color: #6D5DFB;
+
+      background: #FFFFFF;
+
+      box-shadow:
+        0 0 0 3px rgba(109,93,251,0.08);
+    }
+
+    .form-group textarea {
+
+      min-height: 150px;
+
+      resize: vertical;
+    }
+
+    .contact-submit {
+
+      border: none;
+
+      cursor: pointer;
+
+      padding: 12px 25px;
+
+      background: #252525;
+
+      color: white;
+
+      border-radius: 8px;
+
+      font-family: inherit;
+
+      font-size: 14px;
+
+      font-weight: 600;
+
+      transition: 0.2s ease;
+    }
+
+    .contact-submit:hover {
+
+      background: #6D5DFB;
+
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 8px 20px rgba(109,93,251,0.25);
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+
+      background: #1D1D1D;
+
+      color: #AFAFAF;
+
+      text-align: center;
+
+      padding: 35px;
+
+      font-size: 14px;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 900px) {
+
+      .personal-projects {
+
+        grid-template-columns: 1fr;
+
+      }
+
+      .impact-container {
+
+        grid-template-columns:
+          repeat(2, 1fr);
+
+      }
+
+    }
+
+
+    @media (max-width: 750px) {
+
+      .nav-container {
+
+        padding: 15px 20px;
+
+      }
+
+      nav a {
+
+        margin-left: 12px;
+
+        font-size: 12px;
+
+      }
+
+      .hero {
+
+        padding: 65px 25px;
+
+      }
+
+      .hero-container {
+
+        flex-direction:
+          column-reverse;
+
+        text-align: center;
+
+      }
+
+      .hero h1 {
+
+        font-size: 43px;
+
+      }
+
+      .hero h2 {
+
+        font-size: 21px;
+
+      }
+
+      .buttons {
+
+        justify-content: center;
+
+      }
+
+      .headshot {
+
+        width: 180px;
+
+        height: 180px;
+
+      }
+
+      .project-container {
+
+        grid-template-columns: 1fr;
+
+      }
+
+      .personal-projects {
+
+        grid-template-columns: 1fr;
+
+      }
+
+      .container {
+
+        padding: 55px 25px;
+
+      }
+
+      h2.section-title {
+
+        font-size: 29px;
+
+      }
+
+      .impact-container {
+
+        grid-template-columns: 1fr 1fr;
+
+      }
+
+    }
+
+
+    @media (max-width: 480px) {
+
+      .impact-container {
+
+        grid-template-columns: 1fr;
+
+      }
+
+      .contact-form {
+
+        padding: 25px;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+  <div class="nav-container">
+
+    <div class="logo">
+      Sailee Rumao
+    </div>
+
+    <div>
+
+      <a href="#about">About</a>
+
+      <a href="#projects">Projects</a>
+
+      <a href="#experience">Experience</a>
+
+      <a href="#skills">Skills</a>
+
+      <a href="#contact">Contact</a>
+
+    </div>
+
+  </div>
+
+</nav>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<header class="hero">
+
+  <div class="hero-container">
+
+
+    <div class="hero-text">
+
+      <div class="eyebrow">
+        Data • AI • Analytics • Risk
+      </div>
+
+      <h1>
+        Sailee Rumao
+      </h1>
+
+      <h2>
+        Data Scientist | Advanced Analytics | AI & ML
+      </h2>
+
+      <p class="hero-description">
+
+        I combine statistical modeling, machine learning,
+        strategic analytics, and AI to turn complex data into
+        actionable insights and better business decisions.
+
+      </p>
+
+
+      <div class="buttons">
+
+        <a
+          class="button button-primary"
+          href="#projects">
+
+          View Projects
+
+        </a>
+
+
+        <a
+          class="button button-secondary"
+          href="https://www.linkedin.com/in/sailee-mathew-rumao-829608a0/"
+          target="_blank">
+
+          LinkedIn
+
+        </a>
+
+
+        <a
+          class="button button-secondary"
+          href="https://github.com/sxr9810"
+          target="_blank">
+
+          GitHub
+
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="headshot-wrapper">
+
+      <img
+        class="headshot"
+        src="Sailee_headshot.PNG"
+        alt="Sailee Rumao professional headshot">
+
+    </div>
+
+
+  </div>
+
+</header>
+
+
+
+<!-- =========================
+     MAIN CONTENT
+========================= -->
+
+<div class="container">
+
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+  <div class="section-label">
+    About
+  </div>
+
+  <h2 class="section-title">
+    Turning data into decisions
+  </h2>
+
+
+  <div class="about-text">
+
+    <p>
+
+      I’m an Advanced Data Analytics professional with experience
+      across data science, machine learning, strategic analytics,
+      consulting, and fintech risk. I use statistical thinking,
+      ML, and AI/GenAI tools to solve complex problems, evaluate
+      models, and translate data into business impact.
+
+    </p>
+
+  </div>
+
+
+
+  <!-- QUANTITATIVE IMPACT -->
+
+  <div class="impact-container">
+
+
+    <div class="impact-card">
+
+      <span class="impact-number">
+        15+
+      </span>
+
+      <span class="impact-label">
+        Models Validated
+      </span>
+
+    </div>
+
+
+    <div class="impact-card">
+
+      <span class="impact-number">
+        5M+
+      </span>
+
+      <span class="impact-label">
+        Transactions Analyzed
+      </span>
+
+    </div>
+
+
+    <div class="impact-card">
+
+      <span class="impact-number">
+        15%
+      </span>
+
+      <span class="impact-label">
+        Recall Improvement
+      </span>
+
+    </div>
+
+
+    <div class="impact-card">
+
+      <span class="impact-number">
+        0–30%
+      </span>
+
+      <span class="impact-label">
+        Targeting & Analytics Impact
+      </span>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section id="projects">
+
+
+  <div class="section-label">
+    Selected Work
+  </div>
+
+
+  <h2 class="section-title">
+    Projects
+  </h2>
+
+
+
+  <!-- =========================
+       WORK PROJECTS
+  ========================= -->
+
+  <h3 style="
+      font-size: 24px;
+      color: #252525;
+      margin-bottom: 20px;
+  ">
+
+    Work Projects
+
+  </h3>
+
+
+  <div class="project-container">
+
+
+    <!-- WORK PROJECT 1 -->
+
+    <div class="project">
+
+      <div class="project-icon">
+        🛡️
+      </div>
+
+
+      <h3>
+        AML Transaction Monitoring Model Validation
+      </h3>
+
+
+      <p>
+
+        Validated AML transaction monitoring models across
+        large-scale transaction datasets, assessing model
+        performance, segmentation, thresholds, and statistical
+        effectiveness.
+
+      </p>
+
+
+      <p class="tech">
+
+        Python · R · SQL · AML · Model Validation ·
+        AUC-ROC · KS Test
+
+      </p>
+
+    </div>
+
+
+
+    <!-- WORK PROJECT 2 -->
+
+    <div class="project">
+
+      <div class="project-icon">
+        🔎
+      </div>
+
+
+      <h3>
+        Sanctions Screening Model Validation
+      </h3>
+
+
+      <p>
+
+        Evaluated sanctions screening models across multiple
+        payment message formats, including SWIFT, ISO 20022,
+        and ACH, using stress testing and performance analysis.
+
+      </p>
+
+
+      <p class="tech">
+
+        Python · NLP · Model Validation · Sanctions ·
+        Financial Crime
+
+      </p>
+
+    </div>
+
+
+  </div>
+
+
+
+  <!-- =========================
+       PERSONAL PROJECTS
+  ========================= -->
+
+  <h3 style="
+      font-size: 24px;
+      color: #252525;
+      margin-top: 60px;
+      margin-bottom: 20px;
+  ">
+
+    Personal Projects
+
+  </h3>
+
+
+  <div class="project-container personal-projects">
+
+
+    <!-- PERSONAL PROJECT 1 -->
+
+    <div class="project">
+
+      <div class="project-icon">
+        🔬
+      </div>
+
+
+      <h3>
+        Sanctions Screening & Entity Resolution
+      </h3>
+
+
+      <p>
+
+        Independent NLP project exploring fuzzy matching
+        and entity resolution techniques for identifying
+        potential sanctions matches despite spelling variations,
+        transliteration, and formatting differences.
+
+      </p>
+
+
+      <p class="tech">
+
+        Python · NLP · Fuzzy Matching · Entity Resolution
+
+      </p>
+
+
+      <a
+        href="https://github.com/sxr9810/sanctions-screening-fuzzy-matching"
+        target="_blank">
+
+        View Project →
+
+      </a>
+
+    </div>
+
+
+
+    <!-- PERSONAL PROJECT 2 -->
+
+    <div class="project">
+
+      <div class="project-icon">
+        💳
+      </div>
+
+
+      <h3>
+        Fraud Detection
+      </h3>
+
+
+      <p>
+
+        Machine learning project focused on identifying
+        high-risk transactions using classification models,
+        feature engineering, model evaluation, and
+        threshold optimization.
+
+      </p>
+
+
+      <p class="tech">
+
+        Python · SQL · XGBoost · Machine Learning
+
+      </p>
+
+
+      <a href="#">
+
+        Coming Soon →
+
+      </a>
+
+    </div>
+
+
+
+    <!-- PERSONAL PROJECT 3 -->
+
+    <div class="project">
+
+      <div class="project-icon">
+        📈
+      </div>
+
+
+      <h3>
+        A/B Testing & Product Analytics
+      </h3>
+
+
+      <p>
+
+        Experimentation project exploring whether product
+        changes improve user behavior while evaluating both
+        statistical and business significance.
+
+      </p>
+
+
+      <p class="tech">
+
+        Python · SQL · Statistics · Experimentation
+
+      </p>
+
+
+      <a href="#">
+
+        Coming Soon →
+
+      </a>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     SKILLS
+========================= -->
+
+<section id="skills">
+
+
+  <div class="section-label">
+    Technical Toolkit
+  </div>
+
+
+  <h2 class="section-title">
+    Skills
+  </h2>
+
+
+  <div class="skills">
+
+    <span>Python</span>
+
+    <span>SQL</span>
+
+    <span>R</span>
+
+    <span>Machine Learning</span>
+
+    <span>NLP</span>
+
+    <span>Statistics</span>
+
+    <span>XGBoost</span>
+
+    <span>Random Forest</span>
+
+    <span>pandas</span>
+
+    <span>NumPy</span>
+
+    <span>Tableau</span>
+
+    <span>Model Validation</span>
+
+    <span>AML</span>
+
+    <span>Financial Crime</span>
+
+    <span>GenAI</span>
+
+    <span>LLMs</span>
+
+    <span>AI Copilots</span>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     EXPERIENCE
+========================= -->
+
+<section id="experience">
+
+
+  <div class="section-label">
+    Experience
+  </div>
+
+
+  <h2 class="section-title">
+    Professional Experience
+  </h2>
+
+
+
+  <!-- UBS -->
+
+  <div class="experience-item">
+
+
+    <h3>
+      UBS
+    </h3>
+
+
+    <div class="role">
+      Quantitative Analyst — Model Validation
+    </div>
+
+
+    <p>
+
+      Evaluate statistical and machine learning models across
+      financial crime, AML, sanctions screening, fraud, and
+      transaction monitoring applications. Apply statistical
+      testing, performance analysis, stress testing, and
+      AI-assisted analytics to support model risk decisions.
+
+    </p>
+
+  </div>
+
+
+
+  <!-- ZS -->
+
+  <div class="experience-item">
+
+
+    <h3>
+      ZS Associates
+    </h3>
+
+
+    <div class="role">
+      Decision Analytics Associate
+    </div>
+
+
+    <p>
+
+      Applied statistical analysis, segmentation, market
+      research, and data-driven insights to support
+      pharmaceutical business decisions and strategic
+      recommendations.
+
+    </p>
+
+  </div>
+
+
+</section>
+
+
+
+<!-- =========================
+     EDUCATION
+========================= -->
+
+<section>
+
+
+  <div class="section-label">
+    Education
+  </div>
+
+
+  <h2 class="section-title">
+    Education
+  </h2>
+
+
+  <div class="education-card">
+
+
+    <h3>
+      M.S. Applied Statistics
+    </h3>
+
+
+    <p>
+      Rochester Institute of Technology
+    </p>
+
+
+  </div>
+
+
+</section>
+
+
+
 <!-- =========================
      CONTACT
 ========================= -->
 
 <section id="contact">
 
+
   <div class="section-label">
     Get In Touch
   </div>
+
 
   <h2 class="section-title">
     Let's Connect
   </h2>
 
+
   <div class="contact-container">
+
 
     <p
       style="
@@ -26,10 +1504,12 @@
 
     </p>
 
+
     <form
       class="contact-form"
-      action="https://formspree.io/f/mgawrzqg"
+      action="https://formspree.io/f/YOUR_FORM_ID"
       method="POST">
+
 
       <!-- NAME -->
 
@@ -38,6 +1518,7 @@
         <label for="name">
           Name
         </label>
+
 
         <input
           type="text"
@@ -49,6 +1530,7 @@
       </div>
 
 
+
       <!-- EMAIL -->
 
       <div class="form-group">
@@ -56,6 +1538,7 @@
         <label for="email">
           Email
         </label>
+
 
         <input
           type="email"
@@ -67,6 +1550,7 @@
       </div>
 
 
+
       <!-- MESSAGE -->
 
       <div class="form-group">
@@ -75,6 +1559,7 @@
           Message
         </label>
 
+
         <textarea
           id="message"
           name="message"
@@ -82,6 +1567,7 @@
           required></textarea>
 
       </div>
+
 
 
       <!-- SUBMIT -->
@@ -94,8 +1580,36 @@
 
       </button>
 
+
     </form>
 
   </div>
 
 </section>
+
+
+
+</div>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  <p>
+
+    © 2026 Sailee Rumao ·
+    Data Scientist | AI | Analytics | Risk
+
+  </p>
+
+</footer>
+
+
+
+</body>
+
+</html>
