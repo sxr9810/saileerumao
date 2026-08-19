@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -20,16 +21,17 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   Roboto, Arial, sans-serif;
       background: #FAFAF9;
       color: #252525;
       line-height: 1.7;
     }
 
 
-    /* ==============================
+    /* =========================
        NAVIGATION
-    =============================== */
+    ========================= */
 
     nav {
       position: sticky;
@@ -68,9 +70,9 @@
     }
 
 
-    /* ==============================
+    /* =========================
        HERO
-    =============================== */
+    ========================= */
 
     .hero {
       background: linear-gradient(
@@ -87,9 +89,11 @@
     .hero-container {
       max-width: 1150px;
       margin: auto;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       gap: 60px;
     }
 
@@ -129,9 +133,9 @@
     }
 
 
-    /* ==============================
+    /* =========================
        HEADSHOT
-    =============================== */
+    ========================= */
 
     .headshot-wrapper {
       flex-shrink: 0;
@@ -140,16 +144,21 @@
     .headshot {
       width: 230px;
       height: 230px;
+
       object-fit: cover;
+
       border-radius: 50%;
+
       border: 6px solid rgba(255,255,255,0.9);
-      box-shadow: 0 20px 50px rgba(37,37,37,0.18);
+
+      box-shadow:
+        0 20px 50px rgba(37,37,37,0.18);
     }
 
 
-    /* ==============================
+    /* =========================
        BUTTONS
-    =============================== */
+    ========================= */
 
     .buttons {
       display: flex;
@@ -159,11 +168,17 @@
 
     .button {
       display: inline-block;
+
       padding: 12px 22px;
+
       border-radius: 8px;
+
       text-decoration: none;
+
       font-weight: 600;
+
       font-size: 14px;
+
       transition: 0.2s ease;
     }
 
@@ -174,77 +189,39 @@
 
     .button-primary:hover {
       background: #6D5DFB;
+
       transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(109,93,251,0.25);
+
+      box-shadow:
+        0 8px 20px rgba(109,93,251,0.25);
     }
 
     .button-secondary {
       border: 1px solid #D8D5D0;
+
       color: #252525;
+
       background: #FFFFFF;
     }
 
     .button-secondary:hover {
       border-color: #6D5DFB;
+
       color: #6D5DFB;
+
       background: #F8F7FF;
     }
 
 
-    /* ==============================
-       IMPACT BELT
-    =============================== */
-
-    .impact-belt {
-      background: #F1F0FF;
-      border-top: 1px solid #E4E0FF;
-      border-bottom: 1px solid #E4E0FF;
-    }
-
-    .impact-container {
-      max-width: 1150px;
-      margin: auto;
-      padding: 30px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      align-items: center;
-    }
-
-    .impact-item {
-      text-align: center;
-      padding: 5px 20px;
-      border-right: 1px solid #DAD5F5;
-    }
-
-    .impact-item:last-child {
-      border-right: none;
-    }
-
-    .impact-number {
-      font-size: 30px;
-      font-weight: 750;
-      color: #6D5DFB;
-      letter-spacing: -1px;
-      line-height: 1.2;
-      margin-bottom: 5px;
-    }
-
-    .impact-label {
-      font-size: 12px;
-      color: #5F5F6B;
-      text-transform: uppercase;
-      letter-spacing: 0.7px;
-      font-weight: 600;
-    }
-
-
-    /* ==============================
+    /* =========================
        MAIN
-    =============================== */
+    ========================= */
 
     .container {
       max-width: 1150px;
+
       margin: auto;
+
       padding: 70px 30px;
     }
 
@@ -254,28 +231,38 @@
 
     .section-label {
       color: #6D5DFB;
+
       font-size: 13px;
+
       font-weight: 700;
+
       text-transform: uppercase;
+
       letter-spacing: 2px;
+
       margin-bottom: 8px;
     }
 
     h2.section-title {
       font-size: 34px;
+
       color: #252525;
+
       margin-bottom: 25px;
+
       letter-spacing: -0.5px;
     }
 
 
-    /* ==============================
+    /* =========================
        ABOUT
-    =============================== */
+    ========================= */
 
     .about-text {
       max-width: 850px;
+
       font-size: 17px;
+
       color: #5F5F5F;
     }
 
@@ -284,70 +271,161 @@
     }
 
 
-    /* ==============================
+    /* =========================
+       IMPACT BELT
+    ========================= */
+
+    .impact-container {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 15px;
+
+      margin-top: 35px;
+    }
+
+    .impact-card {
+      background: #FFFFFF;
+
+      border: 1px solid #E5E2DD;
+
+      border-radius: 12px;
+
+      padding: 22px 15px;
+
+      text-align: center;
+
+      box-shadow:
+        0 5px 18px rgba(37,37,37,0.04);
+
+      transition: 0.2s ease;
+    }
+
+    .impact-card:hover {
+      transform: translateY(-3px);
+
+      border-color: #D8D2FF;
+    }
+
+    .impact-number {
+      display: block;
+
+      font-size: 28px;
+
+      font-weight: 800;
+
+      color: #6D5DFB;
+
+      margin-bottom: 5px;
+    }
+
+    .impact-label {
+      display: block;
+
+      font-size: 13px;
+
+      color: #666666;
+
+      line-height: 1.4;
+    }
+
+
+    /* =========================
        PROJECTS
-    =============================== */
+    ========================= */
 
     .project-container {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
       gap: 25px;
     }
 
     .project {
       background: #FFFFFF;
+
       padding: 30px;
+
       border-radius: 14px;
+
       border: 1px solid #E5E2DD;
-      box-shadow: 0 8px 25px rgba(37,37,37,0.05);
+
+      box-shadow:
+        0 8px 25px rgba(37,37,37,0.05);
+
       transition: 0.25s ease;
+
       position: relative;
+
       overflow: hidden;
     }
 
     .project::before {
       content: "";
+
       position: absolute;
+
       top: 0;
+
       left: 0;
+
       width: 100%;
+
       height: 4px;
+
       background: #6D5DFB;
     }
 
     .project:hover {
       transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(37,37,37,0.10);
+
+      box-shadow:
+        0 15px 35px rgba(37,37,37,0.10);
     }
 
     .project-icon {
       font-size: 28px;
+
       margin-bottom: 15px;
     }
 
     .project h3 {
       font-size: 21px;
+
       color: #252525;
+
       margin-bottom: 12px;
     }
 
     .project p {
       color: #666666;
+
       font-size: 15px;
+
       margin-bottom: 18px;
     }
 
     .tech {
       font-size: 13px;
+
       color: #6D5DFB;
+
       font-weight: 600;
+
       margin-bottom: 20px !important;
     }
 
     .project a {
       color: #6D5DFB;
+
       text-decoration: none;
+
       font-weight: 700;
+
       font-size: 14px;
     }
 
@@ -356,76 +434,122 @@
     }
 
 
-    /* ==============================
+    /* =========================
+       PERSONAL PROJECTS
+       3 CARDS IN ONE ROW
+    ========================= */
+
+    .personal-projects {
+      grid-template-columns:
+        repeat(3, 1fr);
+    }
+
+    .personal-projects .project {
+      padding: 25px;
+    }
+
+    .personal-projects .project h3 {
+      font-size: 19px;
+    }
+
+
+    /* =========================
        SKILLS
-    =============================== */
+    ========================= */
 
     .skills {
       display: flex;
+
       flex-wrap: wrap;
+
       gap: 10px;
     }
 
     .skills span {
       background: #FFFFFF;
+
       border: 1px solid #D8D5D0;
+
       color: #3F3F3F;
+
       padding: 9px 15px;
+
       border-radius: 30px;
+
       font-size: 14px;
+
       font-weight: 500;
+
+      transition: 0.2s ease;
     }
 
     .skills span:hover {
       border-color: #6D5DFB;
+
       color: #6D5DFB;
     }
 
 
-    /* ==============================
+    /* =========================
        EXPERIENCE
-    =============================== */
+    ========================= */
 
     .experience-item {
       background: #FFFFFF;
+
       border-left: 4px solid #6D5DFB;
+
       padding: 25px 30px;
+
       margin-bottom: 20px;
-      border-radius: 0 12px 12px 0;
-      box-shadow: 0 5px 20px rgba(37,37,37,0.04);
+
+      border-radius:
+        0 12px 12px 0;
+
+      box-shadow:
+        0 5px 20px rgba(37,37,37,0.04);
     }
 
     .experience-item h3 {
       color: #252525;
+
       font-size: 21px;
+
       margin-bottom: 3px;
     }
 
     .role {
       color: #6D5DFB;
+
       font-weight: 600;
+
       margin-bottom: 10px;
     }
 
     .experience-item p {
       color: #666666;
+
       font-size: 15px;
     }
 
 
-    /* ==============================
+    /* =========================
        EDUCATION
-    =============================== */
+    ========================= */
 
     .education-card {
       background: #FFFFFF;
+
       padding: 25px 30px;
+
       border-radius: 12px;
+
       border: 1px solid #E5E2DD;
     }
 
     .education-card h3 {
       color: #252525;
+
       margin-bottom: 5px;
     }
 
@@ -434,17 +558,25 @@
     }
 
 
-    /* ==============================
+    /* =========================
        CONTACT
-    =============================== */
+    ========================= */
+
+    .contact-container {
+      max-width: 750px;
+    }
 
     .contact-form {
-      max-width: 750px;
       background: #FFFFFF;
+
       padding: 35px;
+
       border-radius: 14px;
+
       border: 1px solid #E5E2DD;
-      box-shadow: 0 8px 25px rgba(37,37,37,0.05);
+
+      box-shadow:
+        0 8px 25px rgba(37,37,37,0.05);
     }
 
     .form-group {
@@ -453,149 +585,234 @@
 
     .form-group label {
       display: block;
+
       font-size: 14px;
+
       font-weight: 600;
+
       color: #3F3F3F;
+
       margin-bottom: 7px;
     }
 
     .form-group input,
     .form-group textarea {
+
       width: 100%;
-      padding: 13px 15px;
+
+      padding: 12px 14px;
+
       border: 1px solid #D8D5D0;
+
       border-radius: 8px;
+
       font-family: inherit;
-      font-size: 15px;
+
+      font-size: 14px;
+
       color: #252525;
+
       background: #FAFAF9;
+
+      outline: none;
+
       transition: 0.2s ease;
     }
 
     .form-group input:focus,
     .form-group textarea:focus {
-      outline: none;
+
       border-color: #6D5DFB;
-      box-shadow: 0 0 0 3px rgba(109,93,251,0.10);
+
+      background: #FFFFFF;
+
+      box-shadow:
+        0 0 0 3px rgba(109,93,251,0.08);
     }
 
     .form-group textarea {
+
       min-height: 150px;
+
       resize: vertical;
     }
 
     .contact-submit {
+
       border: none;
+
       cursor: pointer;
+
+      padding: 12px 25px;
+
       background: #252525;
-      color: #FFFFFF;
-      padding: 12px 24px;
+
+      color: white;
+
       border-radius: 8px;
+
       font-family: inherit;
+
       font-size: 14px;
+
       font-weight: 600;
+
       transition: 0.2s ease;
     }
 
     .contact-submit:hover {
+
       background: #6D5DFB;
+
       transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(109,93,251,0.25);
+
+      box-shadow:
+        0 8px 20px rgba(109,93,251,0.25);
     }
 
 
-    /* ==============================
+    /* =========================
        FOOTER
-    =============================== */
+    ========================= */
 
     footer {
+
       background: #1D1D1D;
+
       color: #AFAFAF;
+
       text-align: center;
+
       padding: 35px;
+
       font-size: 14px;
     }
 
 
-    /* ==============================
+    /* =========================
        MOBILE
-    =============================== */
+    ========================= */
+
+    @media (max-width: 900px) {
+
+      .personal-projects {
+
+        grid-template-columns: 1fr;
+
+      }
+
+      .impact-container {
+
+        grid-template-columns:
+          repeat(2, 1fr);
+
+      }
+
+    }
+
 
     @media (max-width: 750px) {
 
       .nav-container {
+
         padding: 15px 20px;
+
       }
 
       nav a {
+
         margin-left: 12px;
+
         font-size: 12px;
+
       }
 
       .hero {
+
         padding: 65px 25px;
+
       }
 
       .hero-container {
-        flex-direction: column-reverse;
+
+        flex-direction:
+          column-reverse;
+
         text-align: center;
+
       }
 
       .hero h1 {
+
         font-size: 43px;
+
       }
 
       .hero h2 {
+
         font-size: 21px;
+
       }
 
       .buttons {
+
         justify-content: center;
+
       }
 
       .headshot {
+
         width: 180px;
+
         height: 180px;
+
       }
-
-
-      /* IMPACT BELT MOBILE */
-
-      .impact-container {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 25px 20px;
-      }
-
-      .impact-item {
-        border-right: none;
-        border-bottom: 1px solid #DAD5F5;
-        padding: 12px 5px;
-      }
-
-      .impact-item:last-child {
-        grid-column: span 2;
-        border-bottom: none;
-      }
-
-      .impact-number {
-        font-size: 26px;
-      }
-
 
       .project-container {
+
         grid-template-columns: 1fr;
+
+      }
+
+      .personal-projects {
+
+        grid-template-columns: 1fr;
+
       }
 
       .container {
+
         padding: 55px 25px;
+
       }
 
       h2.section-title {
+
         font-size: 29px;
+
+      }
+
+      .impact-container {
+
+        grid-template-columns: 1fr 1fr;
+
+      }
+
+    }
+
+
+    @media (max-width: 480px) {
+
+      .impact-container {
+
+        grid-template-columns: 1fr;
+
       }
 
       .contact-form {
+
         padding: 25px;
+
       }
 
     }
@@ -608,9 +825,9 @@
 <body>
 
 
-<!-- ==============================
+<!-- =========================
      NAVIGATION
-=============================== -->
+========================= -->
 
 <nav>
 
@@ -623,9 +840,13 @@
     <div>
 
       <a href="#about">About</a>
+
       <a href="#projects">Projects</a>
+
       <a href="#experience">Experience</a>
+
       <a href="#skills">Skills</a>
+
       <a href="#contact">Contact</a>
 
     </div>
@@ -635,18 +856,20 @@
 </nav>
 
 
-<!-- ==============================
+
+<!-- =========================
      HERO
-=============================== -->
+========================= -->
 
 <header class="hero">
 
   <div class="hero-container">
 
+
     <div class="hero-text">
 
       <div class="eyebrow">
-        Data • AI • Analytics
+        Data • AI • Analytics • Risk
       </div>
 
       <h1>
@@ -654,33 +877,46 @@
       </h1>
 
       <h2>
-        Data Scientist | Decision Sciences | AI & ML
+        Data Scientist | Advanced Analytics | AI & ML
       </h2>
 
       <p class="hero-description">
-        I build data-driven solutions using statistics, machine learning,
-        NLP, and analytics to solve complex problems for business
-        decision-making.
+
+        I combine statistical modeling, machine learning,
+        strategic analytics, and AI to turn complex data into
+        actionable insights and better business decisions.
+
       </p>
+
 
       <div class="buttons">
 
-        <a class="button button-primary" href="#projects">
+        <a
+          class="button button-primary"
+          href="#projects">
+
           View Projects
+
         </a>
+
 
         <a
           class="button button-secondary"
           href="https://www.linkedin.com/in/sailee-mathew-rumao-829608a0/"
           target="_blank">
+
           LinkedIn
+
         </a>
+
 
         <a
           class="button button-secondary"
           href="https://github.com/sxr9810"
           target="_blank">
+
           GitHub
+
         </a>
 
       </div>
@@ -697,85 +933,24 @@
 
     </div>
 
+
   </div>
 
 </header>
 
 
-<!-- ==============================
-     IMPACT BELT
-=============================== -->
 
-<section class="impact-belt">
-
-  <div class="impact-container">
-
-    <div class="impact-item">
-
-      <div class="impact-number">
-        15+
-      </div>
-
-      <div class="impact-label">
-        Models Validated
-      </div>
-
-    </div>
-
-
-    <div class="impact-item">
-
-      <div class="impact-number">
-        5M+
-      </div>
-
-      <div class="impact-label">
-        Transactions Analyzed
-      </div>
-
-    </div>
-
-
-    <div class="impact-item">
-
-      <div class="impact-number">
-        15%
-      </div>
-
-      <div class="impact-label">
-        Recall Gain
-      </div>
-
-    </div>
-
-
-    <div class="impact-item">
-
-      <div class="impact-number">
-        20–30%
-      </div>
-
-      <div class="impact-label">
-        Targeting Efficiency Gain
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ==============================
+<!-- =========================
      MAIN CONTENT
-=============================== -->
+========================= -->
 
 <div class="container">
 
 
-<!-- ==============================
+
+<!-- =========================
      ABOUT
-=============================== -->
+========================= -->
 
 <section id="about">
 
@@ -787,53 +962,123 @@
     Turning data into decisions
   </h2>
 
+
   <div class="about-text">
 
     <p>
-      I’m an Advanced Data Analytics professional with data science,
-      machine learning, and strategic analytics experience across
-      consulting and fintech. I combine statistical thinking, ML,
-      and AI/GenAI tools to turn complex data into actionable insights,
-      smarter decisions, and measurable business impact—from building
-      analytical solutions to evaluating models in high-stakes
-      risk environments.
+
+      I’m an Advanced Data Analytics professional with experience
+      across data science, machine learning, strategic analytics,
+      consulting, and fintech risk. I use statistical thinking,
+      ML, and AI/GenAI tools to solve complex problems, evaluate
+      models, and translate data into business impact.
+
     </p>
+
+  </div>
+
+
+
+  <!-- QUANTITATIVE IMPACT -->
+
+  <div class="impact-container">
+
+
+    <div class="impact-card">
+
+      <span class="impact-number">
+        15+
+      </span>
+
+      <span class="impact-label">
+        Models Validated
+      </span>
+
+    </div>
+
+
+    <div class="impact-card">
+
+      <span class="impact-number">
+        5M+
+      </span>
+
+      <span class="impact-label">
+        Transactions Analyzed
+      </span>
+
+    </div>
+
+
+    <div class="impact-card">
+
+      <span class="impact-number">
+        15%
+      </span>
+
+      <span class="impact-label">
+        Recall Improvement
+      </span>
+
+    </div>
+
+
+    <div class="impact-card">
+
+      <span class="impact-number">
+        0–30%
+      </span>
+
+      <span class="impact-label">
+        Targeting & Analytics Impact
+      </span>
+
+    </div>
+
 
   </div>
 
 </section>
 
 
-<!-- ==============================
+
+<!-- =========================
      PROJECTS
-=============================== -->
+========================= -->
 
 <section id="projects">
+
 
   <div class="section-label">
     Selected Work
   </div>
+
 
   <h2 class="section-title">
     Projects
   </h2>
 
 
-  <!-- WORK PROJECTS -->
+
+  <!-- =========================
+       WORK PROJECTS
+  ========================= -->
 
   <h3 style="
       font-size: 24px;
       color: #252525;
       margin-bottom: 20px;
   ">
+
     Work Projects
+
   </h3>
 
 
   <div class="project-container">
 
 
-    <!-- AML MODEL VALIDATION -->
+    <!-- WORK PROJECT 1 -->
 
     <div class="project">
 
@@ -841,24 +1086,34 @@
         🛡️
       </div>
 
+
       <h3>
         AML Transaction Monitoring Model Validation
       </h3>
 
+
       <p>
-        Validated AML transaction monitoring models across large-scale
-        transaction datasets, assessing model performance, segmentation,
-        thresholds, and statistical effectiveness.
+
+        Validated AML transaction monitoring models across
+        large-scale transaction datasets, assessing model
+        performance, segmentation, thresholds, and statistical
+        effectiveness.
+
       </p>
 
+
       <p class="tech">
-        Python · R · SQL · AML · Model Validation · AUC-ROC · KS Test
+
+        Python · R · SQL · AML · Model Validation ·
+        AUC-ROC · KS Test
+
       </p>
 
     </div>
 
 
-    <!-- SANCTIONS MODEL VALIDATION -->
+
+    <!-- WORK PROJECT 2 -->
 
     <div class="project">
 
@@ -866,18 +1121,26 @@
         🔎
       </div>
 
+
       <h3>
         Sanctions Screening Model Validation
       </h3>
 
+
       <p>
-        Evaluated sanctions screening models across multiple payment
-        message formats, including SWIFT, ISO 20022, and ACH, using
-        stress testing and performance analysis.
+
+        Evaluated sanctions screening models across multiple
+        payment message formats, including SWIFT, ISO 20022,
+        and ACH, using stress testing and performance analysis.
+
       </p>
 
+
       <p class="tech">
-        Python · NLP · Model Validation · Sanctions · Financial Crime
+
+        Python · NLP · Model Validation · Sanctions ·
+        Financial Crime
+
       </p>
 
     </div>
@@ -886,7 +1149,10 @@
   </div>
 
 
-  <!-- PERSONAL PROJECTS -->
+
+  <!-- =========================
+       PERSONAL PROJECTS
+  ========================= -->
 
   <h3 style="
       font-size: 24px;
@@ -894,14 +1160,16 @@
       margin-top: 60px;
       margin-bottom: 20px;
   ">
+
     Personal Projects
+
   </h3>
 
 
-  <div class="project-container">
+  <div class="project-container personal-projects">
 
 
-    <!-- SANCTIONS ENTITY RESOLUTION -->
+    <!-- PERSONAL PROJECT 1 -->
 
     <div class="project">
 
@@ -909,31 +1177,42 @@
         🔬
       </div>
 
+
       <h3>
         Sanctions Screening & Entity Resolution
       </h3>
 
+
       <p>
-        An independent NLP project exploring fuzzy matching and entity
-        resolution techniques for identifying potential sanctions
-        matches despite spelling variations, transliteration, and
-        formatting differences.
+
+        Independent NLP project exploring fuzzy matching
+        and entity resolution techniques for identifying
+        potential sanctions matches despite spelling variations,
+        transliteration, and formatting differences.
+
       </p>
 
+
       <p class="tech">
+
         Python · NLP · Fuzzy Matching · Entity Resolution
+
       </p>
+
 
       <a
         href="https://github.com/sxr9810/sanctions-screening-fuzzy-matching"
         target="_blank">
+
         View Project →
+
       </a>
 
     </div>
 
 
-    <!-- FRAUD DETECTION -->
+
+    <!-- PERSONAL PROJECT 2 -->
 
     <div class="project">
 
@@ -941,51 +1220,73 @@
         💳
       </div>
 
+
       <h3>
         Fraud Detection
       </h3>
 
+
       <p>
-        Machine learning project focused on identifying high-risk
-        transactions using classification models, feature engineering,
-        model evaluation, and threshold optimization.
+
+        Machine learning project focused on identifying
+        high-risk transactions using classification models,
+        feature engineering, model evaluation, and
+        threshold optimization.
+
       </p>
+
 
       <p class="tech">
+
         Python · SQL · XGBoost · Machine Learning
+
       </p>
 
+
       <a href="#">
+
         Coming Soon →
+
       </a>
 
     </div>
 
 
-    <!-- ADVERSE MEDIA NLP -->
+
+    <!-- PERSONAL PROJECT 3 -->
 
     <div class="project">
 
       <div class="project-icon">
-        🤖
+        📈
       </div>
 
+
       <h3>
-        Adverse Media NLP
+        A/B Testing & Product Analytics
       </h3>
 
+
       <p>
-        Independent NLP project exploring entity matching and
-        classification approaches for identifying potentially relevant
-        adverse media content.
+
+        Experimentation project exploring whether product
+        changes improve user behavior while evaluating both
+        statistical and business significance.
+
       </p>
+
 
       <p class="tech">
-        Python · NLP · Classification · Machine Learning
+
+        Python · SQL · Statistics · Experimentation
+
       </p>
 
+
       <a href="#">
+
         Coming Soon →
+
       </a>
 
     </div>
@@ -996,37 +1297,58 @@
 </section>
 
 
-<!-- ==============================
+
+<!-- =========================
      SKILLS
-=============================== -->
+========================= -->
 
 <section id="skills">
+
 
   <div class="section-label">
     Technical Toolkit
   </div>
 
+
   <h2 class="section-title">
     Skills
   </h2>
 
+
   <div class="skills">
 
     <span>Python</span>
+
     <span>SQL</span>
+
     <span>R</span>
+
     <span>Machine Learning</span>
+
     <span>NLP</span>
+
     <span>Statistics</span>
+
     <span>XGBoost</span>
+
     <span>Random Forest</span>
+
     <span>pandas</span>
+
     <span>NumPy</span>
+
     <span>Tableau</span>
+
     <span>Model Validation</span>
+
     <span>AML</span>
+
     <span>Financial Crime</span>
+
     <span>GenAI</span>
+
+    <span>LLMs</span>
+
     <span>AI Copilots</span>
 
   </div>
@@ -1034,53 +1356,76 @@
 </section>
 
 
-<!-- ==============================
+
+<!-- =========================
      EXPERIENCE
-=============================== -->
+========================= -->
 
 <section id="experience">
+
 
   <div class="section-label">
     Experience
   </div>
+
 
   <h2 class="section-title">
     Professional Experience
   </h2>
 
 
+
+  <!-- UBS -->
+
   <div class="experience-item">
+
 
     <h3>
       UBS
     </h3>
 
+
     <div class="role">
       Quantitative Analyst — Model Validation
     </div>
 
+
     <p>
+
       Evaluate statistical and machine learning models across
       financial crime, AML, sanctions screening, fraud, and
-      transaction monitoring applications.
+      transaction monitoring applications. Apply statistical
+      testing, performance analysis, stress testing, and
+      AI-assisted analytics to support model risk decisions.
+
     </p>
 
   </div>
 
 
+
+  <!-- ZS -->
+
   <div class="experience-item">
+
 
     <h3>
       ZS Associates
     </h3>
 
+
     <div class="role">
       Decision Analytics Associate
     </div>
 
+
     <p>
-      Applied statistical analysis, segmentation, and data-driven
-      insights to support pharmaceutical business decisions.
+
+      Applied statistical analysis, segmentation, market
+      research, and data-driven insights to support
+      pharmaceutical business decisions and strategic
+      recommendations.
+
     </p>
 
   </div>
@@ -1089,15 +1434,18 @@
 </section>
 
 
-<!-- ==============================
+
+<!-- =========================
      EDUCATION
-=============================== -->
+========================= -->
 
 <section>
+
 
   <div class="section-label">
     Education
   </div>
+
 
   <h2 class="section-title">
     Education
@@ -1106,124 +1454,160 @@
 
   <div class="education-card">
 
+
     <h3>
       M.S. Applied Statistics
     </h3>
+
 
     <p>
       Rochester Institute of Technology
     </p>
 
+
   </div>
+
 
 </section>
 
 
-<!-- ==============================
+
+<!-- =========================
      CONTACT
-=============================== -->
+========================= -->
 
 <section id="contact">
+
 
   <div class="section-label">
     Get In Touch
   </div>
 
+
   <h2 class="section-title">
-    Contact Me
+    Let's Connect
   </h2>
 
-  <div class="about-text" style="margin-bottom: 25px;">
 
-    <p>
-      Interested in working together, discussing data science,
-      analytics, AI, or risk? I'd love to hear from you.
+  <div class="contact-container">
+
+
+    <p
+      style="
+        color:#666666;
+        margin-bottom:25px;
+        font-size:16px;
+      ">
+
+      Interested in data science, analytics, AI/ML, or
+      risk analytics? I'd love to connect.
+
     </p>
+
+
+    <form
+      class="contact-form"
+      action="https://formspree.io/f/YOUR_FORM_ID"
+      method="POST">
+
+
+      <!-- NAME -->
+
+      <div class="form-group">
+
+        <label for="name">
+          Name
+        </label>
+
+
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Your name"
+          required>
+
+      </div>
+
+
+
+      <!-- EMAIL -->
+
+      <div class="form-group">
+
+        <label for="email">
+          Email
+        </label>
+
+
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="your@email.com"
+          required>
+
+      </div>
+
+
+
+      <!-- MESSAGE -->
+
+      <div class="form-group">
+
+        <label for="message">
+          Message
+        </label>
+
+
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Write your message..."
+          required></textarea>
+
+      </div>
+
+
+
+      <!-- SUBMIT -->
+
+      <button
+        type="submit"
+        class="contact-submit">
+
+        Send Message
+
+      </button>
+
+
+    </form>
 
   </div>
 
-
-  <form
-    class="contact-form"
-    action="mailto:YOUR_EMAIL@example.com"
-    method="POST"
-    enctype="text/plain">
-
-
-    <div class="form-group">
-
-      <label for="name">
-        Name
-      </label>
-
-      <input
-        type="text"
-        id="name"
-        name="Name"
-        placeholder="Your name"
-        required>
-
-    </div>
-
-
-    <div class="form-group">
-
-      <label for="email">
-        Email
-      </label>
-
-      <input
-        type="email"
-        id="email"
-        name="Email"
-        placeholder="your.email@example.com"
-        required>
-
-    </div>
-
-
-    <div class="form-group">
-
-      <label for="message">
-        Message
-      </label>
-
-      <textarea
-        id="message"
-        name="Message"
-        placeholder="Write your message here..."
-        required></textarea>
-
-    </div>
-
-
-    <button
-      type="submit"
-      class="contact-submit">
-
-      Send Message →
-
-    </button>
-
-  </form>
-
 </section>
+
 
 
 </div>
 
 
-<!-- ==============================
+
+<!-- =========================
      FOOTER
-=============================== -->
+========================= -->
 
 <footer>
 
   <p>
-    © 2026 Sailee Rumao · Data Scientist | AI | Analytics | Risk
+
+    © 2026 Sailee Rumao ·
+    Data Scientist | AI | Analytics | Risk
+
   </p>
 
 </footer>
+
 
 
 </body>
