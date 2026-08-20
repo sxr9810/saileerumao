@@ -138,7 +138,7 @@
     ========================= */
 
     .hero-right {
-      width: 320px;
+      width: 390px;
       flex-shrink: 0;
 
       display: flex;
@@ -172,22 +172,27 @@
 
 
     /* =====================================================
-       ROTATING EXPERTISE UNDER HEADSHOT
+       WIDER ROTATING EXPERTISE CARD
     ===================================================== */
 
     .hero-expertise {
 
-      width: 100%;
+      /*
+       * Wider than the headshot.
+       * Uses almost the full width of the right column.
+       */
+      width: 390px;
+      max-width: 100%;
 
-      margin-top: 32px;
+      margin-top: 30px;
 
-      padding: 21px 22px;
+      padding: 22px 25px;
 
-      background: rgba(255,255,255,0.78);
+      background: rgba(255,255,255,0.82);
 
       border: 1px solid #E5E2DD;
 
-      border-radius: 15px;
+      border-radius: 16px;
 
       box-shadow:
         0 10px 30px rgba(37,37,37,0.07);
@@ -196,7 +201,7 @@
 
       overflow: hidden;
 
-      min-height: 125px;
+      min-height: 130px;
     }
 
 
@@ -210,7 +215,7 @@
 
       top: 0;
 
-      width: 4px;
+      width: 5px;
 
       height: 100%;
 
@@ -222,7 +227,7 @@
 
       color: #6D5DFB;
 
-      font-size: 10.5px;
+      font-size: 11px;
 
       font-weight: 800;
 
@@ -230,7 +235,7 @@
 
       text-transform: uppercase;
 
-      margin-bottom: 11px;
+      margin-bottom: 12px;
 
       padding-left: 2px;
     }
@@ -242,17 +247,21 @@
 
       align-items: center;
 
-      gap: 14px;
+      gap: 16px;
+
+      width: 100%;
     }
 
 
     .hero-expertise-icon {
 
-      width: 43px;
+      width: 45px;
+
+      min-width: 45px;
 
       flex-shrink: 0;
 
-      font-size: 32px;
+      font-size: 34px;
 
       line-height: 1;
 
@@ -269,6 +278,8 @@
       text-align: left;
 
       min-width: 0;
+
+      flex: 1;
     }
 
 
@@ -282,7 +293,7 @@
 
       color: #252525;
 
-      margin-bottom: 4px;
+      margin-bottom: 5px;
 
       transition:
         opacity 0.35s ease,
@@ -292,7 +303,7 @@
 
     .hero-expertise-skills {
 
-      font-size: 12.5px;
+      font-size: 13px;
 
       color: #6B6B6B;
 
@@ -322,17 +333,17 @@
 
       justify-content: center;
 
-      gap: 5px;
+      gap: 6px;
 
-      margin-top: 14px;
+      margin-top: 15px;
     }
 
 
     .hero-expertise-dot {
 
-      width: 5px;
+      width: 6px;
 
-      height: 5px;
+      height: 6px;
 
       border-radius: 50%;
 
@@ -346,7 +357,7 @@
 
     .hero-expertise-dot.active {
 
-      width: 17px;
+      width: 18px;
 
       border-radius: 8px;
 
@@ -854,7 +865,11 @@
       }
 
       .hero-right {
-        width: 285px;
+        width: 340px;
+      }
+
+      .hero-expertise {
+        width: 340px;
       }
 
       .experience-container {
@@ -906,7 +921,7 @@
 
       .hero-right {
         width: 100%;
-        max-width: 340px;
+        max-width: 390px;
       }
 
       .headshot {
@@ -915,9 +930,9 @@
       }
 
       .hero-expertise {
-        text-align: left;
-        min-height: 120px;
-        padding: 19px 18px;
+        width: 100%;
+        max-width: 390px;
+        padding: 21px 22px;
       }
 
       .hero-expertise-title {
@@ -925,24 +940,19 @@
       }
 
       .hero-expertise-skills {
-        font-size: 12px;
+        font-size: 12.5px;
       }
 
 
-      /* Experience stacks on mobile */
+      /* Experience stacks on phones */
 
       .experience-container {
-
         grid-template-columns: 1fr;
-
         gap: 18px;
       }
 
-
       .experience-item {
-
         min-height: auto;
-
         padding: 23px 25px;
       }
 
@@ -989,12 +999,26 @@
       }
 
       .hero-expertise {
-        padding: 17px 16px;
-        min-height: 118px;
+        width: 100%;
+        padding: 19px 17px;
+      }
+
+      .hero-expertise-display {
+        gap: 12px;
+      }
+
+      .hero-expertise-icon {
+        width: 40px;
+        min-width: 40px;
+        font-size: 30px;
+      }
+
+      .hero-expertise-title {
+        font-size: 17px;
       }
 
       .hero-expertise-skills {
-        font-size: 11px;
+        font-size: 11.5px;
       }
 
       .experience-container {
@@ -1068,6 +1092,15 @@
         Data Scientist | Risk & Decision Analytics
       </h2>
 
+      <p class="hero-description">
+
+        I combine statistical modeling, machine learning,
+        risk analytics, and AI to turn complex data and models
+        into actionable insights and better, more trustworthy
+        decisions.
+
+      </p>
+
 
       <div class="buttons">
 
@@ -1121,13 +1154,15 @@
 
 
 
-      <!-- ROTATING EXPERTISE -->
+      <!-- WIDER ROTATING EXPERTISE -->
 
       <div class="hero-expertise">
 
 
         <div class="hero-expertise-label">
+
           EXPERTISE
+
         </div>
 
 
@@ -1173,34 +1208,17 @@
         <div class="hero-expertise-dots">
 
 
-          <span
-            class="hero-expertise-dot active">
-          </span>
+          <span class="hero-expertise-dot active"></span>
 
+          <span class="hero-expertise-dot"></span>
 
-          <span
-            class="hero-expertise-dot">
-          </span>
+          <span class="hero-expertise-dot"></span>
 
+          <span class="hero-expertise-dot"></span>
 
-          <span
-            class="hero-expertise-dot">
-          </span>
+          <span class="hero-expertise-dot"></span>
 
-
-          <span
-            class="hero-expertise-dot">
-          </span>
-
-
-          <span
-            class="hero-expertise-dot">
-          </span>
-
-
-          <span
-            class="hero-expertise-dot">
-          </span>
+          <span class="hero-expertise-dot"></span>
 
 
         </div>
@@ -1257,11 +1275,9 @@
   </div>
 
 
-
   <!-- IMPACT -->
 
   <div class="impact-container">
-
 
     <div class="impact-card">
 
@@ -1314,7 +1330,6 @@
 
     </div>
 
-
   </div>
 
 </section>
@@ -1327,16 +1342,13 @@
 
 <section id="projects">
 
-
   <div class="section-label">
     Selected Work
   </div>
 
-
   <h2 class="section-title">
     Projects
   </h2>
-
 
 
   <!-- WORK PROJECTS -->
@@ -1363,11 +1375,9 @@
         🛡️
       </div>
 
-
       <h3>
         Fraud Infraction Scoring & Model Monitoring
       </h3>
-
 
       <p>
 
@@ -1382,7 +1392,6 @@
 
       </p>
 
-
       <p class="tech">
 
         Python · R · SQL · AML · Model Validation ·
@@ -1390,11 +1399,8 @@
 
       </p>
 
-
       <a href="projects/Fraud_Model.html">
-
         View Project →
-
       </a>
 
     </div>
@@ -1409,11 +1415,9 @@
         🎯
       </div>
 
-
       <h3>
         HCP Segmentation & Targeting Analytics
       </h3>
-
 
       <p>
 
@@ -1426,7 +1430,6 @@
 
       </p>
 
-
       <p class="tech">
 
         Python · A-priori Segmentation · Decile Analysis ·
@@ -1434,15 +1437,11 @@
 
       </p>
 
-
       <a href="projects/HCP_segmentation.html">
-
         View Project →
-
       </a>
 
     </div>
-
 
   </div>
 
@@ -1473,11 +1472,9 @@
         🔬
       </div>
 
-
       <h3>
         Sanctions Screening & Entity Resolution
       </h3>
-
 
       <p>
 
@@ -1488,13 +1485,11 @@
 
       </p>
 
-
       <p class="tech">
 
         Python · NLP · Fuzzy Matching · Entity Resolution
 
       </p>
-
 
       <a
         href="projects/Sanction_Screening_fuzzy_logic.html"
@@ -1516,11 +1511,9 @@
         💳
       </div>
 
-
       <h3>
         A/B Testing - Product Analytics
       </h3>
-
 
       <p>
 
@@ -1531,18 +1524,14 @@
 
       </p>
 
-
       <p class="tech">
 
         Python · SQL · A/B Testing · Causal Inference
 
       </p>
 
-
       <a href="#">
-
         Coming Soon →
-
       </a>
 
     </div>
@@ -1557,11 +1546,9 @@
         📈
       </div>
 
-
       <h3>
         LLM Evaluation
       </h3>
-
 
       <p>
 
@@ -1571,18 +1558,14 @@
 
       </p>
 
-
       <p class="tech">
 
         Python · SQL · Statistics · Experimentation
 
       </p>
 
-
       <a href="#">
-
         Coming Soon →
-
       </a>
 
     </div>
@@ -1600,11 +1583,9 @@
 
 <section id="skills">
 
-
   <div class="section-label">
     Technical Toolkit
   </div>
-
 
   <h2 class="section-title">
     Skills
@@ -1614,25 +1595,15 @@
   <div class="skills">
 
     <span>Python</span>
-
     <span>SQL</span>
-
     <span>R</span>
-
     <span>AI</span>
-
     <span>Machine Learning</span>
-
     <span>Statistics</span>
-
     <span>Tableau</span>
-
     <span>GenAI</span>
-
     <span>LLMs</span>
-
     <span>Copilots</span>
-
     <span>Claude</span>
 
   </div>
@@ -1650,7 +1621,6 @@
   <div class="section-label">
     Experience
   </div>
-
 
   <h2 class="section-title">
     Professional Experience
@@ -1710,11 +1680,9 @@
 
 <section>
 
-
   <div class="section-label">
     Education
   </div>
-
 
   <h2 class="section-title">
     Education
@@ -1723,19 +1691,15 @@
 
   <div class="education-card">
 
-
     <h3>
       M.S. Applied Statistics
     </h3>
-
 
     <p>
       Rochester Institute of Technology
     </p>
 
-
   </div>
-
 
 </section>
 
@@ -1747,11 +1711,9 @@
 
 <section id="contact">
 
-
   <div class="section-label">
     Get In Touch
   </div>
-
 
   <h2 class="section-title">
     Let's Connect
@@ -1759,7 +1721,6 @@
 
 
   <div class="contact-container">
-
 
     <p
       style="
@@ -1786,7 +1747,6 @@
           Name
         </label>
 
-
         <input
           type="text"
           id="name"
@@ -1804,7 +1764,6 @@
           Email
         </label>
 
-
         <input
           type="email"
           id="email"
@@ -1821,7 +1780,6 @@
         <label for="message">
           Message
         </label>
-
 
         <textarea
           id="message"
@@ -1956,7 +1914,6 @@
 
 
     setTimeout(() => {
-
 
       currentExpertise =
         (currentExpertise + 1) %
