@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Sailee Rumao | Data Scientist</title>
+  <title>Sailee Rumao | Data Scientist | Risk & Decision Analytics</title>
 
   <style>
 
@@ -27,6 +27,7 @@
       color: #252525;
       line-height: 1.7;
     }
+
 
     /* =========================
        NAVIGATION
@@ -143,11 +144,8 @@
     .headshot {
       width: 230px;
       height: 230px;
-
       object-fit: cover;
-
       border-radius: 50%;
-
       border: 6px solid rgba(255,255,255,0.9);
 
       box-shadow:
@@ -167,17 +165,11 @@
 
     .button {
       display: inline-block;
-
       padding: 12px 22px;
-
       border-radius: 8px;
-
       text-decoration: none;
-
       font-weight: 600;
-
       font-size: 14px;
-
       transition: 0.2s ease;
     }
 
@@ -188,7 +180,6 @@
 
     .button-primary:hover {
       background: #6D5DFB;
-
       transform: translateY(-2px);
 
       box-shadow:
@@ -197,17 +188,13 @@
 
     .button-secondary {
       border: 1px solid #D8D5D0;
-
       color: #252525;
-
       background: #FFFFFF;
     }
 
     .button-secondary:hover {
       border-color: #6D5DFB;
-
       color: #6D5DFB;
-
       background: #F8F7FF;
     }
 
@@ -218,9 +205,7 @@
 
     .container {
       max-width: 1150px;
-
       margin: auto;
-
       padding: 70px 30px;
     }
 
@@ -230,25 +215,17 @@
 
     .section-label {
       color: #6D5DFB;
-
       font-size: 13px;
-
       font-weight: 700;
-
       text-transform: uppercase;
-
       letter-spacing: 2px;
-
       margin-bottom: 8px;
     }
 
     h2.section-title {
       font-size: 34px;
-
       color: #252525;
-
       margin-bottom: 25px;
-
       letter-spacing: -0.5px;
     }
 
@@ -259,9 +236,7 @@
 
     .about-text {
       max-width: 850px;
-
       font-size: 17px;
-
       color: #5F5F5F;
     }
 
@@ -276,24 +251,16 @@
 
     .impact-container {
       display: grid;
-
-      grid-template-columns:
-        repeat(4, 1fr);
-
+      grid-template-columns: repeat(4, 1fr);
       gap: 15px;
-
       margin-top: 35px;
     }
 
     .impact-card {
       background: #FFFFFF;
-
       border: 1px solid #E5E2DD;
-
       border-radius: 12px;
-
       padding: 22px 15px;
-
       text-align: center;
 
       box-shadow:
@@ -304,30 +271,182 @@
 
     .impact-card:hover {
       transform: translateY(-3px);
-
       border-color: #D8D2FF;
     }
 
     .impact-number {
       display: block;
-
       font-size: 28px;
-
       font-weight: 800;
-
       color: #6D5DFB;
-
       margin-bottom: 5px;
     }
 
     .impact-label {
       display: block;
-
       font-size: 13px;
+      color: #666666;
+      line-height: 1.4;
+    }
+
+
+    /* =====================================================
+       ROTATING EXPERTISE
+    ===================================================== */
+
+    .expertise-section {
+
+      margin-top: -20px;
+
+      padding: 48px 40px;
+
+      background: linear-gradient(
+        135deg,
+        #F8F7FF 0%,
+        #FFFFFF 50%,
+        #F5FAF8 100%
+      );
+
+      border: 1px solid #E5E2DD;
+
+      border-radius: 18px;
+
+      box-shadow:
+        0 10px 30px rgba(37,37,37,0.04);
+
+      text-align: center;
+
+      overflow: hidden;
+    }
+
+
+    .expertise-label {
+
+      color: #6D5DFB;
+
+      font-size: 12px;
+
+      font-weight: 800;
+
+      letter-spacing: 0.18em;
+
+      margin-bottom: 28px;
+    }
+
+
+    .expertise-display {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 22px;
+
+      min-height: 125px;
+    }
+
+
+    .expertise-icon {
+
+      width: 72px;
+
+      font-size: 52px;
+
+      line-height: 1;
+
+      transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
+    }
+
+
+    .expertise-content {
+
+      text-align: left;
+
+      max-width: 750px;
+
+      min-width: 0;
+    }
+
+
+    .expertise-title {
+
+      font-size: 34px;
+
+      font-weight: 800;
+
+      line-height: 1.2;
+
+      color: #252525;
+
+      margin-bottom: 8px;
+
+      transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
+    }
+
+
+    .expertise-skills {
+
+      font-size: 16px;
 
       color: #666666;
 
-      line-height: 1.4;
+      line-height: 1.6;
+
+      transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
+    }
+
+
+    .expertise-fade {
+
+      opacity: 0;
+
+      transform: translateY(8px);
+    }
+
+
+    .expertise-dots {
+
+      display: flex;
+
+      justify-content: center;
+
+      gap: 7px;
+
+      margin-top: 25px;
+    }
+
+
+    .expertise-dot {
+
+      width: 7px;
+
+      height: 7px;
+
+      border-radius: 50%;
+
+      background: #D2D0CC;
+
+      transition:
+        width 0.3s ease,
+        background 0.3s ease;
+    }
+
+
+    .expertise-dot.active {
+
+      width: 22px;
+
+      border-radius: 10px;
+
+      background: #6D5DFB;
     }
 
 
@@ -337,20 +456,14 @@
 
     .project-container {
       display: grid;
-
-      grid-template-columns:
-        repeat(2, 1fr);
-
+      grid-template-columns: repeat(2, 1fr);
       gap: 25px;
     }
 
     .project {
       background: #FFFFFF;
-
       padding: 30px;
-
       border-radius: 14px;
-
       border: 1px solid #E5E2DD;
 
       box-shadow:
@@ -369,11 +482,9 @@
       position: absolute;
 
       top: 0;
-
       left: 0;
 
       width: 100%;
-
       height: 4px;
 
       background: #6D5DFB;
@@ -388,43 +499,32 @@
 
     .project-icon {
       font-size: 28px;
-
       margin-bottom: 15px;
     }
 
     .project h3 {
       font-size: 21px;
-
       color: #252525;
-
       margin-bottom: 12px;
     }
 
     .project p {
       color: #666666;
-
       font-size: 15px;
-
       margin-bottom: 18px;
     }
 
     .tech {
       font-size: 13px;
-
       color: #6D5DFB;
-
       font-weight: 600;
-
       margin-bottom: 20px !important;
     }
 
     .project a {
       color: #6D5DFB;
-
       text-decoration: none;
-
       font-weight: 700;
-
       font-size: 14px;
     }
 
@@ -435,12 +535,10 @@
 
     /* =========================
        PERSONAL PROJECTS
-       3 CARDS IN ONE ROW
     ========================= */
 
     .personal-projects {
-      grid-template-columns:
-        repeat(3, 1fr);
+      grid-template-columns: repeat(3, 1fr);
     }
 
     .personal-projects .project {
@@ -458,33 +556,23 @@
 
     .skills {
       display: flex;
-
       flex-wrap: wrap;
-
       gap: 10px;
     }
 
     .skills span {
       background: #FFFFFF;
-
       border: 1px solid #D8D5D0;
-
       color: #3F3F3F;
-
       padding: 9px 15px;
-
       border-radius: 30px;
-
       font-size: 14px;
-
       font-weight: 500;
-
       transition: 0.2s ease;
     }
 
     .skills span:hover {
       border-color: #6D5DFB;
-
       color: #6D5DFB;
     }
 
@@ -511,23 +599,18 @@
 
     .experience-item h3 {
       color: #252525;
-
       font-size: 21px;
-
       margin-bottom: 3px;
     }
 
     .role {
       color: #6D5DFB;
-
       font-weight: 600;
-
       margin-bottom: 10px;
     }
 
     .experience-item p {
       color: #666666;
-
       font-size: 15px;
     }
 
@@ -538,17 +621,13 @@
 
     .education-card {
       background: #FFFFFF;
-
       padding: 25px 30px;
-
       border-radius: 12px;
-
       border: 1px solid #E5E2DD;
     }
 
     .education-card h3 {
       color: #252525;
-
       margin-bottom: 5px;
     }
 
@@ -567,11 +646,8 @@
 
     .contact-form {
       background: #FFFFFF;
-
       padding: 35px;
-
       border-radius: 14px;
-
       border: 1px solid #E5E2DD;
 
       box-shadow:
@@ -584,13 +660,9 @@
 
     .form-group label {
       display: block;
-
       font-size: 14px;
-
       font-weight: 600;
-
       color: #3F3F3F;
-
       margin-bottom: 7px;
     }
 
@@ -699,8 +771,7 @@
       }
 
       .impact-container {
-        grid-template-columns:
-          repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
       }
 
     }
@@ -722,9 +793,7 @@
       }
 
       .hero-container {
-        flex-direction:
-          column-reverse;
-
+        flex-direction: column-reverse;
         text-align: center;
       }
 
@@ -762,8 +831,29 @@
       }
 
       .impact-container {
-        grid-template-columns:
-          1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+      }
+
+
+      .expertise-section {
+        padding: 38px 22px;
+      }
+
+      .expertise-display {
+        gap: 14px;
+      }
+
+      .expertise-icon {
+        width: 50px;
+        font-size: 38px;
+      }
+
+      .expertise-title {
+        font-size: 25px;
+      }
+
+      .expertise-skills {
+        font-size: 14px;
       }
 
     }
@@ -777,6 +867,14 @@
 
       .contact-form {
         padding: 25px;
+      }
+
+      .expertise-display {
+        align-items: flex-start;
+      }
+
+      .expertise-icon {
+        padding-top: 3px;
       }
 
     }
@@ -841,14 +939,15 @@
       </h1>
 
       <h2>
-        Data Scientist | Advanced Analytics | AI & ML
+        Data Scientist | Risk & Decision Analytics
       </h2>
 
       <p class="hero-description">
 
         I combine statistical modeling, machine learning,
-        strategic analytics, and AI to turn complex data into
-        actionable insights and better business decisions.
+        risk analytics, and AI to turn complex data and models
+        into actionable insights and better, more trustworthy
+        decisions.
 
       </p>
 
@@ -931,11 +1030,12 @@
 
     <p>
 
-      I’m an Advanced Data Analytics professional with experience
-      across data science, machine learning, strategic analytics,
-      consulting, and fintech risk. I use statistical thinking,
-      ML, and AI/GenAI tools to solve complex problems, evaluate
-      models, and translate data into business impact.
+      I’m a Data Scientist focused on the intersection of
+      <strong>data science, risk analytics, and decision science</strong>.
+      My experience spans financial services, healthcare, and
+      commercial analytics, where I apply statistical modeling,
+      machine learning, and AI to evaluate models, uncover signals
+      in complex data, and translate analysis into business impact.
 
     </p>
 
@@ -943,7 +1043,9 @@
 
 
 
-  <!-- QUANTITATIVE IMPACT -->
+  <!-- =========================
+       QUANTITATIVE IMPACT
+  ========================= -->
 
   <div class="impact-container">
 
@@ -968,7 +1070,7 @@
       </span>
 
       <span class="impact-label">
-        Transactions Analyzed
+        Transactions & Alerts
       </span>
 
     </div>
@@ -994,13 +1096,107 @@
       </span>
 
       <span class="impact-label">
-        Targeting & Analytics Impact
+        Targeting Efficiency
       </span>
 
     </div>
 
 
   </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ROTATING EXPERTISE
+===================================================== -->
+
+<section class="expertise-section">
+
+
+  <div class="expertise-label">
+
+    WHERE DATA MEETS DECISIONS
+
+  </div>
+
+
+  <div class="expertise-display">
+
+
+    <div
+      class="expertise-icon"
+      id="expertiseIcon">
+
+      🧠
+
+    </div>
+
+
+    <div class="expertise-content">
+
+
+      <div
+        class="expertise-title"
+        id="expertiseTitle">
+
+        Data Science
+
+      </div>
+
+
+      <div
+        class="expertise-skills"
+        id="expertiseSkills">
+
+        Statistical Modeling · Machine Learning · NLP ·
+        Classification · Segmentation
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+  <div class="expertise-dots">
+
+
+    <span
+      class="expertise-dot active">
+    </span>
+
+
+    <span
+      class="expertise-dot">
+    </span>
+
+
+    <span
+      class="expertise-dot">
+    </span>
+
+
+    <span
+      class="expertise-dot">
+    </span>
+
+
+    <span
+      class="expertise-dot">
+    </span>
+
+
+    <span
+      class="expertise-dot">
+    </span>
+
+
+  </div>
+
 
 </section>
 
@@ -1058,11 +1254,14 @@
 
       <p>
 
-        Evaluated a fraud alert productivity framework across highly imbalanced alert data, 
-        assessing productivity trends, alert scores, and predictive effectiveness. 
-        Built a logistic regression model and evaluated performance using AUC-ROC, confusion matrix, precision, recall, and F1-score. 
-        Identified statistically meaningful but limited predictive signal in alert scores, highlighting opportunities for 
-        feature enhancement and threshold optimization.
+        Evaluated a fraud alert productivity framework across
+        highly imbalanced alert data, assessing productivity trends,
+        alert scores, and predictive effectiveness. Built a logistic
+        regression model and evaluated performance using AUC-ROC,
+        confusion matrix, precision, recall, and F1-score. Identified
+        statistically meaningful but limited predictive signal in
+        alert scores, highlighting opportunities for feature
+        enhancement and threshold optimization.
 
       </p>
 
@@ -1074,13 +1273,14 @@
 
       </p>
 
-    
 
-    <a href="projects/Fraud_Model.html">
-    View Project →
-    </a>
+      <a href="projects/Fraud_Model.html">
 
-  </div>
+        View Project →
+
+      </a>
+
+    </div>
 
 
 
@@ -1089,7 +1289,7 @@
     <div class="project">
 
       <div class="project-icon">
-        🔎
+        🎯
       </div>
 
 
@@ -1100,21 +1300,28 @@
 
       <p>
 
-        Analyzed HCP prescription data to segment and prioritize healthcare providers using A-priori decile segmentation. 
-        Identified that the top 20% of HCPs accounted for ~65% of addressable prescriptions, enabling a data-driven targeting 
-        strategy and improving targeting efficiency by ~20–30%.
+        Analyzed HCP prescription data to segment and prioritize
+        healthcare providers using A-priori decile segmentation.
+        Identified that the top 20% of HCPs accounted for ~65%
+        of addressable prescriptions, enabling a data-driven
+        targeting strategy and improving targeting efficiency
+        by ~20–30%.
+
       </p>
 
 
       <p class="tech">
 
-        Python · NLP · Model Validation · Sanctions ·
-        Financial Crime
+        Python · A-priori Segmentation · Decile Analysis ·
+        Commercial Analytics
 
       </p>
 
+
       <a href="projects/HCP_segmentation.html">
-      View Project →
+
+        View Project →
+
       </a>
 
     </div>
@@ -1179,7 +1386,7 @@
         target="_blank">
 
         View Project →
-        
+
       </a>
 
     </div>
@@ -1307,6 +1514,8 @@
 
     <span>Random Forest</span>
 
+    <span>Logistic Regression</span>
+
     <span>pandas</span>
 
     <span>NumPy</span>
@@ -1315,7 +1524,11 @@
 
     <span>Model Validation</span>
 
+    <span>Model Risk</span>
+
     <span>AML</span>
+
+    <span>Fraud Analytics</span>
 
     <span>Financial Crime</span>
 
@@ -1479,15 +1692,11 @@
     </p>
 
 
-    <!-- FORMSPREE CONTACT FORM -->
-
     <form
       class="contact-form"
       action="https://formspree.io/f/mgawrzqg"
       method="POST">
 
-
-      <!-- NAME -->
 
       <div class="form-group">
 
@@ -1507,8 +1716,6 @@
 
 
 
-      <!-- EMAIL -->
-
       <div class="form-group">
 
         <label for="email">
@@ -1527,8 +1734,6 @@
 
 
 
-      <!-- MESSAGE -->
-
       <div class="form-group">
 
         <label for="message">
@@ -1545,8 +1750,6 @@
       </div>
 
 
-
-      <!-- SUBMIT -->
 
       <button
         type="submit"
@@ -1578,12 +1781,175 @@
   <p>
 
     © 2026 Sailee Rumao ·
-    Data Scientist | AI | Analytics | Risk
+    Data Scientist | Risk & Decision Analytics
 
   </p>
 
 </footer>
 
+
+
+<!-- =====================================================
+     ROTATING EXPERTISE JAVASCRIPT
+===================================================== -->
+
+<script>
+
+  const expertise = [
+
+    {
+      icon: "🧠",
+      title: "Data Science",
+      skills:
+        "Statistical Modeling · Machine Learning · NLP · Classification · Segmentation"
+    },
+
+    {
+      icon: "🛡️",
+      title: "Risk Analytics",
+      skills:
+        "AML · Fraud · Sanctions · Transaction Monitoring · Model Risk"
+    },
+
+    {
+      icon: "📊",
+      title: "Decision Science",
+      skills:
+        "Targeting · Thresholds · Prioritization · Segmentation · Business Analytics"
+    },
+
+    {
+      icon: "⚙️",
+      title: "Analytics Engineering",
+      skills:
+        "Python · R · SQL · Automation · Data Pipelines"
+    },
+
+    {
+      icon: "🤖",
+      title: "AI / GenAI",
+      skills:
+        "LLM-assisted Analytics · AI Adoption · AI Model Risk"
+    },
+
+    {
+      icon: "💼",
+      title: "Business Analytics",
+      skills:
+        "Commercial Analytics · HCP Segmentation · Customer Insights"
+    }
+
+  ];
+
+
+  let currentExpertise = 0;
+
+
+  const expertiseIcon =
+    document.getElementById("expertiseIcon");
+
+  const expertiseTitle =
+    document.getElementById("expertiseTitle");
+
+  const expertiseSkills =
+    document.getElementById("expertiseSkills");
+
+  const expertiseDots =
+    document.querySelectorAll(".expertise-dot");
+
+
+  function updateExpertise() {
+
+
+    /*
+     * Fade out
+     */
+
+    expertiseIcon.classList.add("expertise-fade");
+
+    expertiseTitle.classList.add("expertise-fade");
+
+    expertiseSkills.classList.add("expertise-fade");
+
+
+    setTimeout(() => {
+
+
+      /*
+       * Move to next expertise
+       */
+
+      currentExpertise =
+        (currentExpertise + 1) %
+        expertise.length;
+
+
+      const item =
+        expertise[currentExpertise];
+
+
+      /*
+       * Update content
+       */
+
+      expertiseIcon.textContent =
+        item.icon;
+
+      expertiseTitle.textContent =
+        item.title;
+
+      expertiseSkills.textContent =
+        item.skills;
+
+
+      /*
+       * Update navigation dots
+       */
+
+      expertiseDots.forEach(
+        (dot, index) => {
+
+          dot.classList.toggle(
+            "active",
+            index === currentExpertise
+          );
+
+        }
+      );
+
+
+      /*
+       * Fade back in
+       */
+
+      expertiseIcon.classList.remove(
+        "expertise-fade"
+      );
+
+      expertiseTitle.classList.remove(
+        "expertise-fade"
+      );
+
+      expertiseSkills.classList.remove(
+        "expertise-fade"
+      );
+
+
+    }, 350);
+
+  }
+
+
+  /*
+   * Rotate every 3 seconds
+   */
+
+  setInterval(
+    updateExpertise,
+    3000
+  );
+
+</script>
 
 
 </body>
