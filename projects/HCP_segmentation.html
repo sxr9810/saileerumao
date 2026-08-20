@@ -1,0 +1,1625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="HCP segmentation and commercial targeting analytics project using prescription data, A-priori segmentation, decile analysis, and data-driven prioritization."
+  >
+
+  <title>
+    HCP Segmentation & Commercial Targeting | Sailee Rumao
+  </title>
+
+
+  <style>
+
+    :root {
+
+      --navy: #0f172a;
+      --blue: #2563eb;
+      --blue-dark: #1e3a8a;
+      --blue-light: #eff6ff;
+
+      --text: #172033;
+      --muted: #64748b;
+
+      --border: #e2e8f0;
+      --background: #f8fafc;
+      --white: #ffffff;
+
+      --green: #047857;
+      --green-light: #ecfdf5;
+
+      --purple: #7c3aed;
+      --purple-light: #f5f3ff;
+
+    }
+
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    body {
+
+      margin: 0;
+
+      background: var(--background);
+
+      color: var(--text);
+
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+      line-height: 1.65;
+
+    }
+
+
+    .container {
+
+      width: min(1080px, calc(100% - 40px));
+
+      margin: auto;
+
+    }
+
+
+    /* HERO */
+
+    .hero {
+
+      background:
+        linear-gradient(
+          135deg,
+          #0f172a 0%,
+          #172554 55%,
+          #312e81 100%
+        );
+
+      color: white;
+
+      padding: 80px 0 90px;
+
+    }
+
+
+    .eyebrow {
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.14em;
+
+      font-size: 12px;
+
+      font-weight: 800;
+
+      color: #93c5fd;
+
+      margin-bottom: 16px;
+
+    }
+
+
+    .hero h1 {
+
+      font-size: clamp(36px, 5vw, 58px);
+
+      line-height: 1.08;
+
+      max-width: 900px;
+
+      margin: 0 0 22px;
+
+    }
+
+
+    .hero p {
+
+      max-width: 850px;
+
+      font-size: 19px;
+
+      color: #dbeafe;
+
+      margin: 0;
+
+    }
+
+
+    .hero .thesis {
+
+      margin-top: 24px;
+
+      color: white;
+
+      font-weight: 700;
+
+    }
+
+
+    /* METRICS */
+
+    .metrics {
+
+      display: grid;
+
+      grid-template-columns: repeat(4, 1fr);
+
+      gap: 15px;
+
+      margin-top: -55px;
+
+      position: relative;
+
+      margin-bottom: 38px;
+
+    }
+
+
+    .metric {
+
+      background: white;
+
+      border: 1px solid var(--border);
+
+      border-radius: 15px;
+
+      padding: 24px 18px;
+
+      box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.08);
+
+    }
+
+
+    .metric strong {
+
+      display: block;
+
+      font-size: 31px;
+
+      line-height: 1.1;
+
+      color: var(--blue);
+
+    }
+
+
+    .metric span {
+
+      display: block;
+
+      color: var(--muted);
+
+      font-size: 13px;
+
+      font-weight: 650;
+
+      margin-top: 8px;
+
+    }
+
+
+    /* CARDS */
+
+    .card {
+
+      background: var(--white);
+
+      border: 1px solid var(--border);
+
+      border-radius: 18px;
+
+      padding: 35px;
+
+      margin-bottom: 24px;
+
+      box-shadow:
+        0 5px 20px rgba(15, 23, 42, 0.04);
+
+    }
+
+
+    .section-header {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 14px;
+
+      margin-bottom: 18px;
+
+    }
+
+
+    .letter {
+
+      width: 44px;
+
+      height: 44px;
+
+      border-radius: 12px;
+
+      background: var(--blue);
+
+      color: white;
+
+      display: grid;
+
+      place-items: center;
+
+      font-weight: 850;
+
+      font-size: 21px;
+
+      flex-shrink: 0;
+
+    }
+
+
+    h2 {
+
+      font-size: 29px;
+
+      line-height: 1.2;
+
+      margin: 0;
+
+    }
+
+
+    h3 {
+
+      font-size: 18px;
+
+      margin: 27px 0 9px;
+
+    }
+
+
+    p {
+
+      margin: 10px 0;
+
+    }
+
+
+    ul {
+
+      padding-left: 22px;
+
+    }
+
+
+    li {
+
+      margin: 8px 0;
+
+    }
+
+
+    /* CALLOUT */
+
+    .callout {
+
+      background: var(--blue-light);
+
+      border-left: 4px solid var(--blue);
+
+      border-radius: 0 12px 12px 0;
+
+      padding: 19px 21px;
+
+      margin: 23px 0;
+
+    }
+
+
+    /* FINDINGS */
+
+    .finding-grid {
+
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 15px;
+
+      margin-top: 22px;
+
+    }
+
+
+    .finding {
+
+      background: #f8fafc;
+
+      border: 1px solid var(--border);
+
+      border-radius: 13px;
+
+      padding: 21px;
+
+    }
+
+
+    .finding strong {
+
+      display: block;
+
+      font-size: 27px;
+
+      color: var(--blue);
+
+    }
+
+
+    .finding span {
+
+      color: var(--muted);
+
+      font-size: 13px;
+
+    }
+
+
+    /* TWO COLUMNS */
+
+    .two-column {
+
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 24px;
+
+    }
+
+
+    /* SEGMENT CARDS */
+
+    .segments {
+
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 15px;
+
+      margin-top: 22px;
+
+    }
+
+
+    .segment {
+
+      border: 1px solid var(--border);
+
+      border-radius: 14px;
+
+      padding: 22px;
+
+      background: white;
+
+    }
+
+
+    .segment h3 {
+
+      margin-top: 0;
+
+    }
+
+
+    .segment .number {
+
+      font-size: 13px;
+
+      font-weight: 800;
+
+      color: var(--blue);
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.08em;
+
+    }
+
+
+    /* IMPACT */
+
+    .impact {
+
+      background: var(--green-light);
+
+      border: 1px solid #a7f3d0;
+
+      border-radius: 17px;
+
+      padding: 30px;
+
+      margin-top: 25px;
+
+    }
+
+
+    .impact h3 {
+
+      color: var(--green);
+
+      margin-top: 0;
+
+    }
+
+
+    .impact-number {
+
+      font-size: 42px;
+
+      font-weight: 850;
+
+      color: var(--green);
+
+      line-height: 1;
+
+      margin: 12px 0;
+
+    }
+
+
+    /* INSIGHT */
+
+    .insight {
+
+      background: var(--navy);
+
+      color: white;
+
+      border-radius: 17px;
+
+      padding: 30px;
+
+      margin-top: 25px;
+
+    }
+
+
+    .insight h3 {
+
+      margin-top: 0;
+
+    }
+
+
+    .insight p {
+
+      color: #dbe4ef;
+
+    }
+
+
+    /* TABLE */
+
+    table {
+
+      width: 100%;
+
+      border-collapse: collapse;
+
+      margin-top: 20px;
+
+    }
+
+
+    th,
+    td {
+
+      text-align: left;
+
+      padding: 14px;
+
+      border-bottom: 1px solid var(--border);
+
+    }
+
+
+    th {
+
+      background: #f8fafc;
+
+      color: var(--muted);
+
+      text-transform: uppercase;
+
+      font-size: 11px;
+
+      letter-spacing: 0.05em;
+
+    }
+
+
+    /* TAKEAWAY */
+
+    .takeaway {
+
+      background: var(--navy);
+
+      color: white;
+
+      border-radius: 18px;
+
+      padding: 37px;
+
+      margin-bottom: 24px;
+
+    }
+
+
+    .takeaway h2 {
+
+      color: white;
+
+    }
+
+
+    .takeaway p {
+
+      color: #dbe4ef;
+
+      font-size: 18px;
+
+    }
+
+
+    /* TAGS */
+
+    .tags {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 8px;
+
+      margin-top: 18px;
+
+    }
+
+
+    .tag {
+
+      background: var(--blue-light);
+
+      color: #1d4ed8;
+
+      border-radius: 999px;
+
+      padding: 7px 13px;
+
+      font-size: 12px;
+
+      font-weight: 700;
+
+    }
+
+
+    footer {
+
+      text-align: center;
+
+      color: var(--muted);
+
+      font-size: 13px;
+
+      padding: 20px 0 50px;
+
+    }
+
+
+    /* RESPONSIVE */
+
+    @media (max-width: 850px) {
+
+      .metrics {
+
+        grid-template-columns: repeat(2, 1fr);
+
+      }
+
+      .finding-grid,
+      .segments {
+
+        grid-template-columns: 1fr;
+
+      }
+
+    }
+
+
+    @media (max-width: 650px) {
+
+      .two-column {
+
+        grid-template-columns: 1fr;
+
+      }
+
+      .card {
+
+        padding: 24px;
+
+      }
+
+      .hero {
+
+        padding: 55px 0 70px;
+
+      }
+
+    }
+
+
+    @media (max-width: 430px) {
+
+      .container {
+
+        width: min(100% - 28px, 1080px);
+
+      }
+
+      .metrics {
+
+        grid-template-columns: 1fr;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<header class="hero">
+
+  <div class="container">
+
+    <div class="eyebrow">
+      Healthcare Analytics · HCP Segmentation · Commercial Strategy
+    </div>
+
+
+    <h1>
+      Turning HCP Prescription Data Into a Targeting Strategy
+    </h1>
+
+
+    <p>
+      A data-driven HCP segmentation project for Lo Loestrin Fe designed
+      to identify high-value healthcare providers and focus commercial
+      resources where prescription opportunity was greatest.
+    </p>
+
+
+    <p class="thesis">
+
+      Key finding:
+      <strong>
+        the top 20% of HCPs accounted for approximately 65% of
+        addressable prescriptions.
+      </strong>
+
+    </p>
+
+  </div>
+
+</header>
+
+
+
+<main>
+
+<div class="container">
+
+
+<!-- =========================================================
+     KEY METRICS
+========================================================= -->
+
+<section class="metrics">
+
+
+  <div class="metric">
+
+    <strong>
+      20%
+    </strong>
+
+    <span>
+      Highest-priority HCP population
+    </span>
+
+  </div>
+
+
+  <div class="metric">
+
+    <strong>
+      ~65%
+    </strong>
+
+    <span>
+      Addressable prescriptions captured
+    </span>
+
+  </div>
+
+
+  <div class="metric">
+
+    <strong>
+      3
+    </strong>
+
+    <span>
+      Actionable targeting tiers
+    </span>
+
+  </div>
+
+
+  <div class="metric">
+
+    <strong>
+      ~20–30%
+    </strong>
+
+    <span>
+      Improvement in targeting efficiency
+    </span>
+
+  </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     SITUATION
+========================================================= -->
+
+<section class="card">
+
+
+  <div class="section-header">
+
+    <div class="letter">
+      S
+    </div>
+
+    <h2>
+      Situation
+    </h2>
+
+  </div>
+
+
+  <p>
+
+    The pharmaceutical commercial team needed to improve the efficiency
+    of its HCP targeting strategy for <strong>Lo Loestrin Fe</strong>.
+
+  </p>
+
+
+  <p>
+
+    The HCP population represented a broad range of prescription activity,
+    meaning that providers did not contribute equally to the overall
+    addressable prescription opportunity.
+
+  </p>
+
+
+  <p>
+
+    A broad targeting strategy risked allocating sales and marketing
+    resources across HCPs with substantially different levels of commercial
+    opportunity.
+
+  </p>
+
+
+  <div class="callout">
+
+    <strong>
+      The core business question:
+    </strong>
+
+    <br>
+
+    How can prescription data be used to identify the HCPs with the
+    greatest commercial opportunity and prioritize limited sales resources
+    accordingly?
+
+  </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     TASK
+========================================================= -->
+
+<section class="card">
+
+
+  <div class="section-header">
+
+    <div class="letter">
+      T
+    </div>
+
+    <h2>
+      Task
+    </h2>
+
+  </div>
+
+
+  <p>
+
+    My objective was to develop a data-driven HCP segmentation and
+    prioritization framework that would allow the commercial team to:
+
+  </p>
+
+
+  <ul>
+
+    <li>
+      Identify the highest-value HCPs based on prescription contribution.
+    </li>
+
+    <li>
+      Quantify how prescription opportunity was distributed across the
+      HCP population.
+    </li>
+
+    <li>
+      Create actionable HCP priority groups.
+    </li>
+
+    <li>
+      Determine where sales and marketing resources could have the
+      greatest potential impact.
+    </li>
+
+    <li>
+      Translate the analytical findings into a practical targeting strategy.
+    </li>
+
+  </ul>
+
+
+  <div class="callout">
+
+    <strong>
+      The objective was not simply to segment HCPs.
+    </strong>
+
+    The objective was to determine whether the segmentation could identify
+    a smaller group of HCPs representing a disproportionate share of
+    prescription opportunity.
+
+  </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     ACTION
+========================================================= -->
+
+<section class="card">
+
+
+  <div class="section-header">
+
+    <div class="letter">
+      A
+    </div>
+
+    <h2>
+      Action
+    </h2>
+
+  </div>
+
+
+
+  <!-- STEP 1 -->
+
+  <h3>
+    1. Analyzed HCP-level prescription behavior
+  </h3>
+
+
+  <p>
+
+    I analyzed HCP-level prescription data to understand how prescription
+    activity was distributed across the provider population.
+
+  </p>
+
+
+  <p>
+
+    Instead of assuming that every HCP represented the same level of
+    opportunity, I examined the concentration of prescription volume
+    across providers.
+
+  </p>
+
+
+
+  <!-- STEP 2 -->
+
+  <h3>
+    2. Applied A-priori segmentation
+  </h3>
+
+
+  <p>
+
+    I used an <strong>A-priori segmentation approach</strong> to rank HCPs
+    based on prescription contribution and divide the population into
+    <strong>deciles</strong>.
+
+  </p>
+
+
+  <p>
+
+    This converted a broad HCP population into a structured hierarchy
+    that made differences in commercial opportunity easier to identify
+    and act upon.
+
+  </p>
+
+
+  <div class="segments">
+
+
+    <div class="segment">
+
+      <div class="number">
+        Priority Tier 1
+      </div>
+
+      <h3>
+        High-value HCPs
+      </h3>
+
+      <p>
+
+        Highest prescription-contributing HCPs representing the greatest
+        concentration of addressable opportunity.
+
+      </p>
+
+    </div>
+
+
+    <div class="segment">
+
+      <div class="number">
+        Priority Tier 2
+      </div>
+
+      <h3>
+        Growth HCPs
+      </h3>
+
+      <p>
+
+        Mid-tier providers with meaningful prescription activity and
+        potential for additional commercial engagement.
+
+      </p>
+
+    </div>
+
+
+    <div class="segment">
+
+      <div class="number">
+        Priority Tier 3
+      </div>
+
+      <h3>
+        Lower-priority HCPs
+      </h3>
+
+      <p>
+
+        Long-tail providers where intensive sales engagement could have
+        comparatively lower expected impact.
+
+      </p>
+
+    </div>
+
+
+  </div>
+
+
+
+  <!-- STEP 3 -->
+
+  <h3>
+    3. Quantified prescription concentration
+  </h3>
+
+
+  <p>
+
+    I evaluated the cumulative share of addressable prescriptions captured
+    as progressively larger portions of the HCP population were included.
+
+  </p>
+
+
+  <div class="finding-grid">
+
+
+    <div class="finding">
+
+      <strong>
+        Top 20%
+      </strong>
+
+      <span>
+        HCP population
+      </span>
+
+    </div>
+
+
+    <div class="finding">
+
+      <strong>
+        ~65%
+      </strong>
+
+      <span>
+        Addressable prescriptions captured
+      </span>
+
+    </div>
+
+
+    <div class="finding">
+
+      <strong>
+        ~3.25×
+      </strong>
+
+      <span>
+        Approximate concentration relative to an even 20% share
+      </span>
+
+    </div>
+
+
+  </div>
+
+
+  <div class="insight">
+
+    <h3>
+      Why this finding mattered
+    </h3>
+
+
+    <p>
+
+      If prescription opportunity were evenly distributed, the top 20%
+      of HCPs would account for roughly 20% of prescriptions.
+
+    </p>
+
+
+    <p>
+
+      Instead, the top 20% accounted for approximately
+      <strong>65%</strong> of addressable prescriptions.
+
+    </p>
+
+
+    <p>
+
+      This indicated substantial concentration of commercial opportunity
+      and provided quantitative evidence for prioritizing the highest-value
+      HCP segment.
+
+    </p>
+
+  </div>
+
+
+
+  <!-- STEP 4 -->
+
+  <h3>
+    4. Converted segmentation into a targeting framework
+  </h3>
+
+
+  <p>
+
+    I translated the decile analysis into actionable priority tiers so
+    that commercial resources could be aligned with the relative opportunity
+    represented by each group.
+
+  </p>
+
+
+  <table>
+
+
+    <thead>
+
+      <tr>
+
+        <th>
+          Segment
+        </th>
+
+        <th>
+          Analytical Role
+        </th>
+
+        <th>
+          Commercial Action
+        </th>
+
+      </tr>
+
+    </thead>
+
+
+    <tbody>
+
+
+      <tr>
+
+        <td>
+          <strong>
+            High Priority
+          </strong>
+        </td>
+
+        <td>
+          Highest prescription contribution
+        </td>
+
+        <td>
+          Concentrate sales and marketing resources
+        </td>
+
+      </tr>
+
+
+      <tr>
+
+        <td>
+          <strong>
+            Growth Opportunity
+          </strong>
+        </td>
+
+        <td>
+          Meaningful but lower prescription contribution
+        </td>
+
+        <td>
+          Target selectively for incremental growth
+        </td>
+
+      </tr>
+
+
+      <tr>
+
+        <td>
+          <strong>
+            Lower Priority
+          </strong>
+        </td>
+
+        <td>
+          Lower prescription contribution
+        </td>
+
+        <td>
+          Use lower-intensity or broader-touch strategies
+        </td>
+
+      </tr>
+
+
+    </tbody>
+
+
+  </table>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     RESULT
+========================================================= -->
+
+<section class="card">
+
+
+  <div class="section-header">
+
+    <div class="letter">
+      R
+    </div>
+
+    <h2>
+      Result
+    </h2>
+
+  </div>
+
+
+  <p>
+
+    The segmentation demonstrated that prescription opportunity was
+    <strong>highly concentrated within a relatively small portion of the
+    HCP population</strong>.
+
+  </p>
+
+
+  <p>
+
+    The most important finding was that approximately
+    <strong>20% of HCPs accounted for ~65% of addressable prescriptions</strong>.
+
+  </p>
+
+
+  <div class="impact">
+
+
+    <h3>
+      Business Impact
+    </h3>
+
+
+    <div class="impact-number">
+      ~20–30%
+    </div>
+
+
+    <p>
+
+      <strong>
+        improvement in targeting efficiency
+      </strong>
+
+    </p>
+
+
+    <p>
+
+      The segmentation provided a quantitative basis for focusing
+      commercial resources on HCPs representing the greatest prescription
+      opportunity, improving the efficiency of the targeting strategy by
+      approximately <strong>20–30%</strong>.
+
+    </p>
+
+
+  </div>
+
+
+  <h3>
+    What changed for the business?
+  </h3>
+
+
+  <div class="two-column">
+
+
+    <div>
+
+      <h3>
+        Before
+      </h3>
+
+      <ul>
+
+        <li>
+          Broad HCP population
+        </li>
+
+        <li>
+          Limited differentiation in targeting
+        </li>
+
+        <li>
+          Resources distributed across providers with different levels
+          of prescription opportunity
+        </li>
+
+      </ul>
+
+    </div>
+
+
+    <div>
+
+      <h3>
+        After
+      </h3>
+
+      <ul>
+
+        <li>
+          HCPs ranked using prescription contribution
+        </li>
+
+        <li>
+          Clear priority tiers
+        </li>
+
+        <li>
+          Resources aligned with quantified commercial opportunity
+        </li>
+
+      </ul>
+
+    </div>
+
+
+  </div>
+
+
+  <div class="callout">
+
+    <strong>
+      Business takeaway:
+    </strong>
+
+    The analysis transformed prescription data into an actionable
+    prioritization strategy, allowing the commercial team to focus
+    disproportionately on the HCPs responsible for the largest share
+    of addressable prescription opportunity.
+
+  </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     FINAL STORY
+========================================================= -->
+
+<section class="takeaway">
+
+
+  <h2>
+    The Story in One Sentence
+  </h2>
+
+
+  <p>
+
+    I used HCP-level prescription data and A-priori segmentation to identify
+    concentration of commercial opportunity, finding that the
+    <strong>top 20% of HCPs represented approximately 65% of addressable
+    prescriptions</strong>, which enabled a prioritized targeting strategy
+    and contributed to an estimated <strong>20–30% improvement in targeting
+    efficiency</strong>.
+
+  </p>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     WHAT THIS PROJECT DEMONSTRATES
+========================================================= -->
+
+<section class="card">
+
+
+  <div class="section-header">
+
+    <div class="letter">
+      +
+    </div>
+
+    <h2>
+      What This Project Demonstrates
+    </h2>
+
+  </div>
+
+
+  <div class="finding-grid">
+
+
+    <div class="finding">
+
+      <strong>
+        Segmentation
+      </strong>
+
+      <span>
+        Converted heterogeneous HCP behavior into actionable groups.
+      </span>
+
+    </div>
+
+
+    <div class="finding">
+
+      <strong>
+        Quantitative Thinking
+      </strong>
+
+      <span>
+        Quantified prescription concentration rather than relying on
+        qualitative assumptions.
+      </span>
+
+    </div>
+
+
+    <div class="finding">
+
+      <strong>
+        Business Translation
+      </strong>
+
+      <span>
+        Connected analytical findings directly to commercial resource
+        allocation and targeting.
+      </span>
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     TECH STACK
+========================================================= -->
+
+<section class="card">
+
+
+  <h2>
+    Technical Approach
+  </h2>
+
+
+  <div class="tags">
+
+
+    <span class="tag">
+      Python
+    </span>
+
+
+    <span class="tag">
+      A-priori Segmentation
+    </span>
+
+
+    <span class="tag">
+      Decile Analysis
+    </span>
+
+
+    <span class="tag">
+      HCP Analytics
+    </span>
+
+
+    <span class="tag">
+      Prescription Analytics
+    </span>
+
+
+    <span class="tag">
+      Data Visualization
+    </span>
+
+
+    <span class="tag">
+      Commercial Analytics
+    </span>
+
+
+    <span class="tag">
+      Targeting Strategy
+    </span>
+
+
+    <span class="tag">
+      Healthcare Analytics
+    </span>
+
+
+  </div>
+
+
+</section>
+
+
+
+<footer>
+
+  HCP Segmentation & Commercial Targeting ·
+  Sailee Rumao · Data Analytics / Data Science
+
+</footer>
+
+
+</div>
+
+</main>
+
+
+</body>
+
+</html>
