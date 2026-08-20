@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Fraud Alert Productivity Model | Sailee Rumao</title>
+
+  <meta
+    name="description"
+    content="Fraud alert productivity model evaluation using logistic regression, class imbalance analysis, AUC-ROC, confusion matrix metrics, and threshold evaluation."
+  >
+
+  <style>
+    :root {
+      --navy: #0f172a;
+      --blue: #2563eb;
+      --blue-light: #eff6ff;
+      --text: #172033;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --background: #f8fafc;
+      --white: #ffffff;
+      --green: #047857;
+      --green-light: #ecfdf5;
+      --amber: #a16207;
+      --amber-light: #fffbeb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+      line-height: 1.65;
+    }
+
+    .container {
+      width: min(1080px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    /* HERO */
+
+    .hero {
+      background:
+        linear-gradient(135deg, #0f172a 0%, #172554 55%, #1e3a5f 100%);
+      color: white;
+      padding: 80px 0 90px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 12px;
+      font-weight: 800;
+      color: #93c5fd;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 5vw, 60px);
+      line-height: 1.08;
+      max-width: 900px;
+      margin: 0 0 22px;
+    }
+
+    .hero p {
+      max-width: 850px;
+      font-size: 19px;
+      color: #dbeafe;
+      margin: 0;
+    }
+
+    .hero .thesis {
+      margin-top: 24px;
+      color: white;
+      font-weight: 700;
+    }
+
+    /* METRICS */
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+      margin-top: -55px;
+      position: relative;
+      margin-bottom: 38px;
+    }
+
+    .metric {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px 14px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 27px;
+      line-height: 1.1;
+      color: var(--blue);
+    }
+
+    .metric span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 650;
+      margin-top: 7px;
+    }
+
+    /* CARDS */
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 35px;
+      margin-bottom: 24px;
+      box-shadow: 0 5px 20px rgba(15, 23, 42, 0.04);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .letter {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--blue);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: 850;
+      font-size: 21px;
+      flex-shrink: 0;
+    }
+
+    h2 {
+      font-size: 29px;
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin: 27px 0 9px;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    ul {
+      padding-left: 22px;
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    /* CALLOUT */
+
+    .callout {
+      background: var(--blue-light);
+      border-left: 4px solid var(--blue);
+      border-radius: 0 12px 12px 0;
+      padding: 18px 20px;
+      margin: 22px 0;
+    }
+
+    /* FINDINGS */
+
+    .finding-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 22px;
+    }
+
+    .finding {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      padding: 19px;
+    }
+
+    .finding strong {
+      display: block;
+      font-size: 25px;
+    }
+
+    .finding span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* TWO COLUMNS */
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    /* TABLE */
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 18px;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 13px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background: #f8fafc;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 12px;
+    }
+
+    /* CONFUSION MATRIX */
+
+    .matrix {
+      display: grid;
+      grid-template-columns: 150px 1fr 1fr;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      overflow: hidden;
+      margin-top: 18px;
+    }
+
+    .matrix > div {
+      padding: 15px;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .matrix-label {
+      background: #f8fafc;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .matrix-cell {
+      text-align: center;
+    }
+
+    .matrix-cell strong {
+      display: block;
+      font-size: 29px;
+    }
+
+    .tp,
+    .tn {
+      background: var(--green-light);
+    }
+
+    .fp,
+    .fn {
+      background: var(--amber-light);
+    }
+
+    /* DARK INSIGHT */
+
+    .insight {
+      background: var(--navy);
+      color: white;
+      border-radius: 16px;
+      padding: 27px;
+      margin-top: 24px;
+    }
+
+    .insight h3 {
+      margin-top: 0;
+    }
+
+    .insight p {
+      color: #d1d5db;
+    }
+
+    /* RESULT */
+
+    .result {
+      background: var(--green-light);
+      border: 1px solid #a7f3d0;
+      border-radius: 15px;
+      padding: 25px;
+      margin-top: 22px;
+    }
+
+    .result h3 {
+      color: var(--green);
+      margin-top: 0;
+    }
+
+    /* FINAL TAKEAWAY */
+
+    .takeaway {
+      background: var(--navy);
+      color: white;
+      border-radius: 18px;
+      padding: 35px;
+      margin-bottom: 24px;
+    }
+
+    .takeaway h2 {
+      color: white;
+    }
+
+    .takeaway p {
+      color: #dbe4ef;
+      font-size: 17px;
+    }
+
+    /* INTERVIEW */
+
+    .interview {
+      background: #f8fbff;
+      border: 2px solid #bfdbfe;
+    }
+
+    blockquote {
+      border-left: 4px solid var(--blue);
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    /* TAGS */
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      background: #eff6ff;
+      color: #1d4ed8;
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      padding: 20px 0 50px;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .metrics {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 650px) {
+      .two-column,
+      .finding-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .metrics {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .card {
+        padding: 24px;
+      }
+
+      .matrix {
+        grid-template-columns: 100px 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .container {
+        width: min(100% - 28px, 1080px);
+      }
+
+      .hero {
+        padding: 55px 0 70px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="hero">
+  <div class="container">
+
+    <div class="eyebrow">
+      Fraud Analytics · Model Evaluation · STAR Case Study
+    </div>
+
+    <h1>
+      Does the Fraud Alert Score Actually Predict Productivity?
+    </h1>
+
+    <p>
+      A data-driven evaluation of a fraud alert generation framework operating
+      under extreme class imbalance—combining operational trend analysis with
+      statistical modeling to determine whether the existing alert score
+      meaningfully separates productive from non-productive alerts.
+    </p>
+
+    <p class="thesis">
+      Key finding: the alert score contained predictive signal, but its
+      discriminatory power was limited—highlighting opportunities for additional
+      features, score refinement, and threshold optimization.
+    </p>
+
+  </div>
+</header>
+
+
+<main>
+
+<div class="container">
+
+  <!-- KEY METRICS -->
+
+  <section class="metrics">
+
+    <div class="metric">
+      <strong>~97%</strong>
+      <span>Non-productive alerts</span>
+    </div>
+
+    <div class="metric">
+      <strong>~2–3%</strong>
+      <span>Stable productivity rate</span>
+    </div>
+
+    <div class="metric">
+      <strong>59,270</strong>
+      <span>Upsampled observations</span>
+    </div>
+
+    <div class="metric">
+      <strong>29,635</strong>
+      <span>Test observations</span>
+    </div>
+
+    <div class="metric">
+      <strong>0.61</strong>
+      <span>AUC-ROC</span>
+    </div>
+
+    <div class="metric">
+      <strong>47.6%</strong>
+      <span>Recall</span>
+    </div>
+
+  </section>
+
+
+  <!-- SITUATION -->
+
+  <section class="card">
+
+    <div class="section-header">
+      <div class="letter">S</div>
+      <h2>Situation</h2>
+    </div>
+
+    <p>
+      The fraud alert generation framework was producing a high volume of
+      alerts, but only a small proportion ultimately resulted in productive
+      outcomes.
+    </p>
+
+    <p>
+      Approximately <strong>97% of alerts were non-productive</strong>, while
+      only approximately <strong>3% were productive</strong>.
+    </p>
+
+    <div class="callout">
+
+      <strong>The core business question:</strong>
+
+      Was the low productivity simply an inherent characteristic of the alert
+      population, or was the underlying alert score successfully prioritizing
+      alerts that were more likely to become productive?
+
+    </div>
+
+    <div class="finding-grid">
+
+      <div class="finding">
+        <strong>~3%</strong>
+        <span>Productive alerts</span>
+      </div>
+
+      <div class="finding">
+        <strong>~97%</strong>
+        <span>Non-productive alerts</span>
+      </div>
+
+      <div class="finding">
+        <strong>~90%</strong>
+        <span>Of productive alerts had RFI status</span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- TASK -->
+
+  <section class="card">
+
+    <div class="section-header">
+      <div class="letter">T</div>
+      <h2>Task</h2>
+    </div>
+
+    <p>
+      I structured the analysis around two questions:
+    </p>
+
+    <div class="two-column">
+
+      <div>
+
+        <h3>
+          01 · Operational Stability
+        </h3>
+
+        <p>
+          Was alert generation stable over time, with productivity rates
+          remaining consistently low rather than being driven by a temporary
+          period?
+        </p>
+
+      </div>
+
+      <div>
+
+        <h3>
+          02 · Predictive Effectiveness
+        </h3>
+
+        <p>
+          Did the existing alert score provide meaningful predictive information
+          about whether an alert would become productive?
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ACTION -->
+
+  <section class="card">
+
+    <div class="section-header">
+      <div class="letter">A</div>
+      <h2>Action</h2>
+    </div>
+
+
+    <h3>
+      1. Established the operating baseline
+    </h3>
+
+    <ul>
+
+      <li>
+        Analyzed historical alert-level data containing alert status,
+        alert score, productivity outcome, and population group.
+      </li>
+
+      <li>
+        Analyzed alert distributions across population groups using
+        histograms.
+      </li>
+
+      <li>
+        Evaluated monthly alert volumes to understand changes in
+        alert-generation patterns.
+      </li>
+
+      <li>
+        Compared productive, non-productive, and open alerts.
+      </li>
+
+      <li>
+        Evaluated productivity trends over the prior year and found
+        productivity remained relatively stable at approximately
+        <strong>2–3%</strong>.
+      </li>
+
+    </ul>
+
+
+    <h3>
+      2. Decomposed productive outcomes
+    </h3>
+
+    <p>
+      Rather than treating every productive alert as identical, I examined
+      the composition of the productive population.
+    </p>
+
+    <ul>
+
+      <li>
+        Approximately <strong>90% of productive alerts had an
+        RFI (Request for Information) status</strong>.
+      </li>
+
+      <li>
+        Further analyzed productive outcomes, including RFIs and alerts
+        escalated for case creation.
+      </li>
+
+    </ul>
+
+
+    <h3>
+      3. Tested the predictive value of alert score
+    </h3>
+
+    <p>
+      I built a <strong>logistic regression</strong> model to evaluate whether
+      the alert score could predict alert productivity.
+    </p>
+
+    <div class="two-column">
+
+      <div>
+
+        <h3>Model specification</h3>
+
+        <ul>
+
+          <li>
+            <strong>Target:</strong>
+            Productive vs. non-productive
+          </li>
+
+          <li>
+            <strong>Predictor:</strong>
+            Alert score
+          </li>
+
+          <li>
+            <strong>Model:</strong>
+            Logistic regression
+          </li>
+
+          <li>
+            <strong>Evaluation:</strong>
+            AUC-ROC and confusion-matrix metrics
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div>
+
+        <h3>Addressing class imbalance</h3>
+
+        <p>
+          The original population was extremely imbalanced, with productive
+          alerts representing only a small fraction of observations.
+        </p>
+
+        <p>
+          I therefore used <strong>upsampling of the productive class</strong>
+          to create a balanced modeling dataset containing
+          <strong>59,270 observations</strong>.
+        </p>
+
+        <p>
+          The held-out test set contained
+          <strong>29,635 observations</strong>.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <h3>
+      4. Evaluated model performance beyond accuracy
+    </h3>
+
+    <table>
+
+      <thead>
+
+        <tr>
+          <th>Metric</th>
+          <th>Result</th>
+          <th>Interpretation</th>
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>AUC-ROC</td>
+          <td><strong>0.61</strong></td>
+          <td>
+            Modest discrimination above random performance
+          </td>
+        </tr>
+
+        <tr>
+          <td>Accuracy</td>
+          <td><strong>57.1%</strong></td>
+          <td>
+            Overall classification performance at selected threshold
+          </td>
+        </tr>
+
+        <tr>
+          <td>Precision</td>
+          <td><strong>59.1%</strong></td>
+          <td>
+            Predicted productive alerts that were actually productive
+          </td>
+        </tr>
+
+        <tr>
+          <td>Recall</td>
+          <td><strong>47.6%</strong></td>
+          <td>
+            Productive alerts captured
+          </td>
+        </tr>
+
+        <tr>
+          <td>Specificity</td>
+          <td><strong>66.8%</strong></td>
+          <td>
+            Non-productive alerts correctly identified
+          </td>
+        </tr>
+
+        <tr>
+          <td>F1-score</td>
+          <td><strong>52.7%</strong></td>
+          <td>
+            Balance between precision and recall
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+
+    <h3>
+      5. Confusion Matrix — Test Set
+    </h3>
+
+    <p>
+      The confusion matrix reconciles exactly to the
+      <strong>29,635-observation test set</strong>.
+    </p>
+
+    <div class="matrix">
+
+      <div></div>
+
+      <div class="matrix-label">
+        Predicted Productive
+      </div>
+
+      <div class="matrix-label">
+        Predicted Non-productive
+      </div>
+
+
+      <div class="matrix-label">
+        Actual Productive
+      </div>
+
+      <div class="matrix-cell tp">
+        <strong>7,078</strong>
+        True Positive
+      </div>
+
+      <div class="matrix-cell fn">
+        <strong>7,806</strong>
+        False Negative
+      </div>
+
+
+      <div class="matrix-label">
+        Actual Non-productive
+      </div>
+
+      <div class="matrix-cell fp">
+        <strong>4,903</strong>
+        False Positive
+      </div>
+
+      <div class="matrix-cell tn">
+        <strong>9,848</strong>
+        True Negative
+      </div>
+
+    </div>
+
+
+    <div class="insight">
+
+      <h3>
+        What does the 0.61 AUC actually mean?
+      </h3>
+
+      <p>
+        The alert score is <strong>not useless</strong>. The statistically
+        significant relationship indicates that higher alert scores are
+        associated with a greater likelihood of productivity.
+      </p>
+
+      <p>
+        However, an <strong>AUC of 0.61</strong> indicates only modest
+        discriminatory ability.
+      </p>
+
+      <p>
+        Put simply: if one productive and one non-productive alert were
+        randomly selected, the score would rank the productive alert higher
+        approximately <strong>61% of the time</strong>.
+      </p>
+
+      <p>
+        Therefore, the score contains <strong>predictive signal</strong>,
+        but it is <strong>not a strong standalone predictor</strong> of
+        productivity.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- RESULT -->
+
+  <section class="card">
+
+    <div class="section-header">
+      <div class="letter">R</div>
+      <h2>Result</h2>
+    </div>
+
+    <p>
+      The analysis demonstrated that the alert-generation framework was
+      <strong>operationally stable</strong>, with productivity consistently
+      remaining around 2–3%.
+    </p>
+
+    <p>
+      The predictive analysis also showed that the alert score was
+      <strong>statistically informative</strong>—higher scores were associated
+      with greater likelihood of productivity.
+    </p>
+
+
+    <div class="result">
+
+      <h3>
+        The important limitation
+      </h3>
+
+      <p>
+        With an <strong>AUC of 0.61</strong>, the existing alert score had
+        limited discriminatory power. It should therefore not be characterized
+        as a highly effective standalone predictor of productivity.
+      </p>
+
+    </div>
+
+
+    <h3>
+      Business / Model Implications
+    </h3>
+
+    <ul>
+
+      <li>
+        <strong>Feature enhancement:</strong>
+        investigate additional variables that may better distinguish
+        productive from non-productive alerts.
+      </li>
+
+      <li>
+        <strong>Score refinement:</strong>
+        evaluate whether the existing scoring framework can be improved
+        using additional predictive information.
+      </li>
+
+      <li>
+        <strong>Threshold optimization:</strong>
+        evaluate thresholds based on the operational trade-off between
+        missed productive alerts and unnecessary investigations.
+      </li>
+
+      <li>
+        <strong>Ongoing monitoring:</strong>
+        continue tracking productivity and discriminatory performance
+        over time.
+      </li>
+
+    </ul>
+
+
+    <div class="callout">
+
+      <strong>Model-validation takeaway:</strong>
+
+      The analysis did not simply ask whether the model “worked.”
+      It quantified where the scoring framework had predictive value,
+      where it fell short, and what areas warranted further investigation.
+
+    </div>
+
+  </section>
+
+
+  <!-- FINAL STORY -->
+
+  <section class="takeaway">
+
+    <h2>
+      The Story in One Sentence
+    </h2>
+
+    <p>
+      I evaluated a fraud alert productivity framework in an extremely
+      imbalanced environment, established that productivity was consistently
+      low but operationally stable, and used logistic regression to demonstrate
+      that the existing alert score contained predictive signal while its
+      <strong>0.61 AUC revealed limited discriminatory power</strong>—providing
+      a data-driven basis for improving features, scoring, and threshold strategy.
+    </p>
+
+  </section>
+
+
+  <!-- INTERVIEW VERSION -->
+
+  <section class="card interview">
+
+    <div class="section-header">
+
+      <div class="letter">★</div>
+
+      <h2>
+        30-Second Interview Version
+      </h2>
+
+    </div>
+
+    <blockquote>
+
+      I evaluated a fraud alert productivity framework where approximately
+      97% of alerts were non-productive. I first analyzed alert volumes and
+      productivity trends and found that productivity remained stable around
+      2–3%, with roughly 90% of productive alerts having an RFI status. I then
+      built a logistic regression model to test whether the alert score could
+      predict productivity. Because of the severe class imbalance, I upsampled
+      the productive class to 59,270 observations and evaluated the model on a
+      29,635-observation test set. The model achieved an AUC of 0.61, with
+      47.6% recall and 59.1% precision. The key finding was that the score
+      contained statistically meaningful signal, but its discriminatory power
+      was limited, meaning it was not a strong standalone predictor of
+      productivity. This highlighted opportunities around additional features,
+      score refinement, and threshold optimization.
+
+    </blockquote>
+
+  </section>
+
+
+  <!-- TECH STACK -->
+
+  <section class="card">
+
+    <h2>
+      Technical Stack
+    </h2>
+
+    <div class="tags">
+
+      <span class="tag">Python</span>
+      <span class="tag">Logistic Regression</span>
+      <span class="tag">AUC-ROC</span>
+      <span class="tag">Confusion Matrix</span>
+      <span class="tag">Class Imbalance</span>
+      <span class="tag">Upsampling</span>
+      <span class="tag">EDA</span>
+      <span class="tag">Fraud Analytics</span>
+      <span class="tag">Model Evaluation</span>
+      <span class="tag">Threshold Analysis</span>
+
+    </div>
+
+  </section>
+
+
+  <footer>
+    Fraud Alert Productivity Model · Sailee Rumao · Data Science / Model Evaluation
+  </footer>
+
+</div>
+
+</main>
+
+</body>
+</html>
