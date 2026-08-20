@@ -1,0 +1,644 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sanctions Screening | Fuzzy Matching & Model Evaluation</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   Roboto, Helvetica, Arial, sans-serif;
+      background: #f7f9fc;
+      color: #172033;
+      line-height: 1.65;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #101828, #172554);
+      color: white;
+      padding: 90px 20px 80px;
+    }
+
+    .hero-content {
+      max-width: 1050px;
+      margin: auto;
+    }
+
+    .tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 7px 14px;
+      border-radius: 30px;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(38px, 6vw, 64px);
+      line-height: 1.08;
+      margin-bottom: 22px;
+      letter-spacing: -2px;
+    }
+
+    .hero p {
+      max-width: 780px;
+      font-size: 19px;
+      color: #d7deeb;
+    }
+
+    .container {
+      max-width: 1050px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+
+    .story {
+      background: white;
+      border-radius: 18px;
+      padding: 38px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
+      border: 1px solid #e7ebf2;
+    }
+
+    .label {
+      color: #2563eb;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: 30px;
+      margin-bottom: 16px;
+      letter-spacing: -0.7px;
+    }
+
+    h3 {
+      margin: 28px 0 10px;
+      font-size: 19px;
+    }
+
+    p {
+      color: #536176;
+    }
+
+    .highlight {
+      color: #172033;
+      font-weight: 650;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin: 30px 0;
+    }
+
+    .stat {
+      background: #f8fafc;
+      border: 1px solid #e5eaf1;
+      border-radius: 14px;
+      padding: 22px;
+    }
+
+    .stat-number {
+      font-size: 30px;
+      font-weight: 800;
+      color: #172554;
+      margin-bottom: 3px;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: #68758a;
+    }
+
+    .pipeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 25px;
+    }
+
+    .step {
+      padding: 20px;
+      background: #f8fafc;
+      border-radius: 14px;
+      border: 1px solid #e5eaf1;
+    }
+
+    .step-number {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #172554;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .step strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .tech span {
+      background: #eef2ff;
+      color: #3730a3;
+      padding: 6px 11px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 650;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .metric {
+      padding: 25px;
+      border-radius: 15px;
+      background: #172554;
+      color: white;
+    }
+
+    .metric-value {
+      font-size: 38px;
+      font-weight: 800;
+    }
+
+    .metric-name {
+      color: #cbd5e1;
+      font-size: 13px;
+    }
+
+    .insight {
+      border-left: 4px solid #2563eb;
+      background: #f1f5ff;
+      padding: 20px 22px;
+      border-radius: 0 12px 12px 0;
+      margin-top: 25px;
+    }
+
+    .insight p {
+      color: #334155;
+    }
+
+    ul {
+      margin: 15px 0 0 20px;
+      color: #536176;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .footer {
+      background: #101828;
+      color: #cbd5e1;
+      padding: 35px 20px;
+      text-align: center;
+    }
+
+    .footer a {
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    @media (max-width: 800px) {
+      .stats,
+      .pipeline,
+      .metrics {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 550px) {
+      .story {
+        padding: 25px;
+      }
+
+      .stats,
+      .pipeline,
+      .metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 65px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+
+  <section class="hero">
+    <div class="hero-content">
+
+      <div class="tag">DATA SCIENCE • AML • NLP • MODEL VALIDATION</div>
+
+      <h1>
+        Can a name still be recognized<br>
+        when it's written wrong?
+      </h1>
+
+      <p>
+        Building a sanctions screening pipeline that goes beyond exact
+        matching—combining blocking, fuzzy string similarity and phonetic
+        matching to identify potentially sanctioned entities hidden behind
+        typos, reordered names and transliterations.
+      </p>
+
+    </div>
+  </section>
+
+
+  <main class="container">
+
+
+    <!-- SITUATION -->
+
+    <section class="story">
+
+      <div class="label">01 · Situation</div>
+
+      <h2>The problem: names are messy.</h2>
+
+      <p>
+        A sanctions screening system cannot rely on an exact name match.
+        A legitimate payment message might contain
+        <span class="highlight">"Mohammed Al Rashid"</span>,
+        while the sanctions list contains
+        <span class="highlight">"Muhammad Rashid"</span>.
+      </p>
+
+      <p style="margin-top:15px;">
+        Add a typo, a missing middle name, reordered tokens or a
+        transliteration—and a simple lookup can miss the entity entirely.
+        At the same time, overly aggressive matching can overwhelm analysts
+        with false alerts.
+      </p>
+
+      <div class="stats">
+
+        <div class="stat">
+          <div class="stat-number">1.29M</div>
+          <div class="stat-label">entities in target dataset</div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-number">3.07M</div>
+          <div class="stat-label">name variants available</div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-number">2.13M</div>
+          <div class="stat-label">sanctions target name variants</div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-number">10K</div>
+          <div class="stat-label">synthetic transactions screened</div>
+        </div>
+
+      </div>
+
+      <p>
+        The goal was therefore not simply to ask
+        <em>"Does this name match?"</em>
+        but rather:
+        <span class="highlight">
+          "How strong is the evidence that these two names represent the same entity?"
+        </span>
+      </p>
+
+    </section>
+
+
+    <!-- TASK -->
+
+    <section class="story">
+
+      <div class="label">02 · Task</div>
+
+      <h2>Turn fuzzy names into measurable risk signals.</h2>
+
+      <p>
+        I designed a screening pipeline that converts noisy transaction names
+        into a composite similarity score, then evaluates how well that score
+        separates true sanctions hits from clean transactions.
+      </p>
+
+      <h3>The data</h3>
+
+      <p>
+        The reference data came from
+        <strong>OpenSanctions</strong>, using entity, name and sanctions
+        information. The transaction dataset was synthetically generated
+        to create a controlled evaluation environment.
+      </p>
+
+      <h3>Creating realistic noise</h3>
+
+      <p>
+        Instead of testing only perfect matches, I injected realistic
+        perturbations into sanctioned names:
+      </p>
+
+      <ul>
+        <li>Character-level typos</li>
+        <li>First/last name reordering</li>
+        <li>Missing name tokens</li>
+        <li>Common transliteration variations</li>
+        <li>Titles and honorifics</li>
+      </ul>
+
+      <div class="stats">
+
+        <div class="stat">
+          <div class="stat-number">9,800</div>
+          <div class="stat-label">clean synthetic transactions</div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-number">200</div>
+          <div class="stat-label">labeled sanctions hits</div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-number">2%</div>
+          <div class="stat-label">initial injected hit rate</div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-number">5</div>
+          <div class="stat-label">similarity signals</div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ACTION -->
+
+    <section class="story">
+
+      <div class="label">03 · Action</div>
+
+      <h2>From millions of comparisons to one explainable score.</h2>
+
+      <p>
+        The screening architecture was designed in layers—first reducing the
+        search space, then measuring similarity, and finally evaluating the
+        operational trade-off between catching hits and generating alerts.
+      </p>
+
+      <div class="pipeline">
+
+        <div class="step">
+          <div class="step-number">1</div>
+          <strong>Normalize</strong>
+          <p>
+            Lowercase names, remove punctuation and honorifics, and standardize
+            whitespace.
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">2</div>
+          <strong>Block</strong>
+          <p>
+            Use Soundex on the first token to reduce the number of candidate
+            comparisons.
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">3</div>
+          <strong>Score</strong>
+          <p>
+            Combine five complementary similarity measures into one composite
+            score.
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">4</div>
+          <strong>Evaluate</strong>
+          <p>
+            Test thresholds using precision, recall, F1, AUC, KS and operational
+            alert metrics.
+          </p>
+        </div>
+
+      </div>
+
+
+      <h3>The composite score</h3>
+
+      <p>
+        Rather than trusting a single fuzzy-matching algorithm, the model
+        combines:
+      </p>
+
+      <ul>
+        <li><strong>Levenshtein ratio</strong> — character-level similarity</li>
+        <li><strong>Token-set ratio</strong> — robustness to token differences</li>
+        <li><strong>Token-sort ratio</strong> — robustness to reordered names</li>
+        <li><strong>Jaro-Winkler</strong> — useful for short names and prefixes</li>
+        <li><strong>Phonetic matching</strong> — captures sound-based similarity</li>
+      </ul>
+
+      <p style="margin-top:15px;">
+        The final score weighted these signals at
+        <strong>25%, 25%, 20%, 20% and 10%</strong>, respectively.
+      </p>
+
+      <div class="tech">
+        <span>Python</span>
+        <span>Pandas</span>
+        <span>RapidFuzz</span>
+        <span>Jellyfish</span>
+        <span>Scikit-learn</span>
+        <span>Statistical Testing</span>
+        <span>Fuzzy Matching</span>
+        <span>NLP</span>
+      </div>
+
+    </section>
+
+
+    <!-- RESULT -->
+
+    <section class="story">
+
+      <div class="label">04 · Result</div>
+
+      <h2>The model separated hits from clean names—but the threshold mattered.</h2>
+
+      <p>
+        The composite score showed clear separation between the two groups.
+        True hits had a substantially higher average similarity score than
+        clean transactions.
+      </p>
+
+      <div class="metrics">
+
+        <div class="metric">
+          <div class="metric-value">94.58</div>
+          <div class="metric-name">Average score — true hits</div>
+        </div>
+
+        <div class="metric">
+          <div class="metric-value">83.67</div>
+          <div class="metric-name">Average score — clean</div>
+        </div>
+
+        <div class="metric">
+          <div class="metric-value">10.91</div>
+          <div class="metric-name">Point separation gap</div>
+        </div>
+
+      </div>
+
+
+      <h3>Performance at the selected threshold</h3>
+
+      <p>
+        Selecting the threshold that maximized F1 produced a cutoff of
+        <strong>0.85</strong>.
+      </p>
+
+      <div class="metrics">
+
+        <div class="metric">
+          <div class="metric-value">100%</div>
+          <div class="metric-name">Recall — sanctions hits captured</div>
+        </div>
+
+        <div class="metric">
+          <div class="metric-value">80%</div>
+          <div class="metric-name">Precision</div>
+        </div>
+
+        <div class="metric">
+          <div class="metric-value">85%</div>
+          <div class="metric-name">Overall accuracy</div>
+        </div>
+
+      </div>
+
+
+      <div class="insight">
+
+        <p>
+          <strong>The key lesson wasn't simply that fuzzy matching worked.</strong>
+          It was that model performance and operational performance are
+          different questions. A lower threshold can maximize detection but
+          generate an impractical number of alerts. Threshold selection
+          therefore needs to balance missed sanctions risk against analyst
+          workload.
+        </p>
+
+      </div>
+
+
+      <h3>What the feature analysis revealed</h3>
+
+      <p>
+        When evaluated individually, <strong>token-sort similarity</strong>
+        was the strongest single discriminator with an AUC of
+        <strong>0.9808</strong>. Levenshtein also performed strongly at
+        0.9787, while Jaro-Winkler achieved 0.9380.
+      </p>
+
+      <p style="margin-top:15px;">
+        Interestingly, the phonetic feature alone had an AUC of 0.50,
+        illustrating why combining multiple signals can be more useful than
+        relying on a single matching technique.
+      </p>
+
+    </section>
+
+
+    <!-- TAKEAWAY -->
+
+    <section class="story">
+
+      <div class="label">The takeaway</div>
+
+      <h2>Good screening isn't just about finding matches.</h2>
+
+      <p>
+        This project demonstrates how I approach a real-world model problem:
+        start with messy data, engineer meaningful signals, design an efficient
+        scoring pipeline, and then evaluate the model from both a
+        <strong>statistical</strong> and <strong>business</strong> perspective.
+      </p>
+
+      <p style="margin-top:18px;">
+        The next step for a production-grade system would be to incorporate
+        additional entity attributes—such as date of birth, nationality,
+        address and identifiers—and calibrate thresholds against real
+        investigator outcomes.
+      </p>
+
+      <div class="insight">
+
+        <p>
+          <strong>Data science lesson:</strong>
+          The hardest part of entity resolution is rarely calculating
+          similarity. It is deciding which similarities matter, how much
+          evidence is enough, and what the cost of being wrong looks like.
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+
+    <p>
+      Sanctions Screening • Fuzzy Matching • AML Analytics
+    </p>
+
+  </footer>
+
+</body>
+</html>
+
