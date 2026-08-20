@@ -215,7 +215,6 @@
       height: 100%;
 
       background: #6D5DFB;
-
     }
 
 
@@ -622,38 +621,80 @@
     /* =========================
        EXPERIENCE
     ========================= */
-    
+
+    /*
+       THIS IS THE IMPORTANT FIX.
+       Desktop = both experiences in one row.
+    */
+
+    .experience-container {
+
+      display: grid;
+
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      gap: 25px;
+
+      width: 100%;
+    }
+
 
     .experience-item {
+
       background: #FFFFFF;
 
-      border-left: 4px solid #6D5DFB;
+      border-top: 4px solid #6D5DFB;
 
-      padding: 25px 30px;
+      border-left: none;
 
-      margin-bottom: 20px;
+      padding: 28px 30px;
 
-      border-radius:
-        0 12px 12px 0;
+      margin-bottom: 0;
+
+      border-radius: 0 0 12px 12px;
 
       box-shadow:
-        0 5px 20px rgba(37,37,37,0.04);
+        0 5px 20px rgba(37,37,37,0.05);
+
+      transition: 0.25s ease;
+
+      min-height: 145px;
     }
+
+
+    .experience-item:hover {
+
+      transform: translateY(-4px);
+
+      box-shadow:
+        0 12px 30px rgba(37,37,37,0.09);
+    }
+
 
     .experience-item h3 {
+
       color: #252525;
+
       font-size: 21px;
-      margin-bottom: 3px;
+
+      margin-bottom: 4px;
     }
+
 
     .role {
+
       color: #6D5DFB;
+
       font-weight: 600;
-      margin-bottom: 10px;
+
+      margin-bottom: 8px;
     }
 
+
     .experience-item p {
+
       color: #666666;
+
       font-size: 15px;
     }
 
@@ -804,7 +845,7 @@
 
 
     /* =========================
-       MOBILE
+       TABLET
     ========================= */
 
     @media (max-width: 900px) {
@@ -813,8 +854,24 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
+      .hero-container {
+        gap: 40px;
+      }
+
+      .hero-right {
+        width: 270px;
+      }
+
+      .experience-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
     }
 
+
+    /* =========================
+       MOBILE
+    ========================= */
 
     @media (max-width: 750px) {
 
@@ -832,8 +889,11 @@
       }
 
       .hero-container {
+
         flex-direction: column-reverse;
+
         text-align: center;
+
         gap: 35px;
       }
 
@@ -863,9 +923,26 @@
         text-align: left;
       }
 
+
+      /*
+         On phones the experience cards stack.
+      */
+
       .experience-container {
-  grid-template-columns: 1fr;
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
       }
+
+
+      .experience-item {
+
+        min-height: auto;
+
+        padding: 23px 25px;
+      }
+
 
       .project-container {
         grid-template-columns: 1fr;
@@ -890,6 +967,10 @@
     }
 
 
+    /* =========================
+       SMALL MOBILE
+    ========================= */
+
     @media (max-width: 480px) {
 
       .impact-container {
@@ -910,6 +991,10 @@
 
       .hero-expertise-skills {
         font-size: 11px;
+      }
+
+      .experience-container {
+        grid-template-columns: 1fr;
       }
 
     }
@@ -963,9 +1048,7 @@
   <div class="hero-container">
 
 
-    <!-- =========================
-         LEFT SIDE
-    ========================= -->
+    <!-- LEFT SIDE -->
 
     <div class="hero-text">
 
@@ -1027,10 +1110,7 @@
 
 
 
-    <!-- =========================
-         RIGHT SIDE
-         HEADSHOT + ROTATING EXPERTISE
-    ========================= -->
+    <!-- RIGHT SIDE -->
 
     <div class="hero-right">
 
@@ -1046,9 +1126,7 @@
 
 
 
-      <!-- =========================
-           ROTATING EXPERTISE
-      ========================= -->
+      <!-- ROTATING EXPERTISE -->
 
       <div class="hero-expertise">
 
@@ -1187,9 +1265,7 @@
 
 
 
-  <!-- =========================
-       QUANTITATIVE IMPACT
-  ========================= -->
+  <!-- IMPACT -->
 
   <div class="impact-container">
 
@@ -1270,9 +1346,7 @@
 
 
 
-  <!-- =========================
-       WORK PROJECTS
-  ========================= -->
+  <!-- WORK PROJECTS -->
 
   <h3 style="
       font-size: 24px;
@@ -1381,9 +1455,7 @@
 
 
 
-  <!-- =========================
-       PERSONAL PROJECTS
-  ========================= -->
+  <!-- PERSONAL PROJECTS -->
 
   <h3 style="
       font-size: 24px;
@@ -1553,9 +1625,9 @@
     <span>SQL</span>
 
     <span>R</span>
-    
-    <span>AI </span>
-    
+
+    <span>AI</span>
+
     <span>Machine Learning</span>
 
     <span>Statistics</span>
@@ -1580,21 +1652,26 @@
      EXPERIENCE
 ========================= -->
 
-<!-- =========================
-     EXPERIENCE
-========================= -->
-
 <section id="experience">
 
   <div class="section-label">
     Experience
   </div>
 
+
   <h2 class="section-title">
     Professional Experience
   </h2>
 
+
+  <!--
+    IMPORTANT:
+    This container uses a 2-column CSS grid,
+    so UBS and ZS appear in ONE ROW on desktop.
+  -->
+
   <div class="experience-container">
+
 
     <!-- UBS -->
 
@@ -1609,9 +1686,7 @@
       </div>
 
       <p>
-
-        2022- Present
-
+        2022 – Present
       </p>
 
     </div>
@@ -1630,17 +1705,18 @@
       </div>
 
       <p>
-
-        2020-2022
+        2020 – 2022
       </p>
 
     </div>
+
 
   </div>
 
 </section>
 
-  
+
+
 <!-- =========================
      EDUCATION
 ========================= -->
@@ -1879,11 +1955,6 @@
 
   function updateExpertise() {
 
-
-    /*
-     * Fade out
-     */
-
     heroExpertiseIcon.classList.add(
       "hero-expertise-fade"
     );
@@ -1900,10 +1971,6 @@
     setTimeout(() => {
 
 
-      /*
-       * Move to next expertise
-       */
-
       currentExpertise =
         (currentExpertise + 1) %
         expertise.length;
@@ -1912,10 +1979,6 @@
       const item =
         expertise[currentExpertise];
 
-
-      /*
-       * Update content
-       */
 
       heroExpertiseIcon.textContent =
         item.icon;
@@ -1926,10 +1989,6 @@
       heroExpertiseSkills.textContent =
         item.skills;
 
-
-      /*
-       * Update dots
-       */
 
       heroExpertiseDots.forEach(
         (dot, index) => {
@@ -1942,10 +2001,6 @@
         }
       );
 
-
-      /*
-       * Fade back in
-       */
 
       heroExpertiseIcon.classList.remove(
         "hero-expertise-fade"
@@ -1964,10 +2019,6 @@
 
   }
 
-
-  /*
-   * Rotate every 3 seconds
-   */
 
   setInterval(
     updateExpertise,
