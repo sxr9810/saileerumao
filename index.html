@@ -94,7 +94,7 @@
       align-items: center;
       justify-content: space-between;
 
-      gap: 60px;
+      gap: 70px;
     }
 
     .hero-text {
@@ -134,22 +134,224 @@
 
 
     /* =========================
+       RIGHT HERO COLUMN
+    ========================= */
+
+    .hero-right {
+      width: 300px;
+      flex-shrink: 0;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+
+    /* =========================
        HEADSHOT
     ========================= */
 
     .headshot-wrapper {
-      flex-shrink: 0;
+      display: flex;
+      justify-content: center;
     }
 
     .headshot {
       width: 230px;
       height: 230px;
+
       object-fit: cover;
+
       border-radius: 50%;
+
       border: 6px solid rgba(255,255,255,0.9);
 
       box-shadow:
         0 20px 50px rgba(37,37,37,0.18);
+    }
+
+
+    /* =====================================================
+       ROTATING EXPERTISE UNDER HEADSHOT
+    ===================================================== */
+
+    .hero-expertise {
+
+      width: 100%;
+
+      margin-top: 28px;
+
+      padding: 18px 20px;
+
+      background: rgba(255,255,255,0.72);
+
+      border: 1px solid #E5E2DD;
+
+      border-radius: 14px;
+
+      box-shadow:
+        0 8px 25px rgba(37,37,37,0.05);
+
+      position: relative;
+
+      overflow: hidden;
+
+      min-height: 105px;
+    }
+
+
+    .hero-expertise::before {
+
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+
+      top: 0;
+
+      width: 4px;
+
+      height: 100%;
+
+      background: #6D5DFB;
+
+    }
+
+
+    .hero-expertise-label {
+
+      color: #6D5DFB;
+
+      font-size: 10px;
+
+      font-weight: 800;
+
+      letter-spacing: 0.16em;
+
+      text-transform: uppercase;
+
+      margin-bottom: 9px;
+
+      padding-left: 2px;
+    }
+
+
+    .hero-expertise-display {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 12px;
+    }
+
+
+    .hero-expertise-icon {
+
+      width: 38px;
+
+      flex-shrink: 0;
+
+      font-size: 29px;
+
+      line-height: 1;
+
+      text-align: center;
+
+      transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
+    }
+
+
+    .hero-expertise-content {
+
+      text-align: left;
+
+      min-width: 0;
+    }
+
+
+    .hero-expertise-title {
+
+      font-size: 17px;
+
+      font-weight: 800;
+
+      line-height: 1.25;
+
+      color: #252525;
+
+      margin-bottom: 3px;
+
+      transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
+    }
+
+
+    .hero-expertise-skills {
+
+      font-size: 11.5px;
+
+      color: #6B6B6B;
+
+      line-height: 1.45;
+
+      transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
+    }
+
+
+    .hero-expertise-fade {
+
+      opacity: 0;
+
+      transform: translateY(7px);
+    }
+
+
+    /* =========================
+       EXPERTISE DOTS
+    ========================= */
+
+    .hero-expertise-dots {
+
+      display: flex;
+
+      justify-content: center;
+
+      gap: 5px;
+
+      margin-top: 12px;
+    }
+
+
+    .hero-expertise-dot {
+
+      width: 5px;
+
+      height: 5px;
+
+      border-radius: 50%;
+
+      background: #D2D0CC;
+
+      transition:
+        width 0.3s ease,
+        background 0.3s ease;
+    }
+
+
+    .hero-expertise-dot.active {
+
+      width: 16px;
+
+      border-radius: 8px;
+
+      background: #6D5DFB;
     }
 
 
@@ -287,166 +489,6 @@
       font-size: 13px;
       color: #666666;
       line-height: 1.4;
-    }
-
-
-    /* =====================================================
-       ROTATING EXPERTISE
-    ===================================================== */
-
-    .expertise-section {
-
-      margin-top: -20px;
-
-      padding: 48px 40px;
-
-      background: linear-gradient(
-        135deg,
-        #F8F7FF 0%,
-        #FFFFFF 50%,
-        #F5FAF8 100%
-      );
-
-      border: 1px solid #E5E2DD;
-
-      border-radius: 18px;
-
-      box-shadow:
-        0 10px 30px rgba(37,37,37,0.04);
-
-      text-align: center;
-
-      overflow: hidden;
-    }
-
-
-    .expertise-label {
-
-      color: #6D5DFB;
-
-      font-size: 12px;
-
-      font-weight: 800;
-
-      letter-spacing: 0.18em;
-
-      margin-bottom: 28px;
-    }
-
-
-    .expertise-display {
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      gap: 22px;
-
-      min-height: 125px;
-    }
-
-
-    .expertise-icon {
-
-      width: 72px;
-
-      font-size: 52px;
-
-      line-height: 1;
-
-      transition:
-        opacity 0.35s ease,
-        transform 0.35s ease;
-    }
-
-
-    .expertise-content {
-
-      text-align: left;
-
-      max-width: 750px;
-
-      min-width: 0;
-    }
-
-
-    .expertise-title {
-
-      font-size: 34px;
-
-      font-weight: 800;
-
-      line-height: 1.2;
-
-      color: #252525;
-
-      margin-bottom: 8px;
-
-      transition:
-        opacity 0.35s ease,
-        transform 0.35s ease;
-    }
-
-
-    .expertise-skills {
-
-      font-size: 16px;
-
-      color: #666666;
-
-      line-height: 1.6;
-
-      transition:
-        opacity 0.35s ease,
-        transform 0.35s ease;
-    }
-
-
-    .expertise-fade {
-
-      opacity: 0;
-
-      transform: translateY(8px);
-    }
-
-
-    .expertise-dots {
-
-      display: flex;
-
-      justify-content: center;
-
-      gap: 7px;
-
-      margin-top: 25px;
-    }
-
-
-    .expertise-dot {
-
-      width: 7px;
-
-      height: 7px;
-
-      border-radius: 50%;
-
-      background: #D2D0CC;
-
-      transition:
-        width 0.3s ease,
-        background 0.3s ease;
-    }
-
-
-    .expertise-dot.active {
-
-      width: 22px;
-
-      border-radius: 10px;
-
-      background: #6D5DFB;
     }
 
 
@@ -766,10 +808,6 @@
 
     @media (max-width: 900px) {
 
-      .personal-projects {
-        grid-template-columns: 1fr;
-      }
-
       .impact-container {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -795,6 +833,7 @@
       .hero-container {
         flex-direction: column-reverse;
         text-align: center;
+        gap: 35px;
       }
 
       .hero h1 {
@@ -809,9 +848,18 @@
         justify-content: center;
       }
 
+      .hero-right {
+        width: 100%;
+        max-width: 330px;
+      }
+
       .headshot {
         width: 180px;
         height: 180px;
+      }
+
+      .hero-expertise {
+        text-align: left;
       }
 
       .project-container {
@@ -834,28 +882,6 @@
         grid-template-columns: 1fr 1fr;
       }
 
-
-      .expertise-section {
-        padding: 38px 22px;
-      }
-
-      .expertise-display {
-        gap: 14px;
-      }
-
-      .expertise-icon {
-        width: 50px;
-        font-size: 38px;
-      }
-
-      .expertise-title {
-        font-size: 25px;
-      }
-
-      .expertise-skills {
-        font-size: 14px;
-      }
-
     }
 
 
@@ -869,12 +895,16 @@
         padding: 25px;
       }
 
-      .expertise-display {
-        align-items: flex-start;
+      .hero-right {
+        max-width: 100%;
       }
 
-      .expertise-icon {
-        padding-top: 3px;
+      .hero-expertise {
+        padding: 17px 16px;
+      }
+
+      .hero-expertise-skills {
+        font-size: 11px;
       }
 
     }
@@ -927,6 +957,10 @@
 
   <div class="hero-container">
 
+
+    <!-- =========================
+         LEFT SIDE
+    ========================= -->
 
     <div class="hero-text">
 
@@ -987,12 +1021,117 @@
     </div>
 
 
-    <div class="headshot-wrapper">
 
-      <img
-        class="headshot"
-        src="Sailee_headshot.PNG"
-        alt="Sailee Rumao professional headshot">
+    <!-- =========================
+         RIGHT SIDE
+         HEADSHOT + ROTATING EXPERTISE
+    ========================= -->
+
+    <div class="hero-right">
+
+
+      <div class="headshot-wrapper">
+
+        <img
+          class="headshot"
+          src="Sailee_headshot.PNG"
+          alt="Sailee Rumao professional headshot">
+
+      </div>
+
+
+
+      <!-- =========================
+           ROTATING EXPERTISE
+      ========================= -->
+
+      <div class="hero-expertise">
+
+
+        <div class="hero-expertise-label">
+
+          EXPERTISE
+
+        </div>
+
+
+        <div class="hero-expertise-display">
+
+
+          <div
+            class="hero-expertise-icon"
+            id="heroExpertiseIcon">
+
+            🧠
+
+          </div>
+
+
+          <div class="hero-expertise-content">
+
+
+            <div
+              class="hero-expertise-title"
+              id="heroExpertiseTitle">
+
+              Data Science
+
+            </div>
+
+
+            <div
+              class="hero-expertise-skills"
+              id="heroExpertiseSkills">
+
+              Statistical Modeling · Machine Learning · NLP ·
+              Classification · Segmentation
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+
+        <div class="hero-expertise-dots">
+
+
+          <span
+            class="hero-expertise-dot active">
+          </span>
+
+
+          <span
+            class="hero-expertise-dot">
+          </span>
+
+
+          <span
+            class="hero-expertise-dot">
+          </span>
+
+
+          <span
+            class="hero-expertise-dot">
+          </span>
+
+
+          <span
+            class="hero-expertise-dot">
+          </span>
+
+
+          <span
+            class="hero-expertise-dot">
+          </span>
+
+
+        </div>
+
+
+      </div>
+
 
     </div>
 
@@ -1103,100 +1242,6 @@
 
 
   </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     ROTATING EXPERTISE
-===================================================== -->
-
-<section class="expertise-section">
-
-
-  <div class="expertise-label">
-
-    WHERE DATA MEETS DECISIONS
-
-  </div>
-
-
-  <div class="expertise-display">
-
-
-    <div
-      class="expertise-icon"
-      id="expertiseIcon">
-
-      🧠
-
-    </div>
-
-
-    <div class="expertise-content">
-
-
-      <div
-        class="expertise-title"
-        id="expertiseTitle">
-
-        Data Science
-
-      </div>
-
-
-      <div
-        class="expertise-skills"
-        id="expertiseSkills">
-
-        Statistical Modeling · Machine Learning · NLP ·
-        Classification · Segmentation
-
-      </div>
-
-
-    </div>
-
-
-  </div>
-
-
-  <div class="expertise-dots">
-
-
-    <span
-      class="expertise-dot active">
-    </span>
-
-
-    <span
-      class="expertise-dot">
-    </span>
-
-
-    <span
-      class="expertise-dot">
-    </span>
-
-
-    <span
-      class="expertise-dot">
-    </span>
-
-
-    <span
-      class="expertise-dot">
-    </span>
-
-
-    <span
-      class="expertise-dot">
-    </span>
-
-
-  </div>
-
 
 </section>
 
@@ -1409,17 +1454,17 @@
 
       <p>
 
-        Machine learning project focused on identifying
-        high-risk transactions using classification models,
-        feature engineering, model evaluation, and
-        threshold optimization.
+        Product analytics project focused on evaluating
+        whether product changes improve user behavior using
+        experimentation, statistical inference, and
+        business impact analysis.
 
       </p>
 
 
       <p class="tech">
 
-        Python · SQL · XGBoost · Machine Learning
+        Python · SQL · A/B Testing · Causal Inference
 
       </p>
 
@@ -1845,17 +1890,17 @@
   let currentExpertise = 0;
 
 
-  const expertiseIcon =
-    document.getElementById("expertiseIcon");
+  const heroExpertiseIcon =
+    document.getElementById("heroExpertiseIcon");
 
-  const expertiseTitle =
-    document.getElementById("expertiseTitle");
+  const heroExpertiseTitle =
+    document.getElementById("heroExpertiseTitle");
 
-  const expertiseSkills =
-    document.getElementById("expertiseSkills");
+  const heroExpertiseSkills =
+    document.getElementById("heroExpertiseSkills");
 
-  const expertiseDots =
-    document.querySelectorAll(".expertise-dot");
+  const heroExpertiseDots =
+    document.querySelectorAll(".hero-expertise-dot");
 
 
   function updateExpertise() {
@@ -1865,11 +1910,17 @@
      * Fade out
      */
 
-    expertiseIcon.classList.add("expertise-fade");
+    heroExpertiseIcon.classList.add(
+      "hero-expertise-fade"
+    );
 
-    expertiseTitle.classList.add("expertise-fade");
+    heroExpertiseTitle.classList.add(
+      "hero-expertise-fade"
+    );
 
-    expertiseSkills.classList.add("expertise-fade");
+    heroExpertiseSkills.classList.add(
+      "hero-expertise-fade"
+    );
 
 
     setTimeout(() => {
@@ -1892,21 +1943,21 @@
        * Update content
        */
 
-      expertiseIcon.textContent =
+      heroExpertiseIcon.textContent =
         item.icon;
 
-      expertiseTitle.textContent =
+      heroExpertiseTitle.textContent =
         item.title;
 
-      expertiseSkills.textContent =
+      heroExpertiseSkills.textContent =
         item.skills;
 
 
       /*
-       * Update navigation dots
+       * Update dots
        */
 
-      expertiseDots.forEach(
+      heroExpertiseDots.forEach(
         (dot, index) => {
 
           dot.classList.toggle(
@@ -1922,16 +1973,16 @@
        * Fade back in
        */
 
-      expertiseIcon.classList.remove(
-        "expertise-fade"
+      heroExpertiseIcon.classList.remove(
+        "hero-expertise-fade"
       );
 
-      expertiseTitle.classList.remove(
-        "expertise-fade"
+      heroExpertiseTitle.classList.remove(
+        "hero-expertise-fade"
       );
 
-      expertiseSkills.classList.remove(
-        "expertise-fade"
+      heroExpertiseSkills.classList.remove(
+        "hero-expertise-fade"
       );
 
 
