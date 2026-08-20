@@ -589,3 +589,213 @@
           <h4>CUPED-adjust the guardrails too</h4>
           <p>The pre-period balance check flagged a chance imbalance in time-spent between arms —
           expected noise with only 200 randomization clusters. CUPED-correcting the guardrail
+          the same way as the primary metric reversed the raw (misleading) reading.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-idx"><b>09</b>Stress-test</div>
+        <div>
+          <h4>Quantify what individual randomization would have cost</h4>
+          <p>A companion dataset simulated the same experiment with individual- instead of
+          cluster-level randomization and an explicit friend-spillover mechanism, then analyzed
+          it the naive way — to measure, not just assert, the value of the design choice in step 01.</p>
+          <div class="tag-row"><span class="tag warn">interference bias demo</span></div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-idx"><b>10</b>Translate</div>
+        <div>
+          <h4>Turn effect sizes into a number a VP can act on</h4>
+          <p>Steady-state per-user effects were scaled against an illustrative 450M DAU base to
+          size the topline gain and the guardrail cost in absolute daily terms.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESULT ============ -->
+<section class="block block-alt" id="result">
+  <div class="wrap">
+    <div class="block-head" style="position:relative">
+      <div>
+        <p class="eyebrow reveal">Result</p>
+        <h2 class="reveal">A real effect, a real cost, and a segment that needed protecting</h2>
+        <span class="star-letter">R</span>
+      </div>
+      <p class="lede reveal">
+        Every number below is the actual output of running <code>generate_data.py</code> →
+        <code>analysis.py</code> on the experiment's synthetic-but-realistic dataset — nothing
+        here is hand-typed.
+      </p>
+    </div>
+
+    <div class="result-grid reveal">
+      <div class="rcard">
+        <div class="rk">Steady-state effect</div>
+        <div class="rv blue">+1.15</div>
+        <div class="rd">MSI / user / day, days 10&ndash;14 avg — the number the launch was sized on, not day one's +2.47</div>
+      </div>
+      <div class="rcard">
+        <div class="rk">Inference correction</div>
+        <div class="rv blue">2.4×</div>
+        <div class="rd">Wider, honest confidence interval once SEs were clustered on the true randomization unit</div>
+      </div>
+      <div class="rcard">
+        <div class="rk">CUPED variance cut</div>
+        <div class="rv pos">98.4%</div>
+        <div class="rd">SE fell from 0.248 → 0.031 using only pre-period data already on hand</div>
+      </div>
+      <div class="rcard">
+        <div class="rk">Interference bias</div>
+        <div class="rv neg">−30%</div>
+        <div class="rd">How much a naive individually-randomized test would have understated the true effect</div>
+      </div>
+    </div>
+
+    <div class="chart-grid reveal">
+      <figure class="chart">
+        <img src="data:image/png;base64,PASTE_YOUR_BASE64_IMAGE_DATA_HERE" alt="Line chart showing the daily treatment effect on MSI score decaying from about 2.47 on day one to about 1.08 by day fourteen, with a shaded 95% confidence band.">
+        <figcaption><b>Figure 1 — Novelty decay.</b> Daily treatment effect (95% cluster-robust CI). The steady-state lift is the trailing 5-day average, not the launch spike.</figcaption>
+      </figure>
+      <figure class="chart">
+        <img src="data:image/png;base64,PASTE_YOUR_BASE64_IMAGE_DATA_HERE" alt="Bar chart of average treatment effect by user segment: power users about 5.2, casual users about 1.5, dormant users about zero with a confidence interval crossing zero.">
+        <figcaption><b>Figure 2 — Effect by segment.</b> Power users drive the gain; dormant users see none, and their retention moved the wrong way.</figcaption>
+      </figure>
+    </div>
+
+    <h3 class="reveal" style="font-size:18px;margin-bottom:4px;">Where the effect actually lives</h3>
+    <p class="lede reveal" style="margin-bottom:6px;">Subgroup ATEs on daily MSI score, cluster-robust.</p>
+    <div class="seg-bars reveal" id="seg-bars">
+      <div class="seg-row">
+        <span class="seg-name" style="color:var(--teal)">Power</span>
+        <div class="seg-track"><div class="seg-fill power" data-w="100"></div></div>
+        <span class="seg-val">+5.23</span>
+      </div>
+      <div class="seg-row">
+        <span class="seg-name" style="color:var(--blue)">Casual</span>
+        <div class="seg-track"><div class="seg-fill casual" data-w="29"></div></div>
+        <span class="seg-val">+1.52</span>
+      </div>
+      <div class="seg-row">
+        <span class="seg-name" style="color:var(--crimson)">Dormant</span>
+        <div class="seg-track"><div class="seg-fill dormant" data-w="2"></div></div>
+        <span class="seg-val">&minus;0.03</span>
+      </div>
+    </div>
+
+    <div class="guardrail-box reveal">
+      <div class="gicon">GUARDRAIL</div>
+      <div>
+        <p><b>Time spent almost got misread.</b> The raw pre/post comparison showed a small,
+        non-significant <em>increase</em> — but a chance pre-period imbalance between arms
+        (expected noise with only 200 clusters) was masking the real effect. CUPED-adjusting
+        this guardrail exactly like the primary metric reversed the reading:</p>
+        <div class="flip">Raw: <span>+0.19 min/day (p = 0.81, not significant)</span> &rarr; CUPED-adjusted: <b>&minus;0.82 min/day (p &lt; 0.001, significant)</b></div>
+      </div>
+    </div>
+
+    <div class="chart-grid-full reveal">
+      <figure class="chart">
+        <img src="data:image/png;base64,PASTE_YOUR_BASE64_IMAGE_DATA_HERE" alt="Line chart showing that control users' engagement rises the more of their friend cluster was treated, demonstrating spillover contamination under individual-level randomization.">
+        <figcaption><b>Figure 3 — Spillover contamination.</b> Under individual-level randomization, control users surrounded by treated friends start looking treated themselves — the mechanism cluster randomization was built to block.</figcaption>
+      </figure>
+    </div>
+
+    <h3 class="reveal" style="font-size:18px;margin-bottom:14px;">Business impact, at scale</h3>
+    <ul class="impact-list reveal">
+      <li>
+        <span class="iv" style="color:var(--teal)">+516M / day</span>
+        <span class="id">incremental meaningful interactions platform-wide, at the verified steady-state effect (+1.15/user) on an illustrative 450M DAU base</span>
+      </li>
+      <li>
+        <span class="iv" style="color:var(--crimson)">&minus;367M min / day</span>
+        <span class="id">time-spent cost — a real ad-inventory trade-off, invisible in the raw (uncorrected) guardrail read</span>
+      </li>
+      <li>
+        <span class="iv" style="color:var(--crimson)">&minus;1.4M returns / day</span>
+        <span class="id">projected next-day-return shortfall in the dormant segment alone if shipped to them unmodified</span>
+      </li>
+    </ul>
+
+    <div class="reco reveal">
+      <h4>What shipped</h4>
+      <ol>
+        <li><b>Ship to power and casual segments.</b> The effect is large and holds up under cluster-robust, CUPED-adjusted inference — and it's durable after novelty decay.</li>
+        <li><b>Hold back the dormant segment.</b> Zero MSI benefit plus a real retention cost means launching to them trades away the most fragile users for no upside.</li>
+        <li><b>Size the next experiment on +1.15, not +2.47.</b> Pre-registering success thresholds on the steady-state number keeps the team from chasing a novelty artifact again.</li>
+        <li><b>Escalate the time-spent trade-off explicitly.</b> Small per-user, material at platform scale — and easy to miss without the CUPED correction.</li>
+        <li><b>Keep cluster randomization as the default</b> for any feature with plausible peer effects — the interference demo shows a ~30% understatement risk from getting this wrong.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="reveal">
+        <h3>Reproduce the whole pipeline</h3>
+        <p>Every figure and number on this page comes from two scripts: a data generator with
+        known ground-truth effects, and an analysis pipeline that has to recover them correctly —
+        the same way you'd validate an experimentation pipeline before trusting it on production data.</p>
+        <a class="repo-btn" href="https://github.com/YOUR-USERNAME/YOUR-REPO" target="_blank" rel="noopener">
+          View code &amp; data on GitHub →
+        </a>
+      </div>
+      <div class="reveal">
+        <p class="eyebrow" style="margin-bottom:10px;">Methods used</p>
+        <div class="stack-list">
+          <span>cluster randomization</span>
+          <span>SRM testing</span>
+          <span>cluster-robust SEs</span>
+          <span>CUPED</span>
+          <span>diff-in-diff</span>
+          <span>T-learner / CATE</span>
+          <span>interference bias analysis</span>
+        </div>
+        <p class="caveat">
+          Data is synthetic, generated with a fixed random seed for a fictional company
+          ("NorthStar Social") so every estimate above can be checked against a known
+          ground truth. The problem structure, methodology, and pitfalls are drawn from
+          real experimentation practice at large social products.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // scroll-reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // segment bar fill animation, triggered once visible
+  const segBars = document.getElementById('seg-bars');
+  if(segBars){
+    const segIo = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          e.target.querySelectorAll('.seg-fill').forEach(f=>{
+            f.style.width = f.dataset.w + '%';
+          });
+          segIo.unobserve(e.target);
+        }
+      });
+    },{threshold:0.4});
+    segIo.observe(segBars);
+  }
+</script>
+
+</body>
+</html>
