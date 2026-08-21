@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -85,7 +84,6 @@
 
       color: #252525;
 
-      /* Reduced from 90px to eliminate excess space */
       padding: 70px 30px;
     }
 
@@ -128,8 +126,9 @@
       margin-bottom: 20px;
     }
 
+
     /* =========================
-       HERO POSITIONING STATEMENT
+       HERO POSITIONING
     ========================= */
 
     .hero-positioning {
@@ -149,6 +148,7 @@
 
     /* =========================
        RIGHT HERO COLUMN
+       HEADSHOT ONLY
     ========================= */
 
     .hero-right {
@@ -156,13 +156,13 @@
       flex-shrink: 0;
 
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
     }
 
 
     /* =========================
-       LARGER SQUARE HEADSHOT
+       HEADSHOT
     ========================= */
 
     .headshot-wrapper {
@@ -176,11 +176,6 @@
 
       object-fit: cover;
 
-      /*
-       * Square professional headshot.
-       * Slight rounding keeps it polished
-       * without making it circular.
-       */
       border-radius: 18px;
 
       border: 6px solid rgba(255,255,255,0.95);
@@ -192,14 +187,22 @@
 
     /* =====================================================
        ROTATING EXPERTISE CARD
+       NOW ABOVE ABOUT / LEFT ALIGNED
     ===================================================== */
+
+    .expertise-wrapper {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 0 30px;
+    }
 
     .hero-expertise {
 
       width: 390px;
       max-width: 100%;
 
-      margin-top: 30px;
+      margin-top: 0;
+      margin-bottom: 35px;
 
       padding: 22px 25px;
 
@@ -433,12 +436,7 @@
     .container {
       max-width: 1150px;
       margin: auto;
-
-      /*
-       * Reduced top padding so About
-       * sits immediately below hero.
-       */
-      padding: 35px 30px 70px;
+      padding: 0 30px 70px;
     }
 
     section {
@@ -529,7 +527,6 @@
 
     /* =========================
        SKILLS
-       MOVED ABOVE PROJECTS
     ========================= */
 
     .skills {
@@ -894,10 +891,6 @@
         width: 340px;
       }
 
-      .hero-expertise {
-        width: 340px;
-      }
-
       .headshot {
         width: 260px;
         height: 260px;
@@ -968,10 +961,18 @@
         border-radius: 16px;
       }
 
+
+      /* Expertise above About */
+
+      .expertise-wrapper {
+        padding: 0 25px;
+      }
+
       .hero-expertise {
         width: 100%;
         max-width: 390px;
         padding: 21px 22px;
+        margin-bottom: 30px;
       }
 
       .hero-expertise-title {
@@ -1005,7 +1006,7 @@
       }
 
       .container {
-        padding: 30px 25px 55px;
+        padding: 0 25px 55px;
       }
 
       h2.section-title {
@@ -1041,6 +1042,10 @@
         width: 210px;
         height: 210px;
         border-radius: 14px;
+      }
+
+      .expertise-wrapper {
+        padding: 0 20px;
       }
 
       .hero-expertise {
@@ -1137,8 +1142,6 @@
         Data Scientist | Decision Sciences | Risk Analytics
       </h2>
 
-      <!-- POSITIONING STATEMENT -->
-
       <p class="hero-positioning">
 
         I build, validate, and translate data-driven models
@@ -1183,10 +1186,9 @@
 
 
 
-    <!-- RIGHT SIDE -->
+    <!-- RIGHT SIDE — HEADSHOT ONLY -->
 
     <div class="hero-right">
-
 
       <div class="headshot-wrapper">
 
@@ -1197,82 +1199,86 @@
 
       </div>
 
-
-
-      <!-- ROTATING EXPERTISE -->
-
-      <div class="hero-expertise">
-
-
-        <div class="hero-expertise-label">
-
-          EXPERTISE
-
-        </div>
-
-
-        <div class="hero-expertise-display">
-
-
-          <div
-            class="hero-expertise-icon"
-            id="heroExpertiseIcon">
-
-            🧠
-
-          </div>
-
-
-          <div class="hero-expertise-content">
-
-
-            <div
-              class="hero-expertise-title"
-              id="heroExpertiseTitle">
-
-              Data Science
-
-            </div>
-
-
-            <div
-              class="hero-expertise-skills"
-              id="heroExpertiseSkills">
-
-              Statistical Modeling · Machine Learning · NLP ·
-              Classification · Experimentation · Segmentation
-
-            </div>
-
-
-          </div>
-
-        </div>
-
-
-        <div class="hero-expertise-dots">
-
-
-          <span class="hero-expertise-dot active"></span>
-
-          <span class="hero-expertise-dot"></span>
-
-          <span class="hero-expertise-dot"></span>
-
-          <span class="hero-expertise-dot"></span>
-
-        </div>
-
-
-      </div>
-
-
     </div>
 
 
   </div>
 
 </header>
+
+
+
+<!-- =====================================================
+     ROTATING EXPERTISE
+     MOVED TO LEFT ABOVE ABOUT
+===================================================== -->
+
+<div class="expertise-wrapper">
+
+  <div class="hero-expertise">
+
+    <div class="hero-expertise-label">
+
+      EXPERTISE
+
+    </div>
+
+
+    <div class="hero-expertise-display">
+
+
+      <div
+        class="hero-expertise-icon"
+        id="heroExpertiseIcon">
+
+        🧠
+
+      </div>
+
+
+      <div class="hero-expertise-content">
+
+
+        <div
+          class="hero-expertise-title"
+          id="heroExpertiseTitle">
+
+          Data Science
+
+        </div>
+
+
+        <div
+          class="hero-expertise-skills"
+          id="heroExpertiseSkills">
+
+          Statistical Modeling · Machine Learning · NLP ·
+          Classification · Experimentation · Segmentation
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+    <div class="hero-expertise-dots">
+
+      <span class="hero-expertise-dot active"></span>
+
+      <span class="hero-expertise-dot"></span>
+
+      <span class="hero-expertise-dot"></span>
+
+      <span class="hero-expertise-dot"></span>
+
+    </div>
+
+
+  </div>
+
+</div>
 
 
 
@@ -2005,4 +2011,3 @@
 </body>
 
 </html>
-```
