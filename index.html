@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,6 +28,7 @@
       color: #252525;
       line-height: 1.7;
     }
+
 
     /* =========================
        NAVIGATION
@@ -69,6 +70,7 @@
       color: #6D5DFB;
     }
 
+
     /* =========================
        HERO
     ========================= */
@@ -82,7 +84,9 @@
       );
 
       color: #252525;
-      padding: 90px 30px;
+
+      /* Reduced from 90px to eliminate excess space */
+      padding: 70px 30px;
     }
 
     .hero-container {
@@ -124,12 +128,24 @@
       margin-bottom: 20px;
     }
 
-    .hero-description {
-      max-width: 650px;
-      color: #6B6B6B;
-      font-size: 17px;
-      margin-bottom: 30px;
+    /* =========================
+       HERO POSITIONING STATEMENT
+    ========================= */
+
+    .hero-positioning {
+      max-width: 620px;
+
+      margin: 0 0 28px 0;
+
+      font-size: 18px;
+
+      line-height: 1.6;
+
+      color: #5F5F5F;
+
+      font-weight: 500;
     }
+
 
     /* =========================
        RIGHT HERO COLUMN
@@ -143,6 +159,7 @@
       flex-direction: column;
       align-items: center;
     }
+
 
     /* =========================
        LARGER SQUARE HEADSHOT
@@ -159,7 +176,11 @@
 
       object-fit: cover;
 
-      /* Square shape with subtle professional rounding */
+      /*
+       * Square professional headshot.
+       * Slight rounding keeps it polished
+       * without making it circular.
+       */
       border-radius: 18px;
 
       border: 6px solid rgba(255,255,255,0.95);
@@ -168,11 +189,13 @@
         0 20px 50px rgba(37,37,37,0.18);
     }
 
+
     /* =====================================================
-       WIDER ROTATING EXPERTISE CARD
+       ROTATING EXPERTISE CARD
     ===================================================== */
 
     .hero-expertise {
+
       width: 390px;
       max-width: 100%;
 
@@ -196,21 +219,27 @@
       min-height: 130px;
     }
 
+
     .hero-expertise::before {
+
       content: "";
 
       position: absolute;
 
       left: 0;
+
       top: 0;
 
       width: 5px;
+
       height: 100%;
 
       background: #6D5DFB;
     }
 
+
     .hero-expertise-label {
+
       color: #6D5DFB;
 
       font-size: 11px;
@@ -226,7 +255,9 @@
       padding-left: 2px;
     }
 
+
     .hero-expertise-display {
+
       display: flex;
 
       align-items: center;
@@ -236,8 +267,11 @@
       width: 100%;
     }
 
+
     .hero-expertise-icon {
+
       width: 45px;
+
       min-width: 45px;
 
       flex-shrink: 0;
@@ -253,7 +287,9 @@
         transform 0.35s ease;
     }
 
+
     .hero-expertise-content {
+
       text-align: left;
 
       min-width: 0;
@@ -261,7 +297,9 @@
       flex: 1;
     }
 
+
     .hero-expertise-title {
+
       font-size: 19px;
 
       font-weight: 800;
@@ -277,7 +315,9 @@
         transform 0.35s ease;
     }
 
+
     .hero-expertise-skills {
+
       font-size: 13px;
 
       color: #6B6B6B;
@@ -289,16 +329,21 @@
         transform 0.35s ease;
     }
 
+
     .hero-expertise-fade {
+
       opacity: 0;
+
       transform: translateY(7px);
     }
+
 
     /* =========================
        EXPERTISE DOTS
     ========================= */
 
     .hero-expertise-dots {
+
       display: flex;
 
       justify-content: center;
@@ -308,8 +353,11 @@
       margin-top: 15px;
     }
 
+
     .hero-expertise-dot {
+
       width: 6px;
+
       height: 6px;
 
       border-radius: 50%;
@@ -321,13 +369,16 @@
         background 0.3s ease;
     }
 
+
     .hero-expertise-dot.active {
+
       width: 18px;
 
       border-radius: 8px;
 
       background: #6D5DFB;
     }
+
 
     /* =========================
        BUTTONS
@@ -341,17 +392,11 @@
 
     .button {
       display: inline-block;
-
       padding: 12px 22px;
-
       border-radius: 8px;
-
       text-decoration: none;
-
       font-weight: 600;
-
       font-size: 14px;
-
       transition: 0.2s ease;
     }
 
@@ -362,7 +407,6 @@
 
     .button-primary:hover {
       background: #6D5DFB;
-
       transform: translateY(-2px);
 
       box-shadow:
@@ -371,19 +415,16 @@
 
     .button-secondary {
       border: 1px solid #D8D5D0;
-
       color: #252525;
-
       background: #FFFFFF;
     }
 
     .button-secondary:hover {
       border-color: #6D5DFB;
-
       color: #6D5DFB;
-
       background: #F8F7FF;
     }
+
 
     /* =========================
        MAIN
@@ -391,49 +432,48 @@
 
     .container {
       max-width: 1150px;
-
       margin: auto;
 
-      padding: 70px 30px;
+      /*
+       * Reduced top padding so About
+       * sits immediately below hero.
+       */
+      padding: 35px 30px 70px;
     }
 
     section {
-      margin-bottom: 85px;
+      margin-bottom: 70px;
     }
 
     .section-label {
       color: #6D5DFB;
-
       font-size: 13px;
-
       font-weight: 700;
-
       text-transform: uppercase;
-
       letter-spacing: 2px;
-
       margin-bottom: 8px;
     }
 
     h2.section-title {
       font-size: 34px;
-
       color: #252525;
-
       margin-bottom: 25px;
-
       letter-spacing: -0.5px;
     }
+
 
     /* =========================
        ABOUT
     ========================= */
 
+    .about-section {
+      margin-top: 0;
+      margin-bottom: 70px;
+    }
+
     .about-text {
       max-width: 850px;
-
       font-size: 17px;
-
       color: #5F5F5F;
     }
 
@@ -441,29 +481,23 @@
       margin-bottom: 15px;
     }
 
+
     /* =========================
        IMPACT BELT
     ========================= */
 
     .impact-container {
       display: grid;
-
       grid-template-columns: repeat(4, 1fr);
-
       gap: 15px;
-
       margin-top: 35px;
     }
 
     .impact-card {
       background: #FFFFFF;
-
       border: 1px solid #E5E2DD;
-
       border-radius: 12px;
-
       padding: 22px 15px;
-
       text-align: center;
 
       box-shadow:
@@ -474,31 +508,24 @@
 
     .impact-card:hover {
       transform: translateY(-3px);
-
       border-color: #D8D2FF;
     }
 
     .impact-number {
       display: block;
-
       font-size: 28px;
-
       font-weight: 800;
-
       color: #6D5DFB;
-
       margin-bottom: 5px;
     }
 
     .impact-label {
       display: block;
-
       font-size: 13px;
-
       color: #666666;
-
       line-height: 1.4;
     }
+
 
     /* =========================
        SKILLS
@@ -507,35 +534,26 @@
 
     .skills {
       display: flex;
-
       flex-wrap: wrap;
-
       gap: 10px;
     }
 
     .skills span {
       background: #FFFFFF;
-
       border: 1px solid #D8D5D0;
-
       color: #3F3F3F;
-
       padding: 9px 15px;
-
       border-radius: 30px;
-
       font-size: 14px;
-
       font-weight: 500;
-
       transition: 0.2s ease;
     }
 
     .skills span:hover {
       border-color: #6D5DFB;
-
       color: #6D5DFB;
     }
+
 
     /* =========================
        PROJECTS
@@ -543,19 +561,14 @@
 
     .project-container {
       display: grid;
-
       grid-template-columns: repeat(2, 1fr);
-
       gap: 25px;
     }
 
     .project {
       background: #FFFFFF;
-
       padding: 30px;
-
       border-radius: 14px;
-
       border: 1px solid #E5E2DD;
 
       box-shadow:
@@ -591,49 +604,39 @@
 
     .project-icon {
       font-size: 28px;
-
       margin-bottom: 15px;
     }
 
     .project h3 {
       font-size: 21px;
-
       color: #252525;
-
       margin-bottom: 12px;
     }
 
     .project p {
       color: #666666;
-
       font-size: 15px;
-
       margin-bottom: 18px;
     }
 
     .tech {
       font-size: 13px;
-
       color: #6D5DFB;
-
       font-weight: 600;
-
       margin-bottom: 20px !important;
     }
 
     .project a {
       color: #6D5DFB;
-
       text-decoration: none;
-
       font-weight: 700;
-
       font-size: 14px;
     }
 
     .project a:hover {
       text-decoration: underline;
     }
+
 
     /* =========================
        PERSONAL PROJECTS
@@ -651,11 +654,13 @@
       font-size: 19px;
     }
 
+
     /* =========================
        EXPERIENCE
     ========================= */
 
     .experience-container {
+
       display: grid;
 
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -665,7 +670,9 @@
       width: 100%;
     }
 
+
     .experience-item {
+
       background: #FFFFFF;
 
       border-top: 4px solid #6D5DFB;
@@ -686,14 +693,18 @@
       min-height: 145px;
     }
 
+
     .experience-item:hover {
+
       transform: translateY(-4px);
 
       box-shadow:
         0 12px 30px rgba(37,37,37,0.09);
     }
 
+
     .experience-item h3 {
+
       color: #252525;
 
       font-size: 21px;
@@ -701,7 +712,9 @@
       margin-bottom: 4px;
     }
 
+
     .role {
+
       color: #6D5DFB;
 
       font-weight: 600;
@@ -709,11 +722,14 @@
       margin-bottom: 8px;
     }
 
+
     .experience-item p {
+
       color: #666666;
 
       font-size: 15px;
     }
+
 
     /* =========================
        EDUCATION
@@ -721,23 +737,20 @@
 
     .education-card {
       background: #FFFFFF;
-
       padding: 25px 30px;
-
       border-radius: 12px;
-
       border: 1px solid #E5E2DD;
     }
 
     .education-card h3 {
       color: #252525;
-
       margin-bottom: 5px;
     }
 
     .education-card p {
       color: #666666;
     }
+
 
     /* =========================
        CONTACT
@@ -749,11 +762,8 @@
 
     .contact-form {
       background: #FFFFFF;
-
       padding: 35px;
-
       border-radius: 14px;
-
       border: 1px solid #E5E2DD;
 
       box-shadow:
@@ -766,18 +776,15 @@
 
     .form-group label {
       display: block;
-
       font-size: 14px;
-
       font-weight: 600;
-
       color: #3F3F3F;
-
       margin-bottom: 7px;
     }
 
     .form-group input,
     .form-group textarea {
+
       width: 100%;
 
       padding: 12px 14px;
@@ -801,6 +808,7 @@
 
     .form-group input:focus,
     .form-group textarea:focus {
+
       border-color: #6D5DFB;
 
       background: #FFFFFF;
@@ -810,12 +818,14 @@
     }
 
     .form-group textarea {
+
       min-height: 150px;
 
       resize: vertical;
     }
 
     .contact-submit {
+
       border: none;
 
       cursor: pointer;
@@ -838,6 +848,7 @@
     }
 
     .contact-submit:hover {
+
       background: #6D5DFB;
 
       transform: translateY(-2px);
@@ -846,11 +857,13 @@
         0 8px 20px rgba(109,93,251,0.25);
     }
 
+
     /* =========================
        FOOTER
     ========================= */
 
     footer {
+
       background: #1D1D1D;
 
       color: #AFAFAF;
@@ -861,6 +874,7 @@
 
       font-size: 14px;
     }
+
 
     /* =========================
        TABLET
@@ -892,7 +906,9 @@
       .experience-container {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
+
     }
+
 
     /* =========================
        MOBILE
@@ -906,15 +922,15 @@
 
       nav a {
         margin-left: 12px;
-
         font-size: 12px;
       }
 
       .hero {
-        padding: 65px 25px;
+        padding: 55px 25px;
       }
 
       .hero-container {
+
         flex-direction: column-reverse;
 
         text-align: center;
@@ -930,28 +946,31 @@
         font-size: 21px;
       }
 
+      .hero-positioning {
+        margin-left: auto;
+        margin-right: auto;
+
+        font-size: 16px;
+      }
+
       .buttons {
         justify-content: center;
       }
 
       .hero-right {
         width: 100%;
-
         max-width: 390px;
       }
 
       .headshot {
         width: 230px;
         height: 230px;
-
         border-radius: 16px;
       }
 
       .hero-expertise {
         width: 100%;
-
         max-width: 390px;
-
         padding: 21px 22px;
       }
 
@@ -963,17 +982,19 @@
         font-size: 12.5px;
       }
 
+
+      /* Experience stacks on phones */
+
       .experience-container {
         grid-template-columns: 1fr;
-
         gap: 18px;
       }
 
       .experience-item {
         min-height: auto;
-
         padding: 23px 25px;
       }
+
 
       .project-container {
         grid-template-columns: 1fr;
@@ -984,7 +1005,7 @@
       }
 
       .container {
-        padding: 55px 25px;
+        padding: 30px 25px 55px;
       }
 
       h2.section-title {
@@ -994,7 +1015,9 @@
       .impact-container {
         grid-template-columns: 1fr 1fr;
       }
+
     }
+
 
     /* =========================
        SMALL MOBILE
@@ -1017,13 +1040,11 @@
       .headshot {
         width: 210px;
         height: 210px;
-
         border-radius: 14px;
       }
 
       .hero-expertise {
         width: 100%;
-
         padding: 19px 17px;
       }
 
@@ -1033,9 +1054,7 @@
 
       .hero-expertise-icon {
         width: 40px;
-
         min-width: 40px;
-
         font-size: 30px;
       }
 
@@ -1050,13 +1069,16 @@
       .experience-container {
         grid-template-columns: 1fr;
       }
+
     }
 
   </style>
 
 </head>
 
+
 <body>
+
 
 <!-- =========================
      NAVIGATION
@@ -1088,6 +1110,8 @@
 
 </nav>
 
+
+
 <!-- =========================
      HERO
 ========================= -->
@@ -1095,6 +1119,7 @@
 <header class="hero">
 
   <div class="hero-container">
+
 
     <!-- LEFT SIDE -->
 
@@ -1109,8 +1134,18 @@
       </h1>
 
       <h2>
-        Data Scientist | Risk & Decision Analytics
+        Data Scientist | Decision Sciences | Risk Analytics
       </h2>
+
+      <!-- POSITIONING STATEMENT -->
+
+      <p class="hero-positioning">
+
+        I build, validate, and translate data-driven models
+        into better business and risk decisions.
+
+      </p>
+
 
       <div class="buttons">
 
@@ -1122,6 +1157,7 @@
 
         </a>
 
+
         <a
           class="button button-secondary"
           href="https://www.linkedin.com/in/sailee-mathew-rumao-829608a0/"
@@ -1130,6 +1166,7 @@
           LinkedIn
 
         </a>
+
 
         <a
           class="button button-secondary"
@@ -1144,9 +1181,12 @@
 
     </div>
 
+
+
     <!-- RIGHT SIDE -->
 
     <div class="hero-right">
+
 
       <div class="headshot-wrapper">
 
@@ -1157,15 +1197,22 @@
 
       </div>
 
+
+
       <!-- ROTATING EXPERTISE -->
 
       <div class="hero-expertise">
 
+
         <div class="hero-expertise-label">
+
           EXPERTISE
+
         </div>
 
+
         <div class="hero-expertise-display">
+
 
           <div
             class="hero-expertise-icon"
@@ -1175,7 +1222,9 @@
 
           </div>
 
+
           <div class="hero-expertise-content">
+
 
             <div
               class="hero-expertise-title"
@@ -1184,6 +1233,7 @@
               Data Science
 
             </div>
+
 
             <div
               class="hero-expertise-skills"
@@ -1194,11 +1244,14 @@
 
             </div>
 
+
           </div>
 
         </div>
 
+
         <div class="hero-expertise-dots">
+
 
           <span class="hero-expertise-dot active"></span>
 
@@ -1208,19 +1261,20 @@
 
           <span class="hero-expertise-dot"></span>
 
-          <span class="hero-expertise-dot"></span>
-
-          <span class="hero-expertise-dot"></span>
-
         </div>
+
 
       </div>
 
+
     </div>
+
 
   </div>
 
 </header>
+
+
 
 <!-- =========================
      MAIN CONTENT
@@ -1228,11 +1282,13 @@
 
 <div class="container">
 
+
+
 <!-- =========================
      ABOUT
 ========================= -->
 
-<section id="about">
+<section id="about" class="about-section">
 
   <div class="section-label">
     About
@@ -1241,6 +1297,7 @@
   <h2 class="section-title">
     Turning data into decisions
   </h2>
+
 
   <div class="about-text">
 
@@ -1256,6 +1313,7 @@
     </p>
 
   </div>
+
 
   <!-- IMPACT -->
 
@@ -1273,6 +1331,7 @@
 
     </div>
 
+
     <div class="impact-card">
 
       <span class="impact-number">
@@ -1285,6 +1344,7 @@
 
     </div>
 
+
     <div class="impact-card">
 
       <span class="impact-number">
@@ -1296,6 +1356,7 @@
       </span>
 
     </div>
+
 
     <div class="impact-card">
 
@@ -1313,9 +1374,10 @@
 
 </section>
 
+
+
 <!-- =========================
      SKILLS
-     MOVED BEFORE PROJECTS
 ========================= -->
 
 <section id="skills">
@@ -1327,6 +1389,7 @@
   <h2 class="section-title">
     Skills
   </h2>
+
 
   <div class="skills">
 
@@ -1346,6 +1409,8 @@
 
 </section>
 
+
+
 <!-- =========================
      PROJECTS
 ========================= -->
@@ -1360,6 +1425,7 @@
     Projects
   </h2>
 
+
   <!-- WORK PROJECTS -->
 
   <h3 style="
@@ -1372,7 +1438,9 @@
 
   </h3>
 
+
   <div class="project-container">
+
 
     <!-- WORK PROJECT 1 -->
 
@@ -1412,6 +1480,8 @@
 
     </div>
 
+
+
     <!-- WORK PROJECT 2 -->
 
     <div class="project">
@@ -1450,6 +1520,8 @@
 
   </div>
 
+
+
   <!-- PERSONAL PROJECTS -->
 
   <h3 style="
@@ -1463,7 +1535,9 @@
 
   </h3>
 
+
   <div class="project-container personal-projects">
+
 
     <!-- PERSONAL PROJECT 1 -->
 
@@ -1502,6 +1576,8 @@
 
     </div>
 
+
+
     <!-- PERSONAL PROJECT 2 -->
 
     <div class="project">
@@ -1533,11 +1609,13 @@
         href="projects/Causal_inference.html"
         target="_blank">
 
-        Project Inprogress →
+        View Project →
 
       </a>
 
     </div>
+
+
 
     <!-- PERSONAL PROJECT 3 -->
 
@@ -1571,9 +1649,12 @@
 
     </div>
 
+
   </div>
 
 </section>
+
+
 
 <!-- =========================
      EXPERIENCE
@@ -1589,7 +1670,9 @@
     Professional Experience
   </h2>
 
+
   <div class="experience-container">
+
 
     <!-- UBS -->
 
@@ -1609,6 +1692,7 @@
 
     </div>
 
+
     <!-- ZS -->
 
     <div class="experience-item">
@@ -1627,9 +1711,12 @@
 
     </div>
 
+
   </div>
 
 </section>
+
+
 
 <!-- =========================
      EDUCATION
@@ -1645,6 +1732,7 @@
     Education
   </h2>
 
+
   <div class="education-card">
 
     <h3>
@@ -1658,6 +1746,8 @@
   </div>
 
 </section>
+
+
 
 <!-- =========================
      CONTACT
@@ -1673,6 +1763,7 @@
     Let's Connect
   </h2>
 
+
   <div class="contact-container">
 
     <p
@@ -1687,10 +1778,12 @@
 
     </p>
 
+
     <form
       class="contact-form"
       action="https://formspree.io/f/mgawrzqg"
       method="POST">
+
 
       <div class="form-group">
 
@@ -1707,6 +1800,8 @@
 
       </div>
 
+
+
       <div class="form-group">
 
         <label for="email">
@@ -1722,6 +1817,8 @@
 
       </div>
 
+
+
       <div class="form-group">
 
         <label for="message">
@@ -1736,6 +1833,8 @@
 
       </div>
 
+
+
       <button
         type="submit"
         class="contact-submit">
@@ -1744,13 +1843,18 @@
 
       </button>
 
+
     </form>
 
   </div>
 
 </section>
 
+
+
 </div>
+
+
 
 <!-- =========================
      FOOTER
@@ -1766,6 +1870,8 @@
   </p>
 
 </footer>
+
+
 
 <!-- =====================================================
      ROTATING EXPERTISE JAVASCRIPT
@@ -1805,7 +1911,9 @@
 
   ];
 
+
   let currentExpertise = 0;
+
 
   const heroExpertiseIcon =
     document.getElementById("heroExpertiseIcon");
@@ -1818,6 +1926,7 @@
 
   const heroExpertiseDots =
     document.querySelectorAll(".hero-expertise-dot");
+
 
   function updateExpertise() {
 
@@ -1833,14 +1942,17 @@
       "hero-expertise-fade"
     );
 
+
     setTimeout(() => {
 
       currentExpertise =
         (currentExpertise + 1) %
         expertise.length;
 
+
       const item =
         expertise[currentExpertise];
+
 
       heroExpertiseIcon.textContent =
         item.icon;
@@ -1850,6 +1962,7 @@
 
       heroExpertiseSkills.textContent =
         item.skills;
+
 
       heroExpertiseDots.forEach(
         (dot, index) => {
@@ -1861,6 +1974,7 @@
 
         }
       );
+
 
       heroExpertiseIcon.classList.remove(
         "hero-expertise-fade"
@@ -1874,9 +1988,11 @@
         "hero-expertise-fade"
       );
 
+
     }, 350);
 
   }
+
 
   setInterval(
     updateExpertise,
@@ -1885,6 +2001,8 @@
 
 </script>
 
+
 </body>
 
 </html>
+```
