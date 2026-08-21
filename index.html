@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +28,6 @@
       color: #252525;
       line-height: 1.7;
     }
-
 
     /* =========================
        NAVIGATION
@@ -68,7 +68,6 @@
     nav a:hover {
       color: #6D5DFB;
     }
-
 
     /* =========================
        HERO
@@ -132,7 +131,6 @@
       margin-bottom: 30px;
     }
 
-
     /* =========================
        RIGHT HERO COLUMN
     ========================= */
@@ -146,9 +144,8 @@
       align-items: center;
     }
 
-
     /* =========================
-       HEADSHOT
+       LARGER SQUARE HEADSHOT
     ========================= */
 
     .headshot-wrapper {
@@ -157,30 +154,25 @@
     }
 
     .headshot {
-      width: 230px;
-      height: 230px;
+      width: 300px;
+      height: 300px;
 
       object-fit: cover;
 
-      border-radius: 50%;
+      /* Square shape with subtle professional rounding */
+      border-radius: 18px;
 
-      border: 6px solid rgba(255,255,255,0.9);
+      border: 6px solid rgba(255,255,255,0.95);
 
       box-shadow:
         0 20px 50px rgba(37,37,37,0.18);
     }
-
 
     /* =====================================================
        WIDER ROTATING EXPERTISE CARD
     ===================================================== */
 
     .hero-expertise {
-
-      /*
-       * Wider than the headshot.
-       * Uses almost the full width of the right column.
-       */
       width: 390px;
       max-width: 100%;
 
@@ -204,27 +196,21 @@
       min-height: 130px;
     }
 
-
     .hero-expertise::before {
-
       content: "";
 
       position: absolute;
 
       left: 0;
-
       top: 0;
 
       width: 5px;
-
       height: 100%;
 
       background: #6D5DFB;
     }
 
-
     .hero-expertise-label {
-
       color: #6D5DFB;
 
       font-size: 11px;
@@ -240,9 +226,7 @@
       padding-left: 2px;
     }
 
-
     .hero-expertise-display {
-
       display: flex;
 
       align-items: center;
@@ -252,11 +236,8 @@
       width: 100%;
     }
 
-
     .hero-expertise-icon {
-
       width: 45px;
-
       min-width: 45px;
 
       flex-shrink: 0;
@@ -272,9 +253,7 @@
         transform 0.35s ease;
     }
 
-
     .hero-expertise-content {
-
       text-align: left;
 
       min-width: 0;
@@ -282,9 +261,7 @@
       flex: 1;
     }
 
-
     .hero-expertise-title {
-
       font-size: 19px;
 
       font-weight: 800;
@@ -300,9 +277,7 @@
         transform 0.35s ease;
     }
 
-
     .hero-expertise-skills {
-
       font-size: 13px;
 
       color: #6B6B6B;
@@ -314,21 +289,16 @@
         transform 0.35s ease;
     }
 
-
     .hero-expertise-fade {
-
       opacity: 0;
-
       transform: translateY(7px);
     }
-
 
     /* =========================
        EXPERTISE DOTS
     ========================= */
 
     .hero-expertise-dots {
-
       display: flex;
 
       justify-content: center;
@@ -338,11 +308,8 @@
       margin-top: 15px;
     }
 
-
     .hero-expertise-dot {
-
       width: 6px;
-
       height: 6px;
 
       border-radius: 50%;
@@ -354,16 +321,13 @@
         background 0.3s ease;
     }
 
-
     .hero-expertise-dot.active {
-
       width: 18px;
 
       border-radius: 8px;
 
       background: #6D5DFB;
     }
-
 
     /* =========================
        BUTTONS
@@ -377,11 +341,17 @@
 
     .button {
       display: inline-block;
+
       padding: 12px 22px;
+
       border-radius: 8px;
+
       text-decoration: none;
+
       font-weight: 600;
+
       font-size: 14px;
+
       transition: 0.2s ease;
     }
 
@@ -392,6 +362,7 @@
 
     .button-primary:hover {
       background: #6D5DFB;
+
       transform: translateY(-2px);
 
       box-shadow:
@@ -400,16 +371,19 @@
 
     .button-secondary {
       border: 1px solid #D8D5D0;
+
       color: #252525;
+
       background: #FFFFFF;
     }
 
     .button-secondary:hover {
       border-color: #6D5DFB;
+
       color: #6D5DFB;
+
       background: #F8F7FF;
     }
-
 
     /* =========================
        MAIN
@@ -417,7 +391,9 @@
 
     .container {
       max-width: 1150px;
+
       margin: auto;
+
       padding: 70px 30px;
     }
 
@@ -427,20 +403,27 @@
 
     .section-label {
       color: #6D5DFB;
+
       font-size: 13px;
+
       font-weight: 700;
+
       text-transform: uppercase;
+
       letter-spacing: 2px;
+
       margin-bottom: 8px;
     }
 
     h2.section-title {
       font-size: 34px;
+
       color: #252525;
+
       margin-bottom: 25px;
+
       letter-spacing: -0.5px;
     }
-
 
     /* =========================
        ABOUT
@@ -448,7 +431,9 @@
 
     .about-text {
       max-width: 850px;
+
       font-size: 17px;
+
       color: #5F5F5F;
     }
 
@@ -456,23 +441,29 @@
       margin-bottom: 15px;
     }
 
-
     /* =========================
        IMPACT BELT
     ========================= */
 
     .impact-container {
       display: grid;
+
       grid-template-columns: repeat(4, 1fr);
+
       gap: 15px;
+
       margin-top: 35px;
     }
 
     .impact-card {
       background: #FFFFFF;
+
       border: 1px solid #E5E2DD;
+
       border-radius: 12px;
+
       padding: 22px 15px;
+
       text-align: center;
 
       box-shadow:
@@ -483,24 +474,68 @@
 
     .impact-card:hover {
       transform: translateY(-3px);
+
       border-color: #D8D2FF;
     }
 
     .impact-number {
       display: block;
+
       font-size: 28px;
+
       font-weight: 800;
+
       color: #6D5DFB;
+
       margin-bottom: 5px;
     }
 
     .impact-label {
       display: block;
+
       font-size: 13px;
+
       color: #666666;
+
       line-height: 1.4;
     }
 
+    /* =========================
+       SKILLS
+       MOVED ABOVE PROJECTS
+    ========================= */
+
+    .skills {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+    }
+
+    .skills span {
+      background: #FFFFFF;
+
+      border: 1px solid #D8D5D0;
+
+      color: #3F3F3F;
+
+      padding: 9px 15px;
+
+      border-radius: 30px;
+
+      font-size: 14px;
+
+      font-weight: 500;
+
+      transition: 0.2s ease;
+    }
+
+    .skills span:hover {
+      border-color: #6D5DFB;
+
+      color: #6D5DFB;
+    }
 
     /* =========================
        PROJECTS
@@ -508,14 +543,19 @@
 
     .project-container {
       display: grid;
+
       grid-template-columns: repeat(2, 1fr);
+
       gap: 25px;
     }
 
     .project {
       background: #FFFFFF;
+
       padding: 30px;
+
       border-radius: 14px;
+
       border: 1px solid #E5E2DD;
 
       box-shadow:
@@ -551,39 +591,49 @@
 
     .project-icon {
       font-size: 28px;
+
       margin-bottom: 15px;
     }
 
     .project h3 {
       font-size: 21px;
+
       color: #252525;
+
       margin-bottom: 12px;
     }
 
     .project p {
       color: #666666;
+
       font-size: 15px;
+
       margin-bottom: 18px;
     }
 
     .tech {
       font-size: 13px;
+
       color: #6D5DFB;
+
       font-weight: 600;
+
       margin-bottom: 20px !important;
     }
 
     .project a {
       color: #6D5DFB;
+
       text-decoration: none;
+
       font-weight: 700;
+
       font-size: 14px;
     }
 
     .project a:hover {
       text-decoration: underline;
     }
-
 
     /* =========================
        PERSONAL PROJECTS
@@ -601,40 +651,11 @@
       font-size: 19px;
     }
 
-
-    /* =========================
-       SKILLS
-    ========================= */
-
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .skills span {
-      background: #FFFFFF;
-      border: 1px solid #D8D5D0;
-      color: #3F3F3F;
-      padding: 9px 15px;
-      border-radius: 30px;
-      font-size: 14px;
-      font-weight: 500;
-      transition: 0.2s ease;
-    }
-
-    .skills span:hover {
-      border-color: #6D5DFB;
-      color: #6D5DFB;
-    }
-
-
     /* =========================
        EXPERIENCE
     ========================= */
 
     .experience-container {
-
       display: grid;
 
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -644,9 +665,7 @@
       width: 100%;
     }
 
-
     .experience-item {
-
       background: #FFFFFF;
 
       border-top: 4px solid #6D5DFB;
@@ -667,18 +686,14 @@
       min-height: 145px;
     }
 
-
     .experience-item:hover {
-
       transform: translateY(-4px);
 
       box-shadow:
         0 12px 30px rgba(37,37,37,0.09);
     }
 
-
     .experience-item h3 {
-
       color: #252525;
 
       font-size: 21px;
@@ -686,9 +701,7 @@
       margin-bottom: 4px;
     }
 
-
     .role {
-
       color: #6D5DFB;
 
       font-weight: 600;
@@ -696,14 +709,11 @@
       margin-bottom: 8px;
     }
 
-
     .experience-item p {
-
       color: #666666;
 
       font-size: 15px;
     }
-
 
     /* =========================
        EDUCATION
@@ -711,20 +721,23 @@
 
     .education-card {
       background: #FFFFFF;
+
       padding: 25px 30px;
+
       border-radius: 12px;
+
       border: 1px solid #E5E2DD;
     }
 
     .education-card h3 {
       color: #252525;
+
       margin-bottom: 5px;
     }
 
     .education-card p {
       color: #666666;
     }
-
 
     /* =========================
        CONTACT
@@ -736,8 +749,11 @@
 
     .contact-form {
       background: #FFFFFF;
+
       padding: 35px;
+
       border-radius: 14px;
+
       border: 1px solid #E5E2DD;
 
       box-shadow:
@@ -750,15 +766,18 @@
 
     .form-group label {
       display: block;
+
       font-size: 14px;
+
       font-weight: 600;
+
       color: #3F3F3F;
+
       margin-bottom: 7px;
     }
 
     .form-group input,
     .form-group textarea {
-
       width: 100%;
 
       padding: 12px 14px;
@@ -782,7 +801,6 @@
 
     .form-group input:focus,
     .form-group textarea:focus {
-
       border-color: #6D5DFB;
 
       background: #FFFFFF;
@@ -792,14 +810,12 @@
     }
 
     .form-group textarea {
-
       min-height: 150px;
 
       resize: vertical;
     }
 
     .contact-submit {
-
       border: none;
 
       cursor: pointer;
@@ -822,7 +838,6 @@
     }
 
     .contact-submit:hover {
-
       background: #6D5DFB;
 
       transform: translateY(-2px);
@@ -831,13 +846,11 @@
         0 8px 20px rgba(109,93,251,0.25);
     }
 
-
     /* =========================
        FOOTER
     ========================= */
 
     footer {
-
       background: #1D1D1D;
 
       color: #AFAFAF;
@@ -848,7 +861,6 @@
 
       font-size: 14px;
     }
-
 
     /* =========================
        TABLET
@@ -872,12 +884,15 @@
         width: 340px;
       }
 
+      .headshot {
+        width: 260px;
+        height: 260px;
+      }
+
       .experience-container {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
-
     }
-
 
     /* =========================
        MOBILE
@@ -891,6 +906,7 @@
 
       nav a {
         margin-left: 12px;
+
         font-size: 12px;
       }
 
@@ -899,7 +915,6 @@
       }
 
       .hero-container {
-
         flex-direction: column-reverse;
 
         text-align: center;
@@ -921,17 +936,22 @@
 
       .hero-right {
         width: 100%;
+
         max-width: 390px;
       }
 
       .headshot {
-        width: 180px;
-        height: 180px;
+        width: 230px;
+        height: 230px;
+
+        border-radius: 16px;
       }
 
       .hero-expertise {
         width: 100%;
+
         max-width: 390px;
+
         padding: 21px 22px;
       }
 
@@ -943,19 +963,17 @@
         font-size: 12.5px;
       }
 
-
-      /* Experience stacks on phones */
-
       .experience-container {
         grid-template-columns: 1fr;
+
         gap: 18px;
       }
 
       .experience-item {
         min-height: auto;
+
         padding: 23px 25px;
       }
-
 
       .project-container {
         grid-template-columns: 1fr;
@@ -976,9 +994,7 @@
       .impact-container {
         grid-template-columns: 1fr 1fr;
       }
-
     }
-
 
     /* =========================
        SMALL MOBILE
@@ -998,8 +1014,16 @@
         max-width: 100%;
       }
 
+      .headshot {
+        width: 210px;
+        height: 210px;
+
+        border-radius: 14px;
+      }
+
       .hero-expertise {
         width: 100%;
+
         padding: 19px 17px;
       }
 
@@ -1009,7 +1033,9 @@
 
       .hero-expertise-icon {
         width: 40px;
+
         min-width: 40px;
+
         font-size: 30px;
       }
 
@@ -1024,16 +1050,13 @@
       .experience-container {
         grid-template-columns: 1fr;
       }
-
     }
 
   </style>
 
 </head>
 
-
 <body>
-
 
 <!-- =========================
      NAVIGATION
@@ -1051,11 +1074,11 @@
 
       <a href="#about">About</a>
 
+      <a href="#skills">Skills</a>
+
       <a href="#projects">Projects</a>
 
       <a href="#experience">Experience</a>
-
-      <a href="#skills">Skills</a>
 
       <a href="#contact">Contact</a>
 
@@ -1065,8 +1088,6 @@
 
 </nav>
 
-
-
 <!-- =========================
      HERO
 ========================= -->
@@ -1075,13 +1096,12 @@
 
   <div class="hero-container">
 
-
     <!-- LEFT SIDE -->
 
     <div class="hero-text">
 
       <div class="eyebrow">
-        Data • AI • Analytics • Risk
+        Data • Modeling • Insights • AI • Risk
       </div>
 
       <h1>
@@ -1091,16 +1111,6 @@
       <h2>
         Data Scientist | Risk & Decision Analytics
       </h2>
-
-      <p class="hero-description">
-
-        I combine statistical modeling, machine learning,
-        risk analytics, and AI to turn complex data and models
-        into actionable insights and better, more trustworthy
-        decisions.
-
-      </p>
-
 
       <div class="buttons">
 
@@ -1112,7 +1122,6 @@
 
         </a>
 
-
         <a
           class="button button-secondary"
           href="https://www.linkedin.com/in/sailee-mathew-rumao-829608a0/"
@@ -1121,7 +1130,6 @@
           LinkedIn
 
         </a>
-
 
         <a
           class="button button-secondary"
@@ -1136,12 +1144,9 @@
 
     </div>
 
-
-
     <!-- RIGHT SIDE -->
 
     <div class="hero-right">
-
 
       <div class="headshot-wrapper">
 
@@ -1152,22 +1157,15 @@
 
       </div>
 
-
-
-      <!-- WIDER ROTATING EXPERTISE -->
+      <!-- ROTATING EXPERTISE -->
 
       <div class="hero-expertise">
 
-
         <div class="hero-expertise-label">
-
           EXPERTISE
-
         </div>
 
-
         <div class="hero-expertise-display">
-
 
           <div
             class="hero-expertise-icon"
@@ -1177,9 +1175,7 @@
 
           </div>
 
-
           <div class="hero-expertise-content">
-
 
             <div
               class="hero-expertise-title"
@@ -1189,24 +1185,20 @@
 
             </div>
 
-
             <div
               class="hero-expertise-skills"
               id="heroExpertiseSkills">
 
               Statistical Modeling · Machine Learning · NLP ·
-              Classification · Segmentation
+              Classification · Experimentation · Segmentation
 
             </div>
-
 
           </div>
 
         </div>
 
-
         <div class="hero-expertise-dots">
-
 
           <span class="hero-expertise-dot active"></span>
 
@@ -1220,29 +1212,21 @@
 
           <span class="hero-expertise-dot"></span>
 
-
         </div>
-
 
       </div>
 
-
     </div>
-
 
   </div>
 
 </header>
-
-
 
 <!-- =========================
      MAIN CONTENT
 ========================= -->
 
 <div class="container">
-
-
 
 <!-- =========================
      ABOUT
@@ -1258,7 +1242,6 @@
     Turning data into decisions
   </h2>
 
-
   <div class="about-text">
 
     <p>
@@ -1273,7 +1256,6 @@
     </p>
 
   </div>
-
 
   <!-- IMPACT -->
 
@@ -1291,7 +1273,6 @@
 
     </div>
 
-
     <div class="impact-card">
 
       <span class="impact-number">
@@ -1304,7 +1285,6 @@
 
     </div>
 
-
     <div class="impact-card">
 
       <span class="impact-number">
@@ -1316,7 +1296,6 @@
       </span>
 
     </div>
-
 
     <div class="impact-card">
 
@@ -1334,7 +1313,38 @@
 
 </section>
 
+<!-- =========================
+     SKILLS
+     MOVED BEFORE PROJECTS
+========================= -->
 
+<section id="skills">
+
+  <div class="section-label">
+    Technical Toolkit
+  </div>
+
+  <h2 class="section-title">
+    Skills
+  </h2>
+
+  <div class="skills">
+
+    <span>Python</span>
+    <span>SQL</span>
+    <span>R</span>
+    <span>AI</span>
+    <span>Machine Learning</span>
+    <span>Statistics</span>
+    <span>Tableau</span>
+    <span>GenAI</span>
+    <span>LLMs</span>
+    <span>Copilots</span>
+    <span>Claude</span>
+
+  </div>
+
+</section>
 
 <!-- =========================
      PROJECTS
@@ -1350,7 +1360,6 @@
     Projects
   </h2>
 
-
   <!-- WORK PROJECTS -->
 
   <h3 style="
@@ -1363,9 +1372,7 @@
 
   </h3>
 
-
   <div class="project-container">
-
 
     <!-- WORK PROJECT 1 -->
 
@@ -1405,8 +1412,6 @@
 
     </div>
 
-
-
     <!-- WORK PROJECT 2 -->
 
     <div class="project">
@@ -1445,8 +1450,6 @@
 
   </div>
 
-
-
   <!-- PERSONAL PROJECTS -->
 
   <h3 style="
@@ -1460,9 +1463,7 @@
 
   </h3>
 
-
   <div class="project-container personal-projects">
-
 
     <!-- PERSONAL PROJECT 1 -->
 
@@ -1501,8 +1502,6 @@
 
     </div>
 
-
-
     <!-- PERSONAL PROJECT 2 -->
 
     <div class="project">
@@ -1530,16 +1529,15 @@
 
       </p>
 
-      <a href="projects/Causal_inference.html"
-         target="_blank">
+      <a
+        href="projects/Causal_inference.html"
+        target="_blank">
 
         View Project →
-        
+
       </a>
 
     </div>
-
-
 
     <!-- PERSONAL PROJECT 3 -->
 
@@ -1573,47 +1571,9 @@
 
     </div>
 
-
   </div>
 
 </section>
-
-
-
-<!-- =========================
-     SKILLS
-========================= -->
-
-<section id="skills">
-
-  <div class="section-label">
-    Technical Toolkit
-  </div>
-
-  <h2 class="section-title">
-    Skills
-  </h2>
-
-
-  <div class="skills">
-
-    <span>Python</span>
-    <span>SQL</span>
-    <span>R</span>
-    <span>AI</span>
-    <span>Machine Learning</span>
-    <span>Statistics</span>
-    <span>Tableau</span>
-    <span>GenAI</span>
-    <span>LLMs</span>
-    <span>Copilots</span>
-    <span>Claude</span>
-
-  </div>
-
-</section>
-
-
 
 <!-- =========================
      EXPERIENCE
@@ -1629,9 +1589,7 @@
     Professional Experience
   </h2>
 
-
   <div class="experience-container">
-
 
     <!-- UBS -->
 
@@ -1651,7 +1609,6 @@
 
     </div>
 
-
     <!-- ZS -->
 
     <div class="experience-item">
@@ -1670,12 +1627,9 @@
 
     </div>
 
-
   </div>
 
 </section>
-
-
 
 <!-- =========================
      EDUCATION
@@ -1691,7 +1645,6 @@
     Education
   </h2>
 
-
   <div class="education-card">
 
     <h3>
@@ -1705,8 +1658,6 @@
   </div>
 
 </section>
-
-
 
 <!-- =========================
      CONTACT
@@ -1722,7 +1673,6 @@
     Let's Connect
   </h2>
 
-
   <div class="contact-container">
 
     <p
@@ -1737,12 +1687,10 @@
 
     </p>
 
-
     <form
       class="contact-form"
       action="https://formspree.io/f/mgawrzqg"
       method="POST">
-
 
       <div class="form-group">
 
@@ -1759,8 +1707,6 @@
 
       </div>
 
-
-
       <div class="form-group">
 
         <label for="email">
@@ -1776,8 +1722,6 @@
 
       </div>
 
-
-
       <div class="form-group">
 
         <label for="message">
@@ -1792,8 +1736,6 @@
 
       </div>
 
-
-
       <button
         type="submit"
         class="contact-submit">
@@ -1802,18 +1744,13 @@
 
       </button>
 
-
     </form>
 
   </div>
 
 </section>
 
-
-
 </div>
-
-
 
 <!-- =========================
      FOOTER
@@ -1830,8 +1767,6 @@
 
 </footer>
 
-
-
 <!-- =====================================================
      ROTATING EXPERTISE JAVASCRIPT
 ===================================================== -->
@@ -1844,49 +1779,33 @@
       icon: "🧠",
       title: "Data Science",
       skills:
-        "Statistical Modeling · Machine Learning · NLP · Classification · Segmentation"
+        "Statistical Modeling · Machine Learning · NLP · Classification · Experimentation & A/B Testing · Segmentation"
     },
 
     {
       icon: "🛡️",
       title: "Risk Analytics",
       skills:
-        "AML · Fraud · Sanctions · Transaction Monitoring · Model Risk"
+        "AML · Fraud · Sanction Screening · Financial Crime · AI Governance"
     },
 
     {
       icon: "📊",
       title: "Decision Science",
       skills:
-        "Targeting · Thresholds · Prioritization · Segmentation · Business Analytics"
-    },
-
-    {
-      icon: "⚙️",
-      title: "Analytics Engineering",
-      skills:
-        "Python · R · SQL · Automation · Data Pipelines"
+        "Insights · Targeting · Prioritization · Segmentation · Go-To-Market · KPI Monitoring"
     },
 
     {
       icon: "🤖",
       title: "AI / GenAI",
       skills:
-        "LLM-assisted Analytics · AI Adoption · AI Model Risk"
-    },
-
-    {
-      icon: "💼",
-      title: "Business Analytics",
-      skills:
-        "Commercial Analytics · HCP Segmentation · Customer Insights"
+        "LLM · AI Adoption · Prompt Engineering · Agentic AI · Claude · Co-pilot"
     }
 
   ];
 
-
   let currentExpertise = 0;
-
 
   const heroExpertiseIcon =
     document.getElementById("heroExpertiseIcon");
@@ -1899,7 +1818,6 @@
 
   const heroExpertiseDots =
     document.querySelectorAll(".hero-expertise-dot");
-
 
   function updateExpertise() {
 
@@ -1915,17 +1833,14 @@
       "hero-expertise-fade"
     );
 
-
     setTimeout(() => {
 
       currentExpertise =
         (currentExpertise + 1) %
         expertise.length;
 
-
       const item =
         expertise[currentExpertise];
-
 
       heroExpertiseIcon.textContent =
         item.icon;
@@ -1935,7 +1850,6 @@
 
       heroExpertiseSkills.textContent =
         item.skills;
-
 
       heroExpertiseDots.forEach(
         (dot, index) => {
@@ -1947,7 +1861,6 @@
 
         }
       );
-
 
       heroExpertiseIcon.classList.remove(
         "hero-expertise-fade"
@@ -1961,11 +1874,9 @@
         "hero-expertise-fade"
       );
 
-
     }, 350);
 
   }
-
 
   setInterval(
     updateExpertise,
@@ -1973,7 +1884,6 @@
   );
 
 </script>
-
 
 </body>
 
