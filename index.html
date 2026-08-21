@@ -83,8 +83,7 @@
       );
 
       color: #252525;
-
-      padding: 70px 30px;
+      padding: 70px 30px 45px;
     }
 
     .hero-container {
@@ -133,22 +132,16 @@
 
     .hero-positioning {
       max-width: 620px;
-
       margin: 0 0 28px 0;
-
       font-size: 18px;
-
       line-height: 1.6;
-
       color: #5F5F5F;
-
       font-weight: 500;
     }
 
 
     /* =========================
        RIGHT HERO COLUMN
-       HEADSHOT ONLY
     ========================= */
 
     .hero-right {
@@ -156,7 +149,7 @@
       flex-shrink: 0;
 
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
     }
 
@@ -187,24 +180,16 @@
 
     /* =====================================================
        ROTATING EXPERTISE CARD
-       NOW ABOVE ABOUT / LEFT ALIGNED
     ===================================================== */
-
-    .expertise-wrapper {
-      max-width: 1150px;
-      margin: 0 auto;
-      padding: 0 30px;
-    }
 
     .hero-expertise {
 
-      width: 390px;
+      width: 850px;
       max-width: 100%;
 
-      margin-top: 0;
-      margin-bottom: 35px;
+      margin-top: 30px;
 
-      padding: 22px 25px;
+      padding: 22px 30px;
 
       background: rgba(255,255,255,0.82);
 
@@ -222,6 +207,8 @@
       min-height: 130px;
     }
 
+
+    /* Purple accent bar */
 
     .hero-expertise::before {
 
@@ -265,7 +252,7 @@
 
       align-items: center;
 
-      gap: 16px;
+      gap: 22px;
 
       width: 100%;
     }
@@ -273,13 +260,13 @@
 
     .hero-expertise-icon {
 
-      width: 45px;
+      width: 55px;
 
-      min-width: 45px;
+      min-width: 55px;
 
       flex-shrink: 0;
 
-      font-size: 34px;
+      font-size: 38px;
 
       line-height: 1;
 
@@ -303,7 +290,7 @@
 
     .hero-expertise-title {
 
-      font-size: 19px;
+      font-size: 20px;
 
       font-weight: 800;
 
@@ -384,6 +371,24 @@
 
 
     /* =========================
+       EXPERTISE LEFT ALIGNMENT
+    ========================= */
+
+    .hero-expertise-left {
+
+      max-width: 1150px;
+
+      margin: 30px auto 0;
+
+      width: calc(100% - 60px);
+
+      display: flex;
+
+      justify-content: flex-start;
+    }
+
+
+    /* =========================
        BUTTONS
     ========================= */
 
@@ -436,7 +441,7 @@
     .container {
       max-width: 1150px;
       margin: auto;
-      padding: 0 30px 70px;
+      padding: 35px 30px 70px;
     }
 
     section {
@@ -891,6 +896,14 @@
         width: 340px;
       }
 
+      .hero-expertise {
+        width: 100%;
+      }
+
+      .hero-expertise-left {
+        width: calc(100% - 60px);
+      }
+
       .headshot {
         width: 260px;
         height: 260px;
@@ -919,7 +932,7 @@
       }
 
       .hero {
-        padding: 55px 25px;
+        padding: 55px 25px 35px;
       }
 
       .hero-container {
@@ -962,17 +975,24 @@
       }
 
 
-      /* Expertise above About */
+      /* WIDE EXPERTISE CARD BECOMES FULL WIDTH */
 
-      .expertise-wrapper {
-        padding: 0 25px;
+      .hero-expertise-left {
+
+        width: calc(100% - 50px);
+
+        margin-top: 25px;
+
       }
 
       .hero-expertise {
+
         width: 100%;
-        max-width: 390px;
+
+        max-width: 100%;
+
         padding: 21px 22px;
-        margin-bottom: 30px;
+
       }
 
       .hero-expertise-title {
@@ -1006,7 +1026,7 @@
       }
 
       .container {
-        padding: 0 25px 55px;
+        padding: 30px 25px 55px;
       }
 
       h2.section-title {
@@ -1044,8 +1064,8 @@
         border-radius: 14px;
       }
 
-      .expertise-wrapper {
-        padding: 0 20px;
+      .hero-expertise-left {
+        width: calc(100% - 35px);
       }
 
       .hero-expertise {
@@ -1186,7 +1206,7 @@
 
 
 
-    <!-- RIGHT SIDE — HEADSHOT ONLY -->
+    <!-- RIGHT SIDE -->
 
     <div class="hero-right">
 
@@ -1204,81 +1224,79 @@
 
   </div>
 
-</header>
 
+  <!-- =====================================================
+       ROTATING EXPERTISE — MOVED BELOW HERO CONTENT
+  ===================================================== -->
 
+  <div class="hero-expertise-left">
 
-<!-- =====================================================
-     ROTATING EXPERTISE
-     MOVED TO LEFT ABOVE ABOUT
-===================================================== -->
+    <div class="hero-expertise">
 
-<div class="expertise-wrapper">
+      <div class="hero-expertise-label">
 
-  <div class="hero-expertise">
-
-    <div class="hero-expertise-label">
-
-      EXPERTISE
-
-    </div>
-
-
-    <div class="hero-expertise-display">
-
-
-      <div
-        class="hero-expertise-icon"
-        id="heroExpertiseIcon">
-
-        🧠
+        EXPERTISE
 
       </div>
 
 
-      <div class="hero-expertise-content">
+      <div class="hero-expertise-display">
 
 
         <div
-          class="hero-expertise-title"
-          id="heroExpertiseTitle">
+          class="hero-expertise-icon"
+          id="heroExpertiseIcon">
 
-          Data Science
+          🧠
 
         </div>
 
 
-        <div
-          class="hero-expertise-skills"
-          id="heroExpertiseSkills">
+        <div class="hero-expertise-content">
 
-          Statistical Modeling · Machine Learning · NLP ·
-          Classification · Experimentation · Segmentation
+
+          <div
+            class="hero-expertise-title"
+            id="heroExpertiseTitle">
+
+            Data Science
+
+          </div>
+
+
+          <div
+            class="hero-expertise-skills"
+            id="heroExpertiseSkills">
+
+            Statistical Modeling · Machine Learning · NLP ·
+            Classification · Experimentation & A/B Testing · Segmentation
+
+          </div>
+
 
         </div>
-
 
       </div>
 
+
+      <div class="hero-expertise-dots">
+
+        <span class="hero-expertise-dot active"></span>
+
+        <span class="hero-expertise-dot"></span>
+
+        <span class="hero-expertise-dot"></span>
+
+        <span class="hero-expertise-dot"></span>
+
+      </div>
+
+
     </div>
-
-
-    <div class="hero-expertise-dots">
-
-      <span class="hero-expertise-dot active"></span>
-
-      <span class="hero-expertise-dot"></span>
-
-      <span class="hero-expertise-dot"></span>
-
-      <span class="hero-expertise-dot"></span>
-
-    </div>
-
 
   </div>
 
-</div>
+</header>
 
 
 
